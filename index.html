@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<meta name="theme-color" content="#C43C22">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="每日背单词">
+<meta name="description" content="离线每日背单词。含工作金融英语与通用进阶英语，并按八字用神做暖色与学习提醒。进度仅保存在本机。">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACKElEQVR4nO1bu1HEMBBduQJq8FACoWOGBmiEhBpIaIQGGGKHlMC4Bjo4Is3ohPVbvV3JZ73o5mzv7nv7JN1HMqSEdZkvJfcv62akanEhlqSUcApSgsCDoon7QAsBCyZN3AdKiOog2sR91ArBfrg1cR9cISbOQ72RJ+LXVCxAj+QtOLVl2wZJ/OHjPXjt+/kFkiN3SGTdhCAfIx1CrRg5IiRvqCXPIe6jRoiUCKxJMBcI8sg4e4iqw+2+ZMEcN8RcEHRAj+S58WNcdgXoeanjIsQJOgdId18izz8BerU+It8eN9FV4Ai4EuAo3a/J63McDrAvbnHmD8HlWu2AVvZH5Z+IztV9C8t5zAGtC2iNIcAZx7/FusyX4YDaAKjf8FrlHw5oXUBrQARoNQwQeYcDUIG0XYDKB3WAlgjIPGMIoAOWdud3+xKNn4KR/Cic+q7ukr+bH6P3Sg2vSXI3FqpoKfLLuhlDpPODiO+GPev7LpCeVFUFcHH/9hS89vP6qVbHsm5mrAJEersyieLdz7mOguWs6oBccloiEDkCaLqgNVyuag4o7aqWC64EkHIBl4yECD7HsQr4b6BdUNtFpAv2uIk6AFW85HywK8AtrgghTkEH1IqA7lpNPNY2udSDMUhZlhO36U7RIyApQKkLpD/AlMSHbJa2ONqfqNDt8i56F6LUscVzQM9LJKc21iTYowjcmsaxOVQhpz046eO0R2d9nPbwdAi9Hp//A+aA8MzrgW7dAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACKElEQVR4nO1bu1HEMBBduQJq8FACoWOGBmiEhBpIaIQGGGKHlMC4Bjo4Is3ohPVbvV3JZ73o5mzv7nv7JN1HMqSEdZkvJfcv62akanEhlqSUcApSgsCDoon7QAsBCyZN3AdKiOog2sR91ArBfrg1cR9cISbOQ72RJ+LXVCxAj+QtOLVl2wZJ/OHjPXjt+/kFkiN3SGTdhCAfIx1CrRg5IiRvqCXPIe6jRoiUCKxJMBcI8sg4e4iqw+2+ZMEcN8RcEHRAj+S58WNcdgXoeanjIsQJOgdId18izz8BerU+It8eN9FV4Ai4EuAo3a/J63McDrAvbnHmD8HlWu2AVvZH5Z+IztV9C8t5zAGtC2iNIcAZx7/FusyX4YDaAKjf8FrlHw5oXUBrQARoNQwQeYcDUIG0XYDKB3WAlgjIPGMIoAOWdud3+xKNn4KR/Cic+q7ukr+bH6P3Sg2vSXI3FqpoKfLLuhlDpPODiO+GPev7LpCeVFUFcHH/9hS89vP6qVbHsm5mrAJEersyieLdz7mOguWs6oBccloiEDkCaLqgNVyuag4o7aqWC64EkHIBl4yECD7HsQr4b6BdUNtFpAv2uIk6AFW85HywK8AtrgghTkEH1IqA7lpNPNY2udSDMUhZlhO36U7RIyApQKkLpD/AlMSHbJa2ONqfqNDt8i56F6LUscVzQM9LJKc21iTYowjcmsaxOVQhpz046eO0R2d9nPbwdAi9Hp//A+aA8MzrgW7dAAAAAElFTkSuQmCC">
+<title>每日背单词</title>
+<style>
+:root {
+  --cream: #F8F0E1;
+  --cream-deep: #EFE2CB;
+  --paper: #FFF8EE;
+  --paper-2: #FBF3E6;
+  --ink: #3B2A1C;
+  --ink-soft: #6A4E3A;
+  --muted: #A08A72;
+  --line: #E8D3B4;
+  --vermilion: #C43C22;
+  --vermilion-deep: #9E2E1A;
+  --terra: #B85C38;
+  --orange: #E07A35;
+  --amber: #E3A01A;
+  --ochre: #C4842A;
+  --gold: #C9A84C;
+  --gold-bright: #E0C36A;
+  --peach: #F6D3B0;
+  --blush: #F3C7A8;
+  --ok: #9A5A24;
+  --shadow: 0 10px 30px rgba(90, 45, 20, 0.08);
+  --shadow-sm: 0 2px 10px rgba(90, 45, 20, 0.06);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --nav-h: calc(64px + env(safe-area-inset-bottom, 0px));
+  --font-sans: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Noto Sans SC", "Microsoft YaHei", "Source Han Sans SC", system-ui, sans-serif;
+  --font-serif: "Songti SC", "Noto Serif CJK SC", "STSong", "SimSun", "Source Han Serif SC", Georgia, serif;
+  --font-en: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --font-ipa: "DejaVu Sans", "Noto Sans", "Segoe UI", "Lucida Grande", "Apple SD Gothic Neo", "Charis SIL", "Doulos SIL", Times, serif;
+  --font-mono: "SF Mono", "Menlo", "Consolas", "Noto Sans Mono CJK SC", monospace;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; padding: 0; }
+html { height: 100%; scroll-padding-bottom: calc(var(--nav-h) + 16px); }
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(224, 122, 53, 0.16), transparent 55%),
+    radial-gradient(900px 500px at 0% 100%, rgba(196, 60, 34, 0.08), transparent 50%),
+    linear-gradient(180deg, #FBEED8 0%, var(--cream) 28%, #F4E6CE 100%);
+  overflow-x: hidden;
+}
+body.locked { overflow: hidden; }
+button, input, select, textarea { font-family: inherit; }
+button { color: inherit; }
+a { color: var(--vermilion-deep); }
+.wrap {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  padding: 16px 16px calc(var(--nav-h) + 24px);
+}
+.card, .btn, .rate, .choice { scroll-margin-bottom: calc(var(--nav-h) + 16px); }
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0 14px;
+}
+.brand { display: flex; gap: 12px; align-items: center; min-width: 0; }
+.seal {
+  width: 48px; height: 48px; flex: 0 0 48px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, #F0C36A, transparent 45%),
+    linear-gradient(160deg, #E07A35, #C43C22 60%, #9E2E1A);
+  box-shadow: 0 6px 16px rgba(196, 60, 34, 0.28), inset 0 0 0 2px rgba(224, 195, 106, 0.45);
+  display: grid; place-items: center;
+}
+.seal svg { width: 30px; height: 30px; }
+.brand h1 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+.brand p {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.12em;
+}
+.icon-btn {
+  appearance: none; border: 0; background: var(--paper);
+  width: 44px; height: 44px; border-radius: 14px;
+  display: grid; place-items: center;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  color: var(--terra);
+}
+.icon-btn:active { transform: scale(0.97); }
+.icon-btn svg { width: 22px; height: 22px; }
+.card {
+  background: linear-gradient(180deg, var(--paper) 0%, var(--paper-2) 100%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(201, 168, 76, 0.22);
+  padding: 16px;
+  margin-bottom: 14px;
+  position: relative;
+}
+.card::after {
+  content: "";
+  position: absolute; inset: 8px;
+  border-radius: 12px;
+  pointer-events: none;
+  border: 1px solid rgba(201, 168, 76, 0.0);
+}
+.card h2, .sec-title {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  margin: 0 0 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--ochre);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.energy-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 14px;
+  align-items: center;
+}
+.pillar-seal {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(224, 195, 106, 0.5), transparent 55%),
+    linear-gradient(180deg, #F8E3C0, #F3C8A0);
+  border: 2px solid rgba(196, 60, 34, 0.35);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: inset 0 0 0 4px rgba(255, 248, 238, 0.65);
+}
+.pillar-seal .gz {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  letter-spacing: 0.12em;
+  color: var(--vermilion-deep);
+  font-weight: 700;
+  line-height: 1;
+}
+.pillar-seal .sub {
+  margin-top: 6px;
+  font-size: 0.7rem;
+  color: var(--terra);
+  letter-spacing: 0.08em;
+}
+.energy-copy p { margin: 0 0 8px; line-height: 1.65; font-size: 0.95rem; }
+.energy-copy .suggest {
+  background: rgba(224, 122, 53, 0.1);
+  border-left: 3px solid var(--orange);
+  padding: 8px 10px;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.9rem;
+}
+.disclaimer {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.hours {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 4px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(196, 132, 42, 0.12);
+  color: var(--ok);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+}
+.chip.warn { background: rgba(196, 60, 34, 0.1); color: var(--vermilion-deep); }
+.chip.now { background: var(--vermilion); color: #FFF8EE; }
+.progress-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+.stat b { display: block; font-size: 1.25rem; color: var(--vermilion-deep); font-family: var(--font-serif); }
+.stat span { font-size: 0.75rem; color: var(--ink-soft); }
+.bar {
+  height: 8px; background: var(--cream-deep); border-radius: 99px; overflow: hidden; margin: 8px 0 4px;
+}
+.bar > i {
+  display: block; height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--gold-bright), var(--orange) 55%, var(--vermilion));
+  border-radius: 99px;
+  transition: width .35s ease;
+}
+.cta-row, .row { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn {
+  appearance: none; border: 0; cursor: pointer;
+  min-height: 48px; padding: 0 16px;
+  border-radius: 14px;
+  font-size: 0.95rem; font-weight: 650;
+  letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  transition: transform .12s ease, filter .12s ease;
+}
+.btn:active { transform: scale(0.98); }
+.btn[disabled] { opacity: .45; cursor: not-allowed; transform: none; }
+.btn-primary {
+  background: linear-gradient(180deg, #D55336, var(--vermilion-deep));
+  color: #FFF8EE;
+  box-shadow: 0 8px 18px rgba(196, 60, 34, 0.25);
+  flex: 1;
+}
+.btn-ghost {
+  background: var(--paper);
+  color: var(--terra);
+  border: 1px solid var(--line);
+  flex: 1;
+}
+.btn-gold {
+  background: linear-gradient(180deg, #E8C56A, #C9A84C);
+  color: #3B2A1C;
+  flex: 1;
+}
+.encourage {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.word-today .en {
+  font-family: var(--font-en);
+  font-size: 1.6rem;
+  margin: 4px 0 2px;
+}
+.ipa { color: var(--terra); font-family: var(--font-ipa); font-size: 0.92rem; }
+.muted { color: var(--ink-soft); font-size: 0.86rem; }
+.nav {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  height: var(--nav-h);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: rgba(255, 248, 238, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  z-index: 20;
+}
+.nav button {
+  appearance: none; border: 0; background: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2px; font-size: 0.7rem; color: var(--muted); cursor: pointer;
+  min-height: 48px;
+}
+.nav button svg { width: 22px; height: 22px; }
+.nav button.active { color: var(--vermilion-deep); font-weight: 700; }
+.view { display: none; animation: fade .25s ease; }
+.view.on { display: block; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.study-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.flash {
+  min-height: 320px;
+  display: flex; flex-direction: column; justify-content: center;
+  text-align: center;
+  padding: 22px 16px 16px;
+  cursor: pointer;
+}
+.flash .word {
+  font-family: var(--font-en);
+  font-size: clamp(1.8rem, 7vw, 2.6rem);
+  line-height: 1.2;
+  margin: 0 0 8px;
+  word-break: break-word;
+}
+.flash .full { color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 6px; }
+.speak-row { display: flex; justify-content: center; gap: 8px; margin: 8px 0 4px; }
+.speak {
+  min-height: 40px; padding: 0 12px; border-radius: 999px;
+  border: 1px solid var(--line); background: #fffaf3; cursor: pointer;
+  font-size: 0.82rem; color: var(--terra);
+}
+.pos-tag {
+  display: inline-block; font-size: 0.75rem; color: var(--ochre);
+  border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; margin-bottom: 8px;
+}
+.meaning { text-align: left; font-size: 0.95rem; line-height: 1.7; margin: 12px 0 0; }
+.example {
+  text-align: left; margin-top: 12px; padding: 10px 12px;
+  background: rgba(196, 132, 42, 0.08); border-radius: 12px;
+  font-size: 0.9rem; line-height: 1.65;
+}
+.example .en { font-family: var(--font-en); font-style: italic; }
+.example .zh { color: var(--ink-soft); margin-top: 4px; }
+.hint-flip { margin-top: 22px; color: var(--muted); font-size: 0.82rem; }
+.rate-bar {
+  display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;
+  margin-top: 12px;
+}
+.rate {
+  min-height: 52px; border: 0; border-radius: 14px; cursor: pointer; font-weight: 700;
+}
+.rate.again { background: #F8D7CE; color: var(--vermilion-deep); }
+.rate.hard { background: #F6E2B8; color: #8A5A10; }
+.rate.good { background: #F0D59A; color: #6A3F12; }
+.hidden { display: none !important; }
+
+.quiz-q { font-family: var(--font-en); font-size: 1.5rem; text-align: center; margin: 8px 0 16px; }
+.choices { display: flex; flex-direction: column; gap: 8px; }
+.choice {
+  text-align: left; min-height: 52px; padding: 10px 14px;
+  border-radius: 14px; border: 1px solid var(--line);
+  background: #fffaf3; cursor: pointer; font-size: 0.92rem; line-height: 1.5;
+}
+.choice.correct { background: #F0D59A; border-color: var(--ochre); }
+.choice.wrong { background: #F8D7CE; border-color: var(--vermilion); }
+.spell-input {
+  width: 100%; min-height: 52px; font-size: 16px; padding: 12px 14px;
+  border-radius: 14px; border: 1px solid var(--line); background: #fffaf3;
+  color: var(--ink);
+}
+.tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.tab {
+  min-height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line);
+  background: transparent; cursor: pointer; font-size: 0.82rem; color: var(--ink-soft);
+}
+.tab.on { background: var(--vermilion); color: #FFF8EE; border-color: transparent; }
+
+.heat { overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; }
+.heat-grid { display: grid; grid-auto-flow: column; grid-template-rows: repeat(7, 12px); gap: 3px; width: max-content; }
+.heat-cell { width: 12px; height: 12px; border-radius: 3px; background: #EFE2CB; }
+.legend { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; color: var(--muted); margin-top: 8px; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.list { display: flex; flex-direction: column; gap: 8px; }
+.list-item {
+  display: flex; justify-content: space-between; gap: 8px; align-items: baseline;
+  padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 0.9rem;
+}
+.list-item .w { font-family: var(--font-en); }
+.toggle {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 0; border-bottom: 1px solid var(--line);
+}
+.toggle label { font-size: 0.92rem; }
+.switch {
+  position: relative; width: 46px; height: 28px; flex: 0 0 46px;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+.switch span {
+  position: absolute; inset: 0; background: #E4CDB0; border-radius: 99px; cursor: pointer;
+}
+.switch span::before {
+  content: ""; position: absolute; width: 22px; height: 22px; border-radius: 50%;
+  background: #fff; top: 3px; left: 3px; transition: transform .18s ease;
+}
+.switch input:checked + span { background: var(--vermilion); }
+.switch input:checked + span::before { transform: translateX(18px); }
+.field { margin: 10px 0; }
+.field label { display: block; font-size: 0.8rem; color: var(--ink-soft); margin-bottom: 4px; }
+.field input, .field select, .field textarea {
+  width: 100%; font-size: 16px; padding: 10px 12px;
+  border-radius: 12px; border: 1px solid var(--line); background: #fffaf3; color: var(--ink);
+}
+.field textarea { min-height: 120px; resize: vertical; font-family: var(--font-mono); font-size: 13px; }
+.toast {
+  position: fixed; left: 50%; bottom: calc(var(--nav-h) + 12px);
+  transform: translateX(-50%) translateY(12px);
+  background: var(--ink); color: #F8F0E1;
+  padding: 10px 16px; border-radius: 999px; font-size: 0.85rem;
+  opacity: 0; pointer-events: none; transition: .25s ease; z-index: 40;
+  max-width: 90vw; text-align: center;
+}
+.toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
+.modal-bg {
+  position: fixed; inset: 0; background: rgba(59, 42, 28, 0.4);
+  z-index: 30; display: flex; align-items: flex-end; justify-content: center;
+  padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+}
+.modal {
+  width: min(560px, 100%);
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 20px 18px 16px;
+  box-shadow: 0 20px 50px rgba(59, 42, 28, 0.25);
+  max-height: 86vh; overflow: auto;
+}
+.modal h3 { font-family: var(--font-serif); margin: 0 0 10px; }
+@media (min-width: 720px) {
+  .home-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 14px; align-items: start; }
+  .home-grid .card { margin-bottom: 14px; }
+  .card-energy { grid-column: 1; grid-row: 1; }
+  .card-hours { grid-column: 1; grid-row: 2; }
+  .card-progress { grid-column: 2; grid-row: 1; }
+  .card-encourage { grid-column: 2; grid-row: 2; }
+  .card-word { grid-column: 2; grid-row: 3; }
+  .modal-bg { align-items: center; }
+  .flash { min-height: 380px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="app-header">
+      <div class="brand">
+        <div class="seal" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="20" r="10" fill="#F8E7B0"/><path d="M32 28c0 0-2 8-2 14h4c0-6-2-14-2-14z" fill="#7A3E18"/><path d="M32 34c-8 2-14 10-14 10 8-2 12-4 14-8 2 4 6 6 14 8 0 0-6-8-14-10z" fill="#E8C56A"/><path d="M18 50h28l-2 4H20z" fill="#F8E7B0" opacity=".85"/></svg></div>
+        <div>
+          <h1>每日背单词</h1>
+          <p>甲木向阳 · 日日开口</p>
+        </div>
+      </div>
+      <button class="icon-btn" id="btn-settings" type="button" aria-label="打开设置与词库"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v2m0 14v2M3 12h2m14 0h2M6 6l1.5 1.5M16.5 16.5 18 18M18 6l-1.5 1.5M7.5 16.5 6 18"/></svg></button>
+    </header>
+    <main>
+      <section id="view-home" class="view on"></section>
+      <section id="view-study" class="view"></section>
+      <section id="view-quiz" class="view"></section>
+      <section id="view-progress" class="view"></section>
+      <section id="view-library" class="view"></section>
+    </main>
+  </div>
+  <nav class="nav" aria-label="主导航">
+    <button type="button" data-view="home" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-8.5z"/></svg><span>今日</span></button>
+    <button type="button" data-view="study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="13" height="16" rx="2"/><path d="M8 9h5M8 13h5M17 7h2a1 1 0 0 1 1 1v13"/></svg><span>学习</span></button>
+    <button type="button" data-view="quiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9a3 3 0 1 1 5.2 2.1C13.4 12 12 13.1 12 14.5"/><circle cx="12" cy="18" r=".8" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="9"/></svg><span>测验</span></button>
+    <button type="button" data-view="progress"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M7 16V9m5 7V5m5 11v-6"/></svg><span>进度</span></button>
+    <button type="button" data-view="library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h6v14H5zM13 5h6v14h-6zM5 9h6M13 9h6"/></svg><span>词库</span></button>
+  </nav>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+const BANKS = {"finance":[{"id":"fin-001","bank":"finance","word":"FCN","full":"Fixed Coupon Note","ipa":"/ˌef siː ˈen/","pos":"n.","meaning":"固定票息票据。一种结构性票据，投资者通常按约定在各派息日收取固定票息；到期或提前终止时，本金能否全额返还，取决于挂钩标的表现以及是否触发敲入、敲出等条款。投资须承担发行人信用风险，具体权利义务以发行文件为准。","example":"The banker walked the client through how the FCN's knock-in barrier could affect principal at maturity.","exampleZh":"客户经理向客户说明，这份固定票息票据的敲入障碍会如何影响到期本金。"},{"id":"fin-002","bank":"finance","word":"CMT","full":"Constant Maturity Treasury","ipa":"/ˌsiː em ˈtiː/","pos":"n.","meaning":"固定期限国债（收益率）。指由美国国债收益率曲线按某一固定期限（如十年）插值得到的基准利率，常作为结构性票据或利率挂钩产品的参考利率。它不是某只特定国债的到期收益率，而是该期限的曲线点位。","example":"The note's coupon is linked to the 10-year CMT rate observed on each accrual date.","exampleZh":"该票据的票息与各累积观察日的十年期固定期限国债收益率挂钩。"},{"id":"fin-003","bank":"finance","word":"10-year CMT","full":"10-year Constant Maturity Treasury rate","ipa":"/ˌten jɪə ˌsiː em ˈtiː/","pos":"n.","meaning":"十年期固定期限国债收益率。美国国债收益率曲线上十年这一期限的基准利率，常见于与 CMT（Constant Maturity Treasury，固定期限国债收益率）挂钩的结构性产品。具体取值来源与观察日以产品条款为准。","example":"A rise in the 10-year CMT may change the coupon accrual of an interest-rate-linked note.","exampleZh":"十年期固定期限国债收益率上升，可能改变利率挂钩票据的票息累积。"},{"id":"fin-004","bank":"finance","word":"structured note","full":"","ipa":"/ˌstrʌktʃəd ˈnəʊt/","pos":"n.","meaning":"结构性票据。回报取决于挂钩标的（如股票、指数、利率或汇率等）表现，并按预设公式计算的债务工具。可能包含票息、敲入敲出、提前赎回等条款，风险与收益都可能不同于普通债券，须阅读发行文件。","example":"She compared the term sheet of the structured note with the product key facts statement.","exampleZh":"她把这份结构性票据的条款清单与产品资料概要对照阅读。"},{"id":"fin-005","bank":"finance","word":"structured product","full":"","ipa":"/ˌstrʌktʃəd ˈprɒdʌkt/","pos":"n.","meaning":"结构性产品。泛指将债券、期权或其他衍生工具组合而成、回报与挂钩标的挂钩的投资产品，包括结构性票据、结构性存款等。条款、风险和是否保本因产品而异，不能一概而论。","example":"Hong Kong regulators treat many structured products as complex products that require enhanced disclosure.","exampleZh":"香港监管机构将许多结构性产品视为复杂产品，并要求作更充分的披露。"},{"id":"fin-006","bank":"finance","word":"structured deposit","full":"","ipa":"/ˌstrʌktʃəd dɪˈpɒzɪt/","pos":"n.","meaning":"结构性存款。一种存款类产品，部分或全部回报与挂钩标的表现相连。它在法律与保障安排上可能有别于结构性票据，也不等于本金一定获得保障；具体以银行条款及适用的存款保障安排为准。","example":"The client asked whether the structured deposit was covered by the Deposit Protection Scheme.","exampleZh":"客户询问该结构性存款是否受存款保障计划保障。"},{"id":"fin-007","bank":"finance","word":"term sheet","full":"","ipa":"/ˈtɜːm ʃiːt/","pos":"n.","meaning":"条款清单（亦常称询价表或指示性条款表）。用简表概括产品主要条款，如期限、票息、障碍水平与观察日等。多数情况下属于指示性文件，并不等于具有完整约束力的最终条款或发行说明书。","example":"Please do not circulate the indicative term sheet until the issuer confirms the levels.","exampleZh":"在发行人确认各项水平之前，请勿传阅这份指示性条款清单。"},{"id":"fin-008","bank":"finance","word":"indicative terms","full":"","ipa":"/ɪnˈdɪkətɪv tɜːmz/","pos":"n.","meaning":"指示性条款。报价或条款清单上尚未最终确定的条款，通常可随市场变动而调整，对发行人与投资者一般不构成最终承诺。成交应以最终条款、定价补充文件或成交确认书为准。","example":"The knock-out barrier on the indicative terms may be revised at trade time.","exampleZh":"指示性条款中的敲出障碍，可能在成交时被修订。"},{"id":"fin-009","bank":"finance","word":"final terms","full":"","ipa":"/ˌfaɪnl ˈtɜːmz/","pos":"n.","meaning":"最终条款。在发行或成交时确定下来的产品条款，通常构成法律文件的一部分，效力高于先前的指示性条款清单。阅读时应与基础募集文件一并理解。","example":"The final terms set the strike at the official closing prices on the trade date.","exampleZh":"最终条款把行权水平定为交易日的官方收市价。"},{"id":"fin-010","bank":"finance","word":"pricing supplement","full":"","ipa":"/ˈpraɪsɪŋ ˌsʌplɪmənt/","pos":"n.","meaning":"定价补充文件。在中期票据或结构性票据计划下，就某一期产品补充具体定价与条款的法律文件，通常与基础募集说明书（base prospectus）一并阅读。","example":"The pricing supplement should be read together with the issuer's base prospectus.","exampleZh":"定价补充文件应与发行人的基础募集说明书一并阅读。"},{"id":"fin-011","bank":"finance","word":"offering circular","full":"","ipa":"/ˈɒfərɪŋ ˌsɜːkjələ/","pos":"n.","meaning":"发售通函。介绍证券发行安排、风险因素、发行人资料与条款的发售文件，供潜在投资者在认购前阅读。不同市场或计划下的文件名称可能不同。","example":"Investors were advised to read the offering circular before subscribing.","exampleZh":"建议投资者在认购前阅读发售通函。"},{"id":"fin-012","bank":"finance","word":"base prospectus","full":"","ipa":"/ˌbeɪs prəˈspektəs/","pos":"n.","meaning":"基础募集说明书（亦称基础招股章程）。在发行计划（programme）项下预先登记的基础文件，载明通用条款与风险；每一期产品再以最终条款或定价补充文件明确具体条件。","example":"Credit risk of the issuer is described in detail in the base prospectus.","exampleZh":"发行人信用风险在基础募集说明书中有详细说明。"},{"id":"fin-013","bank":"finance","word":"issuer","full":"","ipa":"/ˈɪʃuə/","pos":"n.","meaning":"发行人。发行票据或债券并承诺按条款付款的机构。即使产品在营销上被描述为“保本”，投资者仍须承担发行人（及如有的担保人）的信用风险：若发行人未能履约，本金与票息都可能受损。","example":"The team's due diligence started with the issuer's credit rating and financial disclosures.","exampleZh":"团队的尽职调查从发行人的信用评级与财务披露开始。"},{"id":"fin-014","bank":"finance","word":"guarantor","full":"","ipa":"/ˌɡærənˈtɔː/","pos":"n.","meaning":"担保人。在设有担保的产品中，承诺在发行人未能履约时，按担保文件履行相应付款或责任的机构。担保范围、条件与法律效力以担保文件为准，并不当然覆盖全部损失。","example":"The note is issued by the bank's vehicle and guaranteed by the parent company as guarantor.","exampleZh":"该票据由银行的发行载体发行，并由母公司作为担保人提供担保。"},{"id":"fin-015","bank":"finance","word":"underlying","full":"","ipa":"/ˌʌndəˈlaɪɪŋ/","pos":"n.","meaning":"挂钩标的（相关资产）。决定结构性产品回报的参考资产，可以是个股、指数、利率、汇率、一篮子资产等。条款中的观察、定盘与调整规则都围绕挂钩标的展开。","example":"This FCN has three underlyings and uses a worst-of payoff.","exampleZh":"这份固定票息票据挂钩三只标的，并采用表现最差者结算。"},{"id":"fin-016","bank":"finance","word":"basket","full":"","ipa":"/ˈbɑːskɪt/","pos":"n.","meaning":"一篮子标的。由多只股票、指数或其他资产组成的挂钩组合。回报可能取决于篮子平均值、表现最差或表现最优者，具体以条款中的公式为准。","example":"A worst-of basket can be riskier than a single-stock underlying because any one name may drag down the payoff.","exampleZh":"表现最差篮子可能比单只股票标的风险更高，因为任何一只都可能拖低回报。"},{"id":"fin-017","bank":"finance","word":"worst-of","full":"","ipa":"/ˈwɜːst ɒv/","pos":"adj./n.","meaning":"表现最差（标的）。指回报、是否敲入或是否自动赎回，按篮子中表现最差的那一只来计算。该结构常见于股票挂钩票据，通常比看单一标的或看平均值更严格。","example":"Because it is a worst-of note, a sharp drop in any one stock can trigger knock-in.","exampleZh":"由于这是表现最差结构，任何一只股票大跌都可能触发敲入。"},{"id":"fin-018","bank":"finance","word":"strike","full":"","ipa":"/straɪk/","pos":"n.","meaning":"行权价／执行水平。用于判断产品回报、敲入或交割数量的参考价格水平，通常由期初定盘价乘以约定百分比得出，或以期初定盘价本身作为行权水平。具体定义以条款为准。","example":"The strike was set at 100% of the official closing price on the initial fixing date.","exampleZh":"行权水平定为初始定盘日官方收市价的百分之一百。"},{"id":"fin-019","bank":"finance","word":"initial fixing","full":"","ipa":"/ɪˈnɪʃl ˈfɪksɪŋ/","pos":"n.","meaning":"期初定价／初始定盘。在约定的初始定盘日，按指定价格来源（如交易所官方收市价）确定挂钩标的初始水平的过程，常作为行权水平和各障碍的计算基准。","example":"The trade is subject to initial fixing on the two underlyings tomorrow.","exampleZh":"这笔交易须待明日就两只挂钩标的完成初始定盘。"},{"id":"fin-020","bank":"finance","word":"coupon","full":"","ipa":"/ˈkuːpɒn/","pos":"n.","meaning":"票息。债券或票据按约定向投资者支付的利息或收益金额。普通债券的票息多按固定或浮动利率计算；结构性票据的票息则可能是固定的，也可能取决于是否触发观察条件。","example":"The note pays a quarterly coupon of 12% per annum, subject to the terms.","exampleZh":"该票据按年利率百分之十二按季派息，具体以条款为准。"},{"id":"fin-021","bank":"finance","word":"autocall","full":"","ipa":"/ˈɔːtəʊkɔːl/","pos":"n.","meaning":"自动赎回（亦称自动提前终止）。若挂钩标的在预定观察日达到或超过自动赎回／敲出水平，产品提前终止，并按条款支付本金及相应票息或返还金额。未触发则继续存续至下一观察日或到期。","example":"The autocall barrier is set at 100% of the initial fixing.","exampleZh":"自动赎回障碍设为初始定盘水平的百分之一百。"},{"id":"fin-022","bank":"finance","word":"autocallable","full":"","ipa":"/ˌɔːtəʊˈkɔːləbl/","pos":"adj.","meaning":"可自动赎回的。形容含有自动赎回机制的票据或结构：在观察日若满足预定条件，产品即提前结束。是否触发、支付多少，须按该产品的自动赎回条款确定。","example":"The client preferred an autocallable note with monthly observations.","exampleZh":"客户更倾向选择每月观察的可自动赎回票据。"},{"id":"fin-023","bank":"finance","word":"knock-out","full":"KO","ipa":"/ˌnɒk ˈaʊt/","pos":"n.","meaning":"敲出（Knock-Out，简称 KO）。当挂钩标的触及预定敲出障碍时，某一期权成分或整个产品结构被终止；在自动赎回产品中，敲出常意味着提前赎回。障碍是连续观察还是仅在观察日观察，以条款为准。","example":"If the index closes at or above the knock-out barrier, the note is redeemed early.","exampleZh":"若指数收市价达到或高于敲出障碍，票据将提前赎回。"},{"id":"fin-024","bank":"finance","word":"knock-in","full":"KI","ipa":"/ˌnɒk ˈɪn/","pos":"n.","meaning":"敲入（Knock-In，简称 KI）。当挂钩标的触及预定敲入障碍时，某一或有条款被激活，常见的是使投资者开始承担类似卖出看跌期权的下跌风险。若从未敲入，到期本金处理可能更有利，但仍须阅读具体条款并承担发行人信用风险。","example":"The knock-in barrier is 70% of the initial fixing and is observed at the close only.","exampleZh":"敲入障碍为初始定盘的百分之七十，且仅以收市价观察。"},{"id":"fin-025","bank":"finance","word":"barrier","full":"","ipa":"/ˈbæriə/","pos":"n.","meaning":"障碍（水平）。结构性产品中用于判断敲入、敲出、派息或自动赎回的价格或收益率水平。应同时分清障碍的高低、观察方式（持续、收市或仅在指定日）以及触发后的后果。","example":"The term sheet lists separate barriers for coupon, autocall and knock-in.","exampleZh":"条款清单分别列明了派息、自动赎回和敲入的障碍水平。"},{"id":"fin-026","bank":"finance","word":"KO rebate","full":"knock-out rebate","ipa":"/ˌkeɪ ˈəʊ ˌriːbeɪt/","pos":"n.","meaning":"敲出返还（Knock-Out rebate）。产品因触发敲出或自动赎回而提前终止时，按条款支付的额外金额或补偿，有别于常规票息。是否支付、如何计算，必须以发行文件为准，不能假设一定有返还。","example":"The shark-fin structure pays a KO rebate if the upper barrier is touched.","exampleZh":"若触及上障碍，该鲨鱼鳍结构将支付敲出返还。"},{"id":"fin-027","bank":"finance","word":"participation rate","full":"","ipa":"/pɑːˌtɪsɪˈpeɪʃn reɪt/","pos":"n.","meaning":"参与率。用于计算投资者能分享多少挂钩标的上涨（或约定方向的表现）的比例。例如参与率为百分之八十，通常表示只按标的正向表现的八成计算收益部分，具体公式以条款为准。","example":"A higher participation rate usually means less attractive coupon or barrier terms, all else equal.","exampleZh":"在其他条件相近时，更高的参与率通常意味着票息或障碍条款相对不那么优厚。"},{"id":"fin-028","bank":"finance","word":"minimum redemption","full":"","ipa":"/ˌmɪnɪməm rɪˈdempʃn/","pos":"n.","meaning":"最低赎回金额。条款中约定的到期或赎回时可能支付的最低金额，常见于部分保本或设有下限的结构。最低赎回并不消除发行人信用风险，也不等于在所有提前终止情形下都适用。","example":"The note offers 100% minimum redemption at maturity, subject to issuer credit risk.","exampleZh":"该票据约定到期最低赎回百分之百本金，但仍须承担发行人信用风险。"},{"id":"fin-029","bank":"finance","word":"principal protection","full":"","ipa":"/ˌprɪnsəpl prəˈtekʃn/","pos":"n.","meaning":"本金保障（亦称保本安排）。指按条款在到期时偿还全部或约定比例本金的设计。即使有本金保障，投资者仍须承担发行人信用风险、流动性风险以及提前赎回或机会成本等；保障范围以法律文件为准。","example":"Principal protection does not mean the product is risk-free if the issuer defaults.","exampleZh":"如果发行人违约，本金保障并不意味着产品没有风险。"},{"id":"fin-030","bank":"finance","word":"principal-at-risk","full":"","ipa":"/ˌprɪnsəpl ət ˈrɪsk/","pos":"adj.","meaning":"本金受险／非保本。指投资者可能因挂钩表现、敲入或交割机制而无法收回全部本金的产品特征。最大亏损在不少股票挂钩产品中可以达到全部本金，另须承担发行人信用风险。","example":"The relationship manager clearly labelled the FCN as a principal-at-risk product.","exampleZh":"客户经理明确将该固定票息票据标注为本金受险产品。"},{"id":"fin-031","bank":"finance","word":"notional amount","full":"","ipa":"/ˈnəʊʃənl əˌmaʊnt/","pos":"n.","meaning":"名义本金（亦称名义金额）。用于计算票息、赎回金额或交割数量的参考金额，通常也是投资者的投资金额。它是计算基数，并不保证到期一定全额收回。","example":"Coupons are calculated on a notional amount of 100,000 US dollars.","exampleZh":"票息按十万美元的名义本金计算。"},{"id":"fin-032","bank":"finance","word":"tenor","full":"","ipa":"/ˈtenə/","pos":"n.","meaning":"期限。产品从生效或发行到计划到期之间的存续时长，如六个月、一年或三年。若有自动赎回或发行人赎回权，实际存续期可能短于原定年限。","example":"The client wanted a tenor of about six months rather than two years.","exampleZh":"客户希望期限大约六个月，而不是两年。"},{"id":"fin-033","bank":"finance","word":"maturity","full":"","ipa":"/məˈtʃʊərəti/","pos":"n.","meaning":"到期（日）。产品计划终止并按条款结算剩余款项或进行交割的时点。若已提前赎回，则不会持有至原到期日。应同时留意到期日、最终估值日与资金交收日的区别。","example":"The final valuation date is three business days before maturity.","exampleZh":"最终估值日在到期日前三个营业日。"},{"id":"fin-034","bank":"finance","word":"observation date","full":"","ipa":"/ˌɒbzəˈveɪʃn deɪt/","pos":"n.","meaning":"观察日。按条款观察挂钩标的价格或利率，以判断是否派息、敲入、敲出或自动赎回的预定日期。若遇市场中断，可能按中断事件条款顺延或改用备用来源。","example":"There is an observation date each month, starting from the first month after issue.","exampleZh":"自发行后第一个月起，每月设有一个观察日。"},{"id":"fin-035","bank":"finance","word":"valuation date","full":"","ipa":"/ˌvæljuˈeɪʃn deɪt/","pos":"n.","meaning":"估值日／定价日。用于确定挂钩水平和结算金额的日期，包括期初估值、定期观察及最终估值等。估值日不一定等于付款日或到期日。","example":"Payoff is determined on the final valuation date, with payment at maturity.","exampleZh":"回报在最终估值日确定，并在到期日支付。"},{"id":"fin-036","bank":"finance","word":"early redemption","full":"","ipa":"/ˌɜːli rɪˈdempʃn/","pos":"n.","meaning":"提前赎回。产品在原定到期日之前终止并按条款还款，原因可能包括自动赎回、发行人行使赎回权或发生约定的提前终止事件。提前赎回会影响实际持有期和再投资安排。","example":"Early redemption will be paid in cash five business days after the trigger date.","exampleZh":"提前赎回款项将在触发日后五个营业日以现金支付。"},{"id":"fin-037","bank":"finance","word":"callable","full":"","ipa":"/ˈkɔːləbl/","pos":"adj.","meaning":"可赎回的。通常指发行人有权在约定日期按约定价格赎回债券或票据。对投资者而言，赎回权往往在对发行人有利时行使，从而带来再投资风险。","example":"The callable bond may be redeemed by the issuer on any coupon date after year three.","exampleZh":"该可赎回债券可由发行人在第三年后的任何一个派息日赎回。"},{"id":"fin-038","bank":"finance","word":"range accrual","full":"","ipa":"/reɪndʒ əˈkruːəl/","pos":"n.","meaning":"区间累积。一种计息方式：仅当参考利率或挂钩标的落在约定区间内时，当日（或当期）才累积票息；在区间外的日子可能不累积或按较低利率累积，具体以条款为准。","example":"The range accrual note accrues interest only on days when the 10-year CMT stays inside the corridor.","exampleZh":"该区间累积票据仅在十年期固定期限国债收益率处于约定走廊内的日子累积利息。"},{"id":"fin-039","bank":"finance","word":"snowball","full":"","ipa":"/ˈsnəʊbɔːl/","pos":"n.","meaning":"雪球结构。市场对一类自动赎回股票挂钩结构的俗称，通常定期观察，若满足条件则提前赎回并派发约定收益；若未赎回且触及敲入等条件，到期可能承受本金损失。不同发行人的条款差异很大，须以文件为准。","example":"The team prepared a one-page comparison of two snowball structures with different knock-in levels.","exampleZh":"团队做了一页对照，比较两款敲入水平不同的雪球结构。"},{"id":"fin-040","bank":"finance","word":"shark fin","full":"","ipa":"/ˈʃɑːk fɪn/","pos":"n.","meaning":"鲨鱼鳍。一类障碍期权结构（看涨或看跌变体），在标的未触及障碍时，收益常随表现按参与率计算；一旦触及障碍，收益可能变为较低的敲出返还或固定金额。常见于结构性票据或结构性存款，条款以发行文件为准。","example":"The bullish shark fin pays enhanced upside unless the knock-out barrier is hit.","exampleZh":"除非触及敲出障碍，否则该看涨鲨鱼鳍可提供增强的上行参与。"},{"id":"fin-041","bank":"finance","word":"reverse convertible","full":"","ipa":"/rɪˌvɜːs kənˈvɜːtəbl/","pos":"n.","meaning":"反向可转换票据。一种股票挂钩短期票据，通常提供较高票息，但若标的下跌并满足约定条件，投资者可能以现金或股票形式承受本金损失，相当于在持有债券的同时卖出了看跌期权。","example":"A reverse convertible typically offers a high coupon in exchange for downside risk on the underlying share.","exampleZh":"反向可转换票据通常以较高票息，换取投资者承担挂钩股票的下行风险。"},{"id":"fin-042","bank":"finance","word":"ELN","full":"Equity Linked Note","ipa":"/ˌiː el ˈen/","pos":"n.","meaning":"股票挂钩票据（Equity Linked Note）。回报与一只或多只股票表现挂钩的结构性票据，可能包含票息、敲入、敲出或到期转股等机制，本金通常受险。须承担挂钩股票风险与发行人信用风险。","example":"The ELN may deliver shares of the worst-performing stock if it finishes below the strike.","exampleZh":"若表现最差的股票期末低于行权水平，该股票挂钩票据可能以股票交割。"},{"id":"fin-043","bank":"finance","word":"ELI","full":"Equity Linked Instrument","ipa":"/ˌiː el ˈaɪ/","pos":"n.","meaning":"股票挂钩投资工具（Equity Linked Instrument）。香港市场对一类股票挂钩结构性产品的常用称谓，回报与挂钩股票表现相连，通常本金受险。销售文件中可能同时出现 ELI 与其他产品名称，应以该产品的法律文件为准。","example":"The bank's private wealth desk offers ELIs to professional investors only.","exampleZh":"该行私人财富部门仅向专业投资者提供股票挂钩投资工具。"},{"id":"fin-044","bank":"finance","word":"phoenix note","full":"","ipa":"/ˈfiːnɪks nəʊt/","pos":"n.","meaning":"凤凰票据。一类自动赎回结构，通常在观察日若标的高于派息障碍即可派息，即使未必触发提前赎回；部分产品带有记忆机制。名称是市场俗称，具体条件以条款为准。","example":"This phoenix note pays a coupon if the worst-of stock closes above 70% of its initial fixing.","exampleZh":"若表现最差的股票收市高于其初始定盘的百分之七十，该凤凰票据即派发票息。"},{"id":"fin-045","bank":"finance","word":"memory coupon","full":"","ipa":"/ˈmeməri ˌkuːpɒn/","pos":"n.","meaning":"记忆票息／记忆机制。若某期因未达到派息条件而没有派息，在后续观察日一旦满足条件，可把此前未付的票息一并补发。是否具备记忆、补发几期，必须以条款为准。","example":"Thanks to the memory coupon, missed coupons may be paid later if the barrier is met.","exampleZh":"由于设有记忆票息，若之后满足障碍条件，此前未付的票息有可能被补发。"},{"id":"fin-046","bank":"finance","word":"accumulator","full":"","ipa":"/əˈkjuːmjəleɪtə/","pos":"n.","meaning":"累积认购合约（Accumulator）。一种高风险的场外衍生合约，投资者按约定在期限内分批以低于期初市价的行使价买入挂钩股票；若价格大涨可能被提前敲出，若大跌则可能按约定被要求持续买入，亏损可能很大。香港证监会及投资者及理财教育委员会曾多次提醒其风险。","example":"An accumulator can require repeated share purchases if the stock falls, which may lead to substantial losses.","exampleZh":"若股价下跌，累积认购合约可能要求投资者持续买入股票，从而造成重大亏损。"},{"id":"fin-047","bank":"finance","word":"decumulator","full":"","ipa":"/diːˈkjuːmjəleɪtə/","pos":"n.","meaning":"累积认沽／分批卖出合约（Decumulator）。与累积认购相反的高风险场外结构，投资者按约定分批卖出挂钩股票。价格向不利方向运行时，卖出数量或亏损可能扩大，同样必须充分理解条款与最坏情况。","example":"A decumulator may force the investor to sell more shares if the price rises sharply.","exampleZh":"若价格大幅上涨，累积认沽合约可能迫使投资者卖出更多股票。"},{"id":"fin-048","bank":"finance","word":"unwind","full":"","ipa":"/ʌnˈwaɪnd/","pos":"v./n.","meaning":"提前平仓／提前终止。在到期前把结构性产品或衍生合约终止，并按当时市值或发行人报价结算盈亏。平仓价格通常包含买卖差价与终止成本，可能明显差于理论估值。","example":"The client asked for an unwind quote because she needed liquidity this week.","exampleZh":"客户需要本周动用资金，因而要求给出提前平仓报价。"},{"id":"fin-049","bank":"finance","word":"RFQ","full":"Request for Quote","ipa":"/ˌɑːr ef ˈkjuː/","pos":"n.","meaning":"询价（Request for Quote）。向发行人、交易台或经纪发出的报价请求，用于获取指示性或可成交的价格与条款。询价结果在确认成交前通常仍可变更。","example":"Please send an RFQ for a six-month FCN on those two names with a 70% knock-in.","exampleZh":"请就这两只股票、敲入百分之七十、期限六个月的固定票息票据发出询价。"},{"id":"fin-050","bank":"finance","word":"issue price","full":"","ipa":"/ˈɪʃuː praɪs/","pos":"n.","meaning":"发行价。产品在发行或成交时的价格，常以名义本金的百分比表示，例如百分之一百。发行价不等于二级市场此后的买入或卖出价，也不保证投资者可按该价格提前变现。","example":"The notes were issued at an issue price of 100% of the notional amount.","exampleZh":"该票据按名义本金的百分之一百发行。"},{"id":"fin-051","bank":"finance","word":"cash settlement","full":"","ipa":"/kæʃ ˈsetlmənt/","pos":"n.","meaning":"现金结算。到期或触发事件后，以现金支付应付金额，而不交割股票或其他挂钩资产。现金数额按条款中的公式及估值日价格计算。","example":"If the product is cash-settled, the investor will not receive physical shares.","exampleZh":"若产品以现金结算，投资者不会收到实物股票。"},{"id":"fin-052","bank":"finance","word":"physical delivery","full":"","ipa":"/ˌfɪzɪkl dɪˈlɪvəri/","pos":"n.","meaning":"实物交割。到期时按条款向投资者交付挂钩股票（或其他资产），而不是只支付现金。交割数量通常与名义本金和行权价有关，可能出现零股以现金结清的安排。","example":"Physical delivery of the worst-of stock will occur if knock-in has been triggered and the final level is below the strike.","exampleZh":"若已触发敲入且期末水平低于行权价，将以表现最差的股票进行实物交割。"},{"id":"fin-053","bank":"finance","word":"official closing price","full":"","ipa":"/əˌfɪʃl ˈkləʊzɪŋ praɪs/","pos":"n.","meaning":"官方收市价。交易所或条款指定来源公布的正式收市价格，常作为定盘、观察与结算的依据。它可能不同于盘中成交价或某数据商的临时报价。","example":"Knock-in is observed against the official closing price, not the intra-day low.","exampleZh":"是否敲入按官方收市价观察，而不是按盘中最低价。"},{"id":"fin-054","bank":"finance","word":"market disruption","full":"","ipa":"/ˌmɑːkɪt dɪsˈrʌpʃn/","pos":"n.","meaning":"市场中断。交易暂停、无法公布收市价或其他条款所列事件，导致无法按原定方式定盘。发生后通常按市场中断条款顺延估值日或改用备用来源，具体处理以发行文件为准。","example":"If a market disruption event occurs, the valuation date may be postponed.","exampleZh":"如发生市场中断事件，估值日可能被顺延。"},{"id":"fin-055","bank":"finance","word":"corporate action","full":"","ipa":"/ˌkɔːpərət ˈækʃn/","pos":"n.","meaning":"公司行动。如分红、拆股、合并、换股、退市等可能影响挂钩股票价格或可交割性的事件。结构性产品通常授权计算代理人按条款作出调整，以维持经济效果尽量公平。","example":"A special dividend may lead to a corporate action adjustment of the strike and barriers.","exampleZh":"特别股息可能导致行权价和障碍水平按公司行动规则调整。"},{"id":"fin-056","bank":"finance","word":"issuer risk","full":"","ipa":"/ˈɪʃuə rɪsk/","pos":"n.","meaning":"发行人风险（信用风险的一种）。指发行人未能按期支付票息或偿还本金的风险。即使产品在结构上设计为到期偿还本金，一旦发行人违约，投资者仍可能损失部分或全部投资。","example":"Issuer risk remains even when a structured note is described as principal-protected.","exampleZh":"即使结构性票据被描述为保本，发行人风险依然存在。"},{"id":"fin-057","bank":"finance","word":"liquidity risk","full":"","ipa":"/lɪˈkwɪdəti rɪsk/","pos":"n.","meaning":"流动性风险。指难以在需要时按合理价格变现的风险。许多结构性票据没有活跃的二级市场，提前退出往往只能依赖发行人的指示性回购报价，买卖差价可能较宽。","example":"Liquidity risk means you may not be able to sell the note quickly without a significant cost.","exampleZh":"流动性风险意味着，你可能无法在不承担显著成本的情况下迅速卖出该票据。"},{"id":"fin-058","bank":"finance","word":"market risk","full":"","ipa":"/ˈmɑːkɪt rɪsk/","pos":"n.","meaning":"市场风险。因挂钩标的价格、利率、汇率或波动率等市场变量变动，导致产品市值或最终回报不利变化的风险。它是结构性产品和普通证券都可能面对的基本风险。","example":"Market risk on a worst-of note can be higher than on a single-stock note.","exampleZh":"表现最差结构票据的市场风险，可能高于单只股票挂钩票据。"},{"id":"fin-059","bank":"finance","word":"currency risk","full":"","ipa":"/ˈkʌrənsi rɪsk/","pos":"n.","meaning":"汇率风险（亦称货币风险）。当投资币种与投资者的参考货币不同，或产品本身含有汇率挂钩成分时，汇率变动可能增加收益或扩大亏损。即使挂钩股票表现理想，汇率不利也可能侵蚀回报。","example":"The dollar-denominated note carries currency risk for an investor whose spending is in Hong Kong dollars.","exampleZh":"对以港元作为主要支出货币的投资者而言，该美元计价票据带有汇率风险。"},{"id":"fin-060","bank":"finance","word":"reinvestment risk","full":"","ipa":"/ˌriːɪnˈvestmənt rɪsk/","pos":"n.","meaning":"再投资风险。产品被提前赎回或付息后，投资者可能无法再按原来的收益率找到类似投资。可赎回债券和自动赎回票据都可能使投资者更早面对这一问题。","example":"If the note is autocalled after one month, the client faces reinvestment risk in a lower-yield market.","exampleZh":"若票据在一个月后即被自动赎回，客户在较低收益的市场中就会面临再投资风险。"},{"id":"fin-061","bank":"finance","word":"European barrier","full":"","ipa":"/ˌjʊərəˈpiːən ˈbæriə/","pos":"n.","meaning":"欧式障碍。仅在指定估值日或到期时观察是否触及障碍，而不在整个期限内持续观察。因此盘中或非观察日触及该水平，通常并不构成触发，除非条款另有约定。","example":"A European barrier is checked only on the final valuation date, not intra-day.","exampleZh":"欧式障碍只在最终估值日检查，而不按盘中价格检查。"},{"id":"fin-062","bank":"finance","word":"American barrier","full":"","ipa":"/əˈmerɪkən ˈbæriə/","pos":"n.","meaning":"美式障碍。在约定期间内持续观察（或每个交易日观察）是否触及障碍，因此比仅在到期观察的欧式障碍更容易被触发。持续观察的具体规则，如是否包括盘中价格，须以条款为准。","example":"An American barrier can be triggered on any trading day during the life of the note.","exampleZh":"美式障碍在票据存续期内的任何一个交易日都可能被触发。"},{"id":"fin-063","bank":"finance","word":"bond","full":"","ipa":"/bɒnd/","pos":"n.","meaning":"债券。发行人向投资者借入资金并承诺按约定支付利息、到期偿还本金的债务凭证。债券价格会随利率、信用评级和市场供求变动，同样存在信用风险与流动性风险。","example":"Government bonds are often used as a benchmark for pricing corporate credit.","exampleZh":"政府债券常被用作为企业信用定价的基准。"},{"id":"fin-064","bank":"finance","word":"yield","full":"","ipa":"/jiːld/","pos":"n.","meaning":"收益率。衡量债券或投资回报水平的指标，常见的有当期收益率、到期收益率等。收益率与价格通常反向变动：价格上升时，到期收益率往往下降。不同口径的收益率不可直接混用。","example":"Bond prices fell and the yield moved higher after the data release.","exampleZh":"数据公布后，债券价格下跌，收益率走高。"},{"id":"fin-065","bank":"finance","word":"YTM","full":"Yield to Maturity","ipa":"/ˌwaɪ tiː ˈem/","pos":"n.","meaning":"到期收益率（Yield to Maturity）。假设投资者持有债券至到期、按期收到全部票息并再投资、且发行人未违约时，使未来现金流现值等于当前全价的内部回报率。它是估计值，并不保证实际回报。","example":"The bond was quoted at a YTM of 4.2% on a semi-annual basis.","exampleZh":"该债券按半年复利口径报出的到期收益率为百分之四点二。"},{"id":"fin-066","bank":"finance","word":"YTC","full":"Yield to Call","ipa":"/ˌwaɪ tiː ˈsiː/","pos":"n.","meaning":"至赎回收益率（Yield to Call）。假设债券在下一个或某一约定赎回日被发行人赎回，并按赎回价格计算得到的收益率。对可赎回债券，除到期收益率外，还常需关注至赎回收益率。","example":"Because the bond is trading above par, its YTC is lower than its yield to maturity.","exampleZh":"由于该债券溢价交易，其至赎回收益率低于到期收益率。"},{"id":"fin-067","bank":"finance","word":"duration","full":"","ipa":"/djʊˈreɪʃn/","pos":"n.","meaning":"久期。衡量债券价格对利率变动敏感度的常用指标，也反映收回现金流的加权平均时间。久期越长，在其他条件相近时，利率上升通常导致更大的价格跌幅。须分清麦考利久期与修正久期等不同口径。","example":"Longer-duration bonds lost more value when yields rose.","exampleZh":"收益率上升时，久期较长的债券跌幅更大。"},{"id":"fin-068","bank":"finance","word":"modified duration","full":"","ipa":"/ˌmɒdɪfaɪd djʊˈreɪʃn/","pos":"n.","meaning":"修正久期。在麦考利久期基础上调整计息频率后，用来近似估计收益率变动百分之一（或一个百分点）时债券价格变动的百分比。它是线性近似，大幅利率变动时还需考虑凸性。","example":"A modified duration of 6 suggests a 1% rise in yield may cut the price by about 6%, all else equal.","exampleZh":"在其他条件不变时，修正久期为六，意味着收益率上升一个百分点，价格大约下跌百分之六。"},{"id":"fin-069","bank":"finance","word":"convexity","full":"","ipa":"/kənˈveksəti/","pos":"n.","meaning":"凸性。描述债券价格与收益率关系弯曲程度的指标，用来补充久期的线性近似。正凸性意味着利率下降时价格升幅可能大于利率同样幅度上升时的跌幅，具体仍取决于债券条款。","example":"Callable bonds can have negative convexity when the issuer is likely to call.","exampleZh":"当发行人很可能行使赎回权时，可赎回债券可能呈现负凸性。"},{"id":"fin-070","bank":"finance","word":"DV01","full":"Dollar Value of an 01","ipa":"/ˌdiː viː ˈəʊ wʌn/","pos":"n.","meaning":"基点价值（Dollar Value of an 01，亦称 PV01）。衡量收益率变动一个基点（百分之零点零一）时，债券或利率头寸价格变动的金额。常用于利率风险管理与对冲规模估算。","example":"The desk hedged the portfolio so that the net DV01 was close to zero.","exampleZh":"交易台对投资组合做了对冲，使净基点价值接近于零。"},{"id":"fin-071","bank":"finance","word":"yield curve","full":"","ipa":"/ˈjiːld kɜːv/","pos":"n.","meaning":"收益率曲线。把不同期限的利率或债券收益率连成的曲线，常见的有国债曲线和掉期曲线。曲线变陡、变平或倒挂，往往被用来观察市场对增长与利率路径的预期，但并不能单独作为预测依据。","example":"The Treasury yield curve flattened after the central bank's comments.","exampleZh":"央行表态后，国债收益率曲线变得更平坦。"},{"id":"fin-072","bank":"finance","word":"credit spread","full":"","ipa":"/ˈkredɪt spred/","pos":"n.","meaning":"信用利差。债券收益率高于相应期限无风险或基准利率的部分，用来补偿发行人信用风险及其他因素。利差扩大通常表示信用资产相对更便宜或风险溢价上升，须结合评级与流动性理解。","example":"The credit spread on the issuer's five-year bond widened by ten basis points.","exampleZh":"该发行人五年期债券的信用利差扩大了十个基点。"},{"id":"fin-073","bank":"finance","word":"basis point","full":"","ipa":"/ˈbeɪsɪs pɔɪnt/","pos":"n.","meaning":"基点。利率或收益率的计量单位，一个基点等于百分之零点零一，即万分之一。例如收益率从百分之三点五〇升至百分之三点六〇，就是上升十个基点。","example":"The coupon was cut by 25 basis points to 3.75%.","exampleZh":"票息下调二十五个基点，至百分之三点七五。"},{"id":"fin-074","bank":"finance","word":"par value","full":"","ipa":"/pɑː ˈvæljuː/","pos":"n.","meaning":"面值／平价。债券上载明的本金金额，也常作价格报价的百分之百基准。债券以平价交易，指价格约等于面值；高于面值为溢价，低于面值为折价。","example":"The bond was issued at par value and later traded at a premium.","exampleZh":"该债券按面值发行，后来溢价交易。"},{"id":"fin-075","bank":"finance","word":"clean price","full":"","ipa":"/kliːn praɪs/","pos":"n.","meaning":"净价。不含应计利息的债券报价。国际债券市场通常以净价报价，但买方实际支付的是净价加上应计利息后的全价。","example":"The clean price does not include the accrued interest that the buyer must pay.","exampleZh":"净价不包括买方须支付的应计利息。"},{"id":"fin-076","bank":"finance","word":"dirty price","full":"","ipa":"/ˈdɜːti praɪs/","pos":"n.","meaning":"全价。净价加上应计利息后的实际成交金额，也就是买方为购入债券真正支付的价格。计算到期收益率时，通常使用全价作为当前投入。","example":"Yield to maturity is calculated from the dirty price, not the clean price alone.","exampleZh":"到期收益率按全价计算，而不是只按净价。"},{"id":"fin-077","bank":"finance","word":"accrued interest","full":"","ipa":"/əˌkruːd ˈɪntrəst/","pos":"n.","meaning":"应计利息。自上一个派息日（或起息日）起，按照计息基准已经累积、但尚未支付的利息。买卖债券时，买方通常向卖方支付应计利息。","example":"Accrued interest depends on the day-count convention stated in the bond terms.","exampleZh":"应计利息取决于债券条款中列明的计息基准。"},{"id":"fin-078","bank":"finance","word":"senior unsecured","full":"","ipa":"/ˌsiːniə ʌnˈsɪkjʊəd/","pos":"adj.","meaning":"高级无抵押。指清偿顺序相对靠前、但没有以特定资产作抵押的债务。一旦发行人破产，其受偿顺序通常优于次级债，但仍可能无法全额收回，具体以法律文件及当地破产规则为准。","example":"The structured notes were issued as senior unsecured obligations of the bank.","exampleZh":"这些结构性票据以该银行的高级无抵押债务形式发行。"},{"id":"fin-079","bank":"finance","word":"subordinated bond","full":"","ipa":"/səˈbɔːdɪneɪtɪd bɒnd/","pos":"n.","meaning":"次级债券。清偿顺序排在高级债务之后的债券，因此信用风险通常高于同一发行人的高级债，收益率也往往较高。部分银行资本工具还可能含有减记或转股条款。","example":"A subordinated bond usually yields more than the issuer's senior notes to compensate for lower priority.","exampleZh":"次级债券的收益率通常高于同一发行人的高级票据，以补偿其较低的清偿顺序。"},{"id":"fin-080","bank":"finance","word":"investment grade","full":"","ipa":"/ɪnˈvestmənt ɡreɪd/","pos":"adj./n.","meaning":"投资级。信用评级机构把相对较高信用质量的债券列为投资级，例如标普（Standard & Poor's）口径下通常为 BBB- 或以上。投资级并不等于没有违约风险，也不构成投资建议。","example":"The mandate allows only investment-grade bonds in the credit portfolio.","exampleZh":"该投资授权仅允许信用组合配置投资级债券。"},{"id":"fin-081","bank":"finance","word":"high-yield bond","full":"","ipa":"/ˌhaɪ ˈjiːld bɒnd/","pos":"n.","meaning":"高收益债券。信用评级低于投资级的债券，亦常被称为投机级债券。其票息或收益率通常较高，以补偿更高的违约风险、价格波动和流动性风险。","example":"High-yield bonds can fall sharply when investors become more risk-averse.","exampleZh":"当投资者风险偏好下降时，高收益债券可能大幅下跌。"},{"id":"fin-082","bank":"finance","word":"credit rating","full":"","ipa":"/ˈkredɪt ˌreɪtɪŋ/","pos":"n.","meaning":"信用评级。评级机构对发行人或不特定债务工具偿付能力的意见，常见机构包括标普、穆迪（Moody's）和惠誉（Fitch）。评级会调整，且只是意见，不能替代独立的尽职调查。","example":"A downgrade of the credit rating may widen the issuer's credit spread.","exampleZh":"信用评级被下调，可能导致该发行人的信用利差扩大。"},{"id":"fin-083","bank":"finance","word":"default","full":"","ipa":"/dɪˈfɔːlt/","pos":"n./v.","meaning":"违约。债务人未能按约定支付利息、偿还本金，或发生条款所定义的其他违约事件。违约后的回收金额不确定，投资者可能遭受重大本金损失。","example":"Issuer default can cause losses even on a note that was marketed as principal-protected.","exampleZh":"即使产品在营销中被称作保本，发行人违约仍可能造成亏损。"},{"id":"fin-084","bank":"finance","word":"perpetual bond","full":"","ipa":"/pəˈpetʃuəl bɒnd/","pos":"n.","meaning":"永续债券。没有固定到期日、原则上可长期支付票息的债券，许多品种带有发行人赎回权和停息或重置条款。价格对利率和信用利差往往更敏感，条款也比普通债券复杂。","example":"The perpetual bond pays a coupon until the issuer calls it or an interest-cancellation feature is triggered.","exampleZh":"该永续债券会持续派息，直至发行人赎回或触发停息条款。"},{"id":"fin-085","bank":"finance","word":"convertible bond","full":"","ipa":"/kənˈvɜːtəbl bɒnd/","pos":"n.","meaning":"可转换债券。持有人有权在约定条件下把债券转换成发行人股票的债券。其价值既受利率和信用的影响，也受正股价格与波动率影响，分析时需同时看到债性和股性。","example":"The convertible bond rose after the share price moved well above the conversion price.","exampleZh":"正股价格明显高于转股价后，该可转换债券价格上涨。"},{"id":"fin-086","bank":"finance","word":"day-count convention","full":"","ipa":"/ˈdeɪ kaʊnt kənˈvenʃn/","pos":"n.","meaning":"计息基准／日算惯例。约定如何计算一段期间的天数与一年的天数，例如 Actual/365、Actual/360 或 30/360，从而影响应计利息和票息金额。同一票面利率在不同计息基准下，实际金额可能不同。","example":"The accrual follows an Actual/365 day-count convention.","exampleZh":"利息按实际天数／365 的计息基准累积。"},{"id":"fin-087","bank":"finance","word":"business day convention","full":"","ipa":"/ˈbɪznɪs deɪ kənˈvenʃn/","pos":"n.","meaning":"营业日调整惯例。当付款日或观察日不是营业日时，如何调整到邻近营业日的规则，常见的有顺延（Following）、修正顺延（Modified Following）和提前（Preceding）。相关营业日中心（如香港、纽约）也由条款指定。","example":"Payment dates are adjusted in accordance with the Modified Following business day convention.","exampleZh":"付款日按修正顺延的营业日惯例调整。"},{"id":"fin-088","bank":"finance","word":"ISIN","full":"International Securities Identification Number","ipa":"/ˈaɪsɪn/","pos":"n.","meaning":"国际证券识别码（International Securities Identification Number）。为证券分配的十二位字母数字代码，便于在清算、托管和查询中准确识别同一只债券、票据或股票。它标识证券本身，并不保证产品的风险高低。","example":"Please include the ISIN in the trade confirmation so operations can settle the note.","exampleZh":"请在成交确认书中写上国际证券识别码，以便运营部门办理交收。"},{"id":"fin-089","bank":"finance","word":"prospectus","full":"","ipa":"/prəˈspektəs/","pos":"n.","meaning":"招股章程／募集说明书。向投资者披露发行人资料、条款、风险因素和发售安排的法律文件。认购前应阅读该文件及其补充文件，而不能只依赖宣传材料或条款清单。","example":"Any marketing slide should be consistent with the prospectus and the key facts statement.","exampleZh":"任何营销幻灯片都应与募集说明书和产品资料概要保持一致。"},{"id":"fin-090","bank":"finance","word":"NAV","full":"Net Asset Value","ipa":"/ˌen eɪ ˈviː/","pos":"n.","meaning":"资产净值（Net Asset Value）。基金资产减去负债后的价值，通常以每单位资产净值报价，作为认购和赎回的主要参考价格。不同基金的估值时点、费用计提与摆动定价安排可能不同。","example":"The fund was subscribed at the NAV published on the dealing day.","exampleZh":"该基金按交易日公布的每单位资产净值认购。"},{"id":"fin-091","bank":"finance","word":"subscription","full":"","ipa":"/səbˈskrɪpʃn/","pos":"n.","meaning":"认购。投资者按基金的发售或交易安排申请买入基金份额的行为。成交价格通常与相应交易日的资产净值及费用安排有关，并须遵守截止时间与结算周期。","example":"The subscription instruction must be received before the dealing cut-off time.","exampleZh":"认购指示必须在交易截止时间之前送达。"},{"id":"fin-092","bank":"finance","word":"redemption","full":"","ipa":"/rɪˈdempʃn/","pos":"n.","meaning":"赎回。投资者按基金章程要求把基金份额卖回给基金并取得款项的行为；在债券或票据中，也可指发行人偿还本金。基金赎回可能受截止时间、流动性管理和赎回费用约束。","example":"Large redemptions can force a fund to sell assets and may affect remaining investors.","exampleZh":"大规模赎回可能迫使基金卖出资产，并影响仍留在基金中的投资者。"},{"id":"fin-093","bank":"finance","word":"switching","full":"","ipa":"/ˈswɪtʃɪŋ/","pos":"n.","meaning":"转换。在同一基金系列或管理人安排下，把一个基金份额转换为另一基金份额的交易。转换可能仍涉及买卖价差、费用或税务后果，并须在允许的范围与时间内进行。","example":"The client requested a switching from the bond fund into a money market fund.","exampleZh":"客户申请把债券基金转换为货币市场基金。"},{"id":"fin-094","bank":"finance","word":"ETF","full":"Exchange Traded Fund","ipa":"/ˌiː tiː ˈef/","pos":"n.","meaning":"交易所买卖基金（Exchange Traded Fund）。在交易所上市交易的基金，价格随市变动，通常追踪指数或一篮子资产。其市价可能略高于或低于每单位资产净值，还须考虑买卖差价与跟踪误差。","example":"The ETF can be bought and sold on the exchange during market hours.","exampleZh":"该交易所买卖基金可在市场交易时间内于交易所买卖。"},{"id":"fin-095","bank":"finance","word":"money market fund","full":"","ipa":"/ˈmʌni ˌmɑːkɪt fʌnd/","pos":"n.","meaning":"货币市场基金。主要投资于短期货币市场工具的基金，通常以本金相对稳定和较高流动性为目标，但并不保证不会亏损，也不等于银行存款。费用、持仓和浮动净值安排会影响实际回报。","example":"She parked unused cash in a US-dollar money market fund while awaiting allocation.","exampleZh":"在等待配置期间，她把闲置资金暂时放在美元货币市场基金。"},{"id":"fin-096","bank":"finance","word":"management fee","full":"","ipa":"/ˈmænɪdʒmənt fiː/","pos":"n.","meaning":"管理费。向基金管理公司或投资经理支付的费用，通常按资产净值的年费率计提。它是基金持有成本的一部分，但不是全部，还需关注其他经常性开支。","example":"The management fee is 0.80% per annum of the fund's net asset value.","exampleZh":"管理费为基金资产净值的每年百分之零点八。"},{"id":"fin-097","bank":"finance","word":"ongoing charges","full":"","ipa":"/ˌɒnɡəʊɪŋ ˈtʃɑːdʒɪz/","pos":"n.","meaning":"经常性开支。香港基金销售文件中常用的综合费用率，用来概括在一段期间内经常产生的费用，通常以占资产净值的百分比披露。它便于比较持有成本，但不一定包含全部交易费用或或有表现费。","example":"Compare the ongoing charges in the product key facts statement before choosing a share class.","exampleZh":"选择份额类别前，请比较产品资料概要中的经常性开支。"},{"id":"fin-098","bank":"finance","word":"AUM","full":"Assets Under Management","ipa":"/ˌeɪ juː ˈem/","pos":"n.","meaning":"资产管理规模（Assets Under Management）。机构或组合所管理的资产总金额。该指标反映规模，但单独并不能说明投资表现、风险或费用是否合理。","example":"The team's AUM grew after several new private wealth clients were onboarded.","exampleZh":"在多名私人财富客户开户后，团队的资产管理规模有所增长。"},{"id":"fin-099","bank":"finance","word":"custodian","full":"","ipa":"/kʌˈstəʊdiən/","pos":"n.","meaning":"托管人。负责保管基金或客户资产、办理交收并记录持仓的机构，职能与投资经理相互分离，以降低资产被挪用的风险。托管并不等于保证投资本金或收益。","example":"The fund's assets are held by an independent custodian.","exampleZh":"该基金的资产由独立托管人保管。"},{"id":"fin-100","bank":"finance","word":"trustee","full":"","ipa":"/trʌˈstiː/","pos":"n.","meaning":"受托人。在单位信托等结构中，按信托安排为持有人的利益持有资产并监督信托契诺执行的机构。其职责以信托文件及适用法律为准，不能简单等同于投资决策者。","example":"The trustee oversees whether the fund is managed in accordance with the trust deed.","exampleZh":"受托人监督基金是否按照信托契据进行管理。"},{"id":"fin-101","bank":"finance","word":"fund manager","full":"","ipa":"/ˈfʌnd ˌmænɪdʒə/","pos":"n.","meaning":"基金经理／投资经理。负责按照投资目标与限制作出投资决策的个人或公司。表现会随市场波动，过往业绩不能预示未来结果，投资者仍须阅读销售文件中的风险披露。","example":"The fund manager reduced duration before the expected rate announcement.","exampleZh":"基金经理在预期的利率公布前降低了组合久期。"},{"id":"fin-102","bank":"finance","word":"explanatory memorandum","full":"","ipa":"/ɪkˌsplænətəri ˌmeməˈrændəm/","pos":"n.","meaning":"解释备忘录。香港单位信托及互惠基金常用的销售文件，向投资者说明投资目标、风险、费用和交易安排，作用类似于其他市场的基金说明书。应与产品资料概要一并阅读。","example":"The explanatory memorandum sets out the fund's investment restrictions.","exampleZh":"解释备忘录列明了该基金的投资限制。"},{"id":"fin-103","bank":"finance","word":"distribution","full":"","ipa":"/ˌdɪstrɪˈbjuːʃn/","pos":"n.","meaning":"派息／收益分配。基金向持有人分派的现金或再投资份额，来源可能包括利息、股息或资本。高派息并不等于高回报，有时可能从资本中支付，须阅读派息政策说明。","example":"The monthly distribution may include a return of capital, as disclosed in the documents.","exampleZh":"每月派息可能包含资本返还，有关安排已在文件中披露。"},{"id":"fin-104","bank":"finance","word":"benchmark","full":"","ipa":"/ˈbentʃmɑːk/","pos":"n.","meaning":"基准（业绩比较基准）。用来比较组合或基金表现的参考指数或利率。跑赢或落后基准并不自动说明投资是否合适，还须看风险、费用和投资目标是否一致。","example":"The bond fund aims to outperform its benchmark after fees over a full market cycle.","exampleZh":"该债券基金的目标，是在完整市场周期内、扣除费用后跑赢其基准。"},{"id":"fin-105","bank":"finance","word":"tracking error","full":"","ipa":"/ˈtrækɪŋ ˌerə/","pos":"n.","meaning":"跟踪误差。组合回报与其基准回报之间差异的波动程度，常用于指数基金和交易所买卖基金。跟踪误差来自费用、抽样复制、现金拖累或再平衡等因素，并非计算错误本身。","example":"The ETF's tracking error widened during a volatile month.","exampleZh":"在波动较大的一个月里，该交易所买卖基金的跟踪误差有所扩大。"},{"id":"fin-106","bank":"finance","word":"asset allocation","full":"","ipa":"/ˈæset æləˌkeɪʃn/","pos":"n.","meaning":"资产配置。在股票、债券、现金、基金及另类资产等类别之间分配投资比例的过程。它通常是组合风险与长期回报的重要来源，应与投资者的目标、年期和风险承受能力相符。","example":"The discretionary mandate starts with a strategic asset allocation review.","exampleZh":"全权委托授权从战略资产配置检讨开始。"},{"id":"fin-107","bank":"finance","word":"diversification","full":"","ipa":"/daɪˌvɜːsɪfɪˈkeɪʃn/","pos":"n.","meaning":"分散投资。通过持有不完全同步波动的不同资产、地区或发行人以降低个别风险的方法。分散不能消除系统性市场风险，也不能保证不亏损。","example":"Diversification across issuers can reduce concentration risk, but not market risk as a whole.","exampleZh":"在不同发行人之间分散投资，可以降低集中度风险，但不能消除整体市场风险。"},{"id":"fin-108","bank":"finance","word":"drawdown","full":"","ipa":"/ˈdrɔːdaʊn/","pos":"n.","meaning":"回撤。投资组合或资产从前期高点到随后低点的下跌幅度，常用来观察历史波动和亏损深度。过往回撤不能预示未来最大亏损。","example":"The portfolio's maximum drawdown last year was 8%.","exampleZh":"该组合去年的最大回撤为百分之八。"},{"id":"fin-109","bank":"finance","word":"volatility","full":"","ipa":"/ˌvɒləˈtɪləti/","pos":"n.","meaning":"波动性／波动率。衡量价格或回报变动幅度的指标，常用标准差表示。波动率高意味着价格起伏更大，但波动率本身并不等于必然亏损或必然获利。","example":"Higher equity volatility can make structured-note terms appear more attractive, but the risks also rise.","exampleZh":"股票波动率上升可能使结构性票据条款看起来更有吸引力，但风险也会增加。"},{"id":"fin-110","bank":"finance","word":"implied volatility","full":"","ipa":"/ɪmˌplaɪd ˌvɒləˈtɪləti/","pos":"n.","meaning":"隐含波动率。从期权市场价格反推出来的、市场对未来波动程度的估计，是为期权定价的重要输入。它反映当时的市场定价，并不是对未来波动的保证。","example":"Richer implied volatility can improve the coupon on a new equity-linked note.","exampleZh":"较高的隐含波动率，可能提高新发行股票挂钩票据的票息。"},{"id":"fin-111","bank":"finance","word":"due diligence","full":"","ipa":"/ˌdjuː ˈdɪlɪdʒəns/","pos":"n.","meaning":"尽职调查。在推荐、购买或引入产品与交易前，对发行人、条款、风险、法律文件和运营安排等进行审慎核实的过程。完善的尽职调查有助于识别风险，但不能消除风险。","example":"Product due diligence includes a review of the issuer, the payoff, and the legal documents.","exampleZh":"产品尽职调查包括对发行人、收益结构及法律文件的审阅。"},{"id":"fin-112","bank":"finance","word":"KYC","full":"Know Your Client","ipa":"/ˌkeɪ waɪ ˈsiː/","pos":"n.","meaning":"认识你的客户（Know Your Client，亦称 Know Your Customer）。金融机构在建立业务关系时，识别和核实客户身份、了解其背景与业务性质的监管要求，是反洗钱和合适性安排的基础。","example":"The account cannot be opened until the KYC documents are complete.","exampleZh":"在认识你的客户的文件齐备之前，账户不能开立。"},{"id":"fin-113","bank":"finance","word":"AML","full":"Anti-Money Laundering","ipa":"/ˌeɪ em ˈel/","pos":"n.","meaning":"反洗钱（Anti-Money Laundering）。防止犯罪分子把非法所得转入合法金融体系的法律与合规制度，包括客户尽职调查、持续监控和可疑交易报告等。香港的银行与持牌机构均须遵守相关条例及监管指引。","example":"The transfer was held pending an AML review of the source of funds.","exampleZh":"该笔转账因资金来源的反洗钱审查而暂缓处理。"},{"id":"fin-114","bank":"finance","word":"CFT","full":"Counter-Financing of Terrorism","ipa":"/ˌsiː ef ˈtiː/","pos":"n.","meaning":"反恐融资（Counter-Financing of Terrorism，亦常作 Combating the Financing of Terrorism）。防止资金被用于恐怖主义活动的制度，通常与反洗钱要求一并执行，包括名单筛查、监控和报告义务。","example":"CFT screening is performed against designated sanctions and terrorist-financing lists.","exampleZh":"反恐融资筛查会对照指定的制裁及恐怖分子资金筹集名单进行。"},{"id":"fin-115","bank":"finance","word":"FATCA","full":"Foreign Account Tax Compliance Act","ipa":"/ˈfætkə/","pos":"n.","meaning":"海外账户税收合规法案（Foreign Account Tax Compliance Act）。美国一项税务合规制度，要求外国金融机构识别并申报美国纳税人账户资料，否则可能面临预提税等后果。银行开户和资料更新时常会收集相关声明。","example":"The client completed a FATCA self-certification when opening the account.","exampleZh":"客户在开户时填写了海外账户税收合规法案自我证明。"},{"id":"fin-116","bank":"finance","word":"CRS","full":"Common Reporting Standard","ipa":"/ˌsiː ɑːr ˈes/","pos":"n.","meaning":"共同汇报标准（Common Reporting Standard）。由经济合作与发展组织推动的自动交换财务账户资料标准，香港已实施。金融机构须识别税务居民身份并按要求向税务机关申报。","example":"Under the CRS, the bank may report the account to the tax authority based on the client's tax residency.","exampleZh":"根据共同汇报标准，银行可能按客户的税务居民身份向税务机关申报该账户。"},{"id":"fin-117","bank":"finance","word":"SFC","full":"Securities and Futures Commission","ipa":"/ˌes ef ˈsiː/","pos":"n.","meaning":"证券及期货事务监察委员会（Securities and Futures Commission，证监会）。负责监管香港证券及期货市场的独立法定机构，包括持牌人操守、产品认可与投资者保护等相关职能。","example":"The SFC requires intermediaries to assess suitability when recommending certain investment products.","exampleZh":"证监会要求中介人在建议若干投资产品时评估合适性。"},{"id":"fin-118","bank":"finance","word":"HKMA","full":"Hong Kong Monetary Authority","ipa":"/ˌeɪtʃ keɪ em ˈeɪ/","pos":"n.","meaning":"香港金融管理局（Hong Kong Monetary Authority，金管局）。香港的政府当局，负责维持货币及银行体系稳定，并监管银行业务。私人银行业务亦须遵守金管局的监管要求与指引。","example":"The HKMA issues guidance on the sale of investment products by authorized institutions.","exampleZh":"金管局就认可机构销售投资产品发出指引。"},{"id":"fin-119","bank":"finance","word":"IFEC","full":"Investor and Financial Education Council","ipa":"/ˌaɪ ef iː ˈsiː/","pos":"n.","meaning":"投资者及理财教育委员会（Investor and Financial Education Council）。由香港证监会成立、负责推动投资者及理财教育的机构，提供中立的公众教育资料，并不销售产品或提供个性化投资建议。","example":"The IFEC publishes plain-language explanations of structured products and their risks.","exampleZh":"投资者及理财教育委员会以浅白语言刊载有关结构性产品及其风险的说明。"},{"id":"fin-120","bank":"finance","word":"professional investor","full":"","ipa":"/prəˌfeʃənl ɪnˈvestə/","pos":"n.","meaning":"专业投资者。香港《证券及期货条例》及相关规则下的类别，包括机构专业投资者及符合资产或其他准则的个人或法团专业投资者。被归类为专业投资者后，部分投资者保护及披露安排可能不同，中介人仍须遵守适用的操守要求。","example":"The product is offered only to professional investors as defined under Hong Kong law.","exampleZh":"该产品仅向香港法例所界定的专业投资者发售。"},{"id":"fin-121","bank":"finance","word":"complex product","full":"","ipa":"/ˌkɒmpleks ˈprɒdʌkt/","pos":"n.","meaning":"复杂产品。香港证监会操守准则下的用语，泛指条款、特征和风险可能不易被零售投资者合理理解的投资产品，许多结构性产品属于此类。销售复杂产品通常须有加强的披露与合适性安排。","example":"A principal-at-risk structured note is generally treated as a complex product.","exampleZh":"本金受险的结构性票据一般被视为复杂产品。"},{"id":"fin-122","bank":"finance","word":"suitability","full":"","ipa":"/ˌsuːtəˈbɪləti/","pos":"n.","meaning":"合适性。中介人在提供投资建议或进行招揽时，应合理确保所建议产品符合客户的财政状况、投资目标、投资年期、风险承受能力及投资知识等。合适性评估并不能保证产品将来盈利。","example":"The suitability assessment must be completed before the recommendation is made.","exampleZh":"在作出建议之前，必须完成合适性评估。"},{"id":"fin-123","bank":"finance","word":"KFS","full":"Key Facts Statement","ipa":"/ˌkeɪ ef ˈes/","pos":"n.","meaning":"产品资料概要（Key Facts Statement，亦称 Product Key Facts Statement）。香港基金及部分投资产品须向投资者提供的简明文档，概述关键条款、风险、费用和交易资料。它是重要的披露文件，但不能替代完整的销售法律文件。","example":"The salesperson went through the KFS with the client page by page.","exampleZh":"销售人员与客户逐页审阅了产品资料概要。"},{"id":"fin-124","bank":"finance","word":"risk disclosure","full":"","ipa":"/rɪsk dɪsˈkləʊʒə/","pos":"n.","meaning":"风险披露。向投资者说明产品主要风险的文件或口头说明，例如市场风险、信用风险、流动性风险和本金损失风险。签署或确认风险披露并不等于产品一定合适，也不能消除风险本身。","example":"The risk disclosure highlights that the investor may lose the entire principal.","exampleZh":"风险披露强调，投资者可能损失全部本金。"},{"id":"fin-125","bank":"finance","word":"risk profile","full":"","ipa":"/rɪsk ˈprəʊfaɪl/","pos":"n.","meaning":"风险取向／风险概况。对客户能够并愿意承担多大投资风险的综合描述，通常结合目标、年期、流动资金需要和风险承受能力评估得出，用于匹配产品与组合。风险取向会随情况变化，应定期检视。","example":"A conservative risk profile may not be consistent with a principal-at-risk snowball note.","exampleZh":"保守的风险取向，可能与本金受险的雪球票据并不相符。"},{"id":"fin-126","bank":"finance","word":"investment horizon","full":"","ipa":"/ɪnˈvestmənt həˌraɪzn/","pos":"n.","meaning":"投资年期／投资期限。投资者计划持有投资的时间长度。年期较短时，通常更需关注流动性和价格波动；结构性票据若难以提前变现，尤其要与投资年期相匹配。","example":"Her investment horizon is three years, which is longer than the note's maximum tenor.","exampleZh":"她的投资年期是三年，比该票据的最长存续期更长。"},{"id":"fin-127","bank":"finance","word":"private wealth management","full":"PWM","ipa":"/ˌpraɪvət ˈwelθ ˌmænɪdʒmənt/","pos":"n.","meaning":"私人财富管理（Private Wealth Management）。向高净值客户提供的综合财富服务，可能包括投资建议、全权委托、信托与信贷安排等。服务范围、收费和适合的产品，以客户协议及监管要求为准。","example":"She works in product design support for the private wealth management desk.","exampleZh":"她在私人财富管理团队从事产品设计支持工作。"},{"id":"fin-128","bank":"finance","word":"discretionary management","full":"","ipa":"/dɪˈskreʃənəri ˈmænɪdʒmənt/","pos":"n.","meaning":"全权委托管理。客户授权管理人在约定的投资范围和限制内，不必就每笔交易事先征求同意即可作出投资决定的安排。客户仍须理解授权范围、风险、收费及自己仍承担的市场与信用风险。","example":"Under discretionary management, the team rebalances the portfolio within the agreed mandate.","exampleZh":"在全权委托管理下，团队可在约定授权范围内再平衡投资组合。"},{"id":"fin-129","bank":"finance","word":"execution-only","full":"","ipa":"/ˌeksɪˈkjuːʃn ˈəʊnli/","pos":"adj.","meaning":"只执行交易。中介人按照客户的指示执行买卖，而不就该笔交易提供投资建议的服务模式。在此模式下，合适性责任可能与顾问服务不同，但中介人仍须遵守适用的监管与披露要求。","example":"The client placed an execution-only order after declining investment advice.","exampleZh":"客户在拒绝投资建议后，下达了一笔只执行交易的指示。"},{"id":"fin-130","bank":"finance","word":"Lombard loan","full":"","ipa":"/ˈlɒmbɑːd ləʊn/","pos":"n.","meaning":"证券抵押融资（亦称伦巴德贷款）。以投资组合或合资格证券作抵押，向银行借入资金的融资安排。借款比率、保证金要求与强制平仓条款由授信文件规定，抵押品下跌时可能被要求还款或平仓。","example":"The Lombard loan allowed the client to raise liquidity without selling the bonds immediately.","exampleZh":"这笔证券抵押融资让客户不必立刻卖出债券也能筹集流动资金。"},{"id":"fin-131","bank":"finance","word":"LTV","full":"Loan-to-Value","ipa":"/ˌel tiː ˈviː/","pos":"n.","meaning":"贷款价值比（Loan-to-Value）。贷款金额相对于抵押品价值的比率，用来控制信贷风险。抵押品估值下跌时，贷款价值比上升，可能触发补仓、强制还款或平仓。","example":"If the LTV exceeds the limit, the bank may issue a margin call.","exampleZh":"若贷款价值比超过上限，银行可能发出追加保证金通知。"},{"id":"fin-132","bank":"finance","word":"margin call","full":"","ipa":"/ˈmɑːdʒɪn kɔːl/","pos":"n.","meaning":"追加保证金通知。当抵押品价值下跌、贷款价值比或保证金水平触碰约定阈值时，贷款人要求借款人补充保证金、偿还部分贷款或增加抵押品的通知。若未能按时满足，可能被强制平仓。","example":"The client met the margin call by pledging additional bonds the same day.","exampleZh":"客户在当天增补质押债券，以满足追加保证金要求。"},{"id":"fin-133","bank":"finance","word":"collateral","full":"","ipa":"/kəˈlætərəl/","pos":"n.","meaning":"抵押品／担保品。借款人或交易方向贷款人、交易对手提供的、用于担保偿付或履约的资产，如债券、股票或现金。抵押品的折扣率（haircut）和估值规则会影响可借金额。","example":"Only eligible bonds can be posted as collateral under the facility.","exampleZh":"在该授信安排下，只有合资格债券可作为抵押品。"},{"id":"fin-134","bank":"finance","word":"premium financing","full":"","ipa":"/ˈpriːmiəm ˌfaɪnænsɪŋ/","pos":"n.","meaning":"保费融资。以保单现金价值或其他合资格资产作安排，借入资金支付寿险等保费的融资方式。利息成本、汇率、保单退保价值和补仓条款都会影响净效果，必须结合贷款合同与保险合同理解，而不能只看宣传回报。","example":"Premium financing can magnify both the potential return and the loss if policy values or interest rates move adversely.","exampleZh":"若保单价值或利率朝不利方向变动，保费融资可能同时放大潜在回报与亏损。"},{"id":"fin-135","bank":"finance","word":"hedging","full":"","ipa":"/ˈhedʒɪŋ/","pos":"n.","meaning":"对冲。通过相反或互补的头寸，降低某一已有风险暴露的做法，例如用利率掉期对冲债券的利率风险。对冲通常无法消除全部风险，还可能带来基差、流动性和交易对手风险。","example":"The desk is hedging the interest-rate exposure, not taking a directional view.","exampleZh":"交易台是在对冲利率敞口，而不是在表达方向性观点。"},{"id":"fin-136","bank":"finance","word":"leverage","full":"","ipa":"/ˈliːvərɪdʒ/","pos":"n.","meaning":"杠杆。通过借款或衍生工具，使投资暴露大于实际投入资金的做法。杠杆可以放大收益，也会放大亏损，并可能带来追加保证金或强制平仓的风险。","example":"Using leverage to buy more of the same bond increased both the yield pickup and the downside risk.","exampleZh":"使用杠杆增持同一只债券，既提高了额外收益，也加大了下行风险。"},{"id":"fin-137","bank":"finance","word":"mark-to-market","full":"MTM","ipa":"/ˌmɑːk tə ˈmɑːkɪt/","pos":"n./v.","meaning":"按市价计值（Mark-to-Market）。按当前市场价格估算持仓或产品的价值，从而得出未实现盈亏。结构性票据的按市值计价往往还受买卖差价、发行人报价和模型假设影响，只是估计而非保证可成交价。","example":"The mark-to-market on the note turned negative after the underlying shares fell.","exampleZh":"挂钩股票下跌后，该票据的按市值计价转为负值。"},{"id":"fin-138","bank":"finance","word":"bid-offer spread","full":"","ipa":"/ˌbɪd ˈɒfə spred/","pos":"n.","meaning":"买卖差价。买方报价（bid）与卖方报价（offer/ask）之间的差额，是流动性成本和交易成本的重要部分。结构性票据在二级市场的买卖差价往往明显宽于流动性高的政府债券。","example":"A wide bid-offer spread can make early exit from a structured note expensive.","exampleZh":"较宽的买卖差价，可能使结构性票据的提前退出成本很高。"},{"id":"fin-139","bank":"finance","word":"SOFR","full":"Secured Overnight Financing Rate","ipa":"/ˈsəʊfə/","pos":"n.","meaning":"有担保隔夜融资利率（Secured Overnight Financing Rate）。由纽约联邦储备银行公布的美元隔夜利率，基于国债回购市场的实际成交，已被广泛用作替代已停止使用的伦敦银行同业拆息（LIBOR）的美元参考利率。","example":"The floating-rate note pays a coupon of SOFR plus a margin.","exampleZh":"该浮动利率票据的票息为有担保隔夜融资利率加上一定利差。"},{"id":"fin-140","bank":"finance","word":"HIBOR","full":"Hong Kong Interbank Offered Rate","ipa":"/ˈhaɪbɔː/","pos":"n.","meaning":"香港银行同业拆息（Hong Kong Interbank Offered Rate）。香港银行之间港元（及若干其他币种）拆借的参考利率，常用于港元贷款、浮息票据和利率对冲。具体期限（如隔夜、一个月、三个月）须在条款中写明。","example":"The Lombard loan interest is reset monthly with reference to one-month HIBOR.","exampleZh":"该证券抵押融资的利率每月参照一个月香港银行同业拆息重新定价。"},{"id":"fin-141","bank":"finance","word":"settlement date","full":"","ipa":"/ˈsetlmənt deɪt/","pos":"n.","meaning":"交收日／结算日。买卖双方完成付款与证券交付的日期，通常晚于交易日，例如债券常见为交易日后一个或两个营业日。款项、持仓和应计利息的计算都以交收安排为准。","example":"The notes will be delivered on the settlement date against payment of the issue price.","exampleZh":"该票据将在交收日凭支付发行价完成交付。"},{"id":"fin-142","bank":"finance","word":"trade date","full":"","ipa":"/ˈtreɪd deɪt/","pos":"n.","meaning":"交易日。双方达成交易、价格或主要条款被确认的日期，通常以交易日作为初始定盘或价格观察的参考日之一。交易日与交收日、起息日不一定是同一天。","example":"The initial fixing is taken from official closing prices on the trade date.","exampleZh":"初始定盘采用交易日的官方收市价。"},{"id":"fin-143","bank":"finance","word":"concentration risk","full":"","ipa":"/ˌkɒnsnˈtreɪʃn rɪsk/","pos":"n.","meaning":"集中度风险。投资过分集中于同一发行人、同一股票、同一行业或同一产品类型，从而使个别不利事件造成过大损失的风险。合适的分散可以降低集中度风险，但不能消除市场整体下跌的风险。","example":"Holding several notes all linked to the same stock creates concentration risk.","exampleZh":"持有多份都挂钩同一只股票的票据，会形成集中度风险。"},{"id":"fin-144","bank":"finance","word":"secondary market","full":"","ipa":"/ˈsekəndri ˌmɑːkɪt/","pos":"n.","meaning":"二级市场。证券发行后，投资者之间（或投资者与做市商、发行人之间）再买卖的市场。许多结构性票据的二级市场并不活跃，可变现性取决于发行人是否愿意给出回购报价。","example":"There is no active secondary market, so any exit depends on an issuer bid.","exampleZh":"没有活跃的二级市场，因此任何退出都取决于发行人是否给出买入报价。"},{"id":"fin-145","bank":"finance","word":"unwind cost","full":"","ipa":"/ʌnˈwaɪnd kɒst/","pos":"n.","meaning":"平仓成本。提前终止结构性产品或衍生合约时，除市值变动外还需承担的买卖差价、终止费用或不利报价。平仓成本可能相当显著，尤其在市场波动或流动性不足时。","example":"The unwind cost widened during the sell-off, so the client decided to hold to the next observation date.","exampleZh":"在下跌行情中平仓成本扩大，客户因此决定持有至下一个观察日。"},{"id":"fin-146","bank":"finance","word":"selling restriction","full":"","ipa":"/ˈselɪŋ rɪˌstrɪkʃn/","pos":"n.","meaning":"销售限制。发行文件中规定的、关于何地、向何类投资者以及以何种方式销售产品的限制，例如仅限专业投资者，或不向美国人士发售。分销人员必须遵守这些限制，否则可能违反证券法规。","example":"The selling restriction states that the notes may not be offered to US persons.","exampleZh":"销售限制订明，该票据不得向美国人士发售。"},{"id":"fin-147","bank":"finance","word":"governing law","full":"","ipa":"/ˈɡʌvənɪŋ lɔː/","pos":"n.","meaning":"管辖法律。合同或发行文件约定用来解释和执行该文件的法律制度，例如英格兰法律或香港法律。管辖法律与争议解决地会影响权利如何被执行，是法律文件中的关键条款。","example":"The notes are issued under English governing law, with disputes submitted to Hong Kong courts.","exampleZh":"该票据以英格兰法律为管辖法律，争议提交香港法院处理。"},{"id":"fin-148","bank":"finance","word":"trade confirmation","full":"","ipa":"/treɪd ˌkɒnfəˈmeɪʃn/","pos":"n.","meaning":"成交确认书。交易达成后向客户发出的书面确认，列明产品名称、名义本金、价格、日期及其他关键条款。客户应核对确认书是否与约定一致，如有出入应立即提出。","example":"Please check the trade confirmation against the agreed term sheet.","exampleZh":"请将成交确认书与已约定的条款清单核对。"},{"id":"fin-149","bank":"finance","word":"minimum denomination","full":"","ipa":"/ˌmɪnɪməm dɪˌnɒmɪˈneɪʃn/","pos":"n.","meaning":"最低面额／最低认购单位。投资者可以认购或转售该证券的最小金额及其整数倍。最低面额会影响可否分拆转让，以及是否适合较小的投资金额。","example":"The minimum denomination is 100,000 US dollars and integral multiples of 10,000 thereafter.","exampleZh":"最低面额为十万美元，其后须为一万美元的整数倍。"},{"id":"fin-150","bank":"finance","word":"US Treasury","full":"","ipa":"/ˌjuː es ˈtreʒəri/","pos":"n.","meaning":"美国国债。由美国财政部发行的主权债务工具，包括短期国库券（Treasury bills）、中期国债（Treasury notes）和长期国债（Treasury bonds）。其收益率曲线是许多美元资产定价的基准，也是固定期限国债收益率（CMT，Constant Maturity Treasury）的数据来源。","example":"The 10-year US Treasury yield is a widely watched benchmark for dollar interest rates.","exampleZh":"十年期美国国债收益率是美元利率中广受关注的基准。"}],"general":[{"id":"gen-001","bank":"general","word":"articulate","full":"","ipa":"/ɑːˈtɪkjuleɪt/","pos":"v.","meaning":"清楚地表达。指把想法、理由或立场说得明白、有条理。作形容词时读作 /ɑːˈtɪkjələt/，表示“表达能力强的”。在会议上把复杂产品讲清楚，靠的就是这种能力。","example":"She articulated the difference between knock-in and knock-out in plain language.","exampleZh":"她用浅白的语言把敲入和敲出的区别讲清楚了。"},{"id":"gen-002","bank":"general","word":"concise","full":"","ipa":"/kənˈsaɪs/","pos":"adj.","meaning":"简洁的。指用较少的文字把要点说完整，不绕弯、不堆砌。商务电邮、条款对照和向客户作摘要时尤其需要简洁，但不能因此漏掉关键风险。","example":"Please give a concise summary of the three remaining risks.","exampleZh":"请就余下的三项风险作一个简洁的摘要。"},{"id":"gen-003","bank":"general","word":"elaborate","full":"","ipa":"/ɪˈlæbəreɪt/","pos":"v.","meaning":"详细说明。在已给出要点之后，补充细节、例子或推理过程。作形容词时读作 /ɪˈlæbərət/，意为“复杂精细的”。对方说“Could you elaborate?”通常是在请你展开说明。","example":"Could you elaborate on how the memory coupon works in a missed period?","exampleZh":"你能否详细说明，若某一期未达条件，记忆票息将如何运作？"},{"id":"gen-004","bank":"general","word":"clarify","full":"","ipa":"/ˈklærɪfaɪ/","pos":"v.","meaning":"澄清；说明清楚。用于消除歧义、确认口径或把容易混淆的概念区分开来。比单纯重复原话更进一步，是把含义说准确。","example":"Let me clarify that the figure is indicative and not a final offer.","exampleZh":"我先澄清一下：这个数字只是指示性的，并不是最终报价。"},{"id":"gen-005","bank":"general","word":"revert","full":"","ipa":"/rɪˈvɜːt/","pos":"v.","meaning":"回复。在香港及不少国际商务电邮里，常表示稍后向对方回信或汇报进展，例如 “I will revert shortly。” 这是地区常用用法；在一般词典里，revert 的基本义是“回复到原先状态”，正式国际英语里更常说 reply。","example":"I will revert to you this afternoon after checking with the issuer.","exampleZh":"我向发行人核对后，今天下午再回复你。"},{"id":"gen-006","bank":"general","word":"follow-up","full":"","ipa":"/ˈfɒləʊ ʌp/","pos":"n.","meaning":"跟进。指在初次沟通、会议或请求之后，为推动进展而作的后续联系或行动。动词写作 follow up。及时跟进能减少事项被搁置。","example":"A short follow-up email will help us close the outstanding points.","exampleZh":"一封简短的跟进电邮，有助于我们把未决问题收尾。"},{"id":"gen-007","bank":"general","word":"pending","full":"","ipa":"/ˈpendɪŋ/","pos":"adj.","meaning":"待决的；尚未完成的。指正在等待回复、批准、文件或下一步行动的事项。也可以作介词，表示“在……之前／有待”。","example":"Two items are still pending the client's signed confirmation.","exampleZh":"还有两项事宜，有待客户签署确认。"},{"id":"gen-008","bank":"general","word":"forthcoming","full":"","ipa":"/ˌfɔːθˈkʌmɪŋ/","pos":"adj.","meaning":"即将到来的；乐于提供信息的。既可指即将举行的会议或即将公布的结果，也可形容一个人是否愿意把情况说出来。后一种用法里，not forthcoming 表示不太配合或不愿透露。","example":"Please circulate the pack before the forthcoming investment meeting.","exampleZh":"请在即将召开的投资会议之前把材料分发出去。"},{"id":"gen-009","bank":"general","word":"discrepancy","full":"","ipa":"/dɪˈskrepənsi/","pos":"n.","meaning":"出入；不一致之处。指两份文件、两组数字或两种说法之间对不上的地方。发现出入后应核对来源，而不是先假定哪一边一定正确。","example":"There is a discrepancy between the term sheet and the trade confirmation.","exampleZh":"条款清单和成交确认书之间有一处不一致。"},{"id":"gen-010","bank":"general","word":"consistent","full":"","ipa":"/kənˈsɪstənt/","pos":"adj.","meaning":"一致的；连贯的。指不同材料、不同时点或不同人员的说法彼此吻合，或行为与原则保持同一标准。营销材料必须与法律文件保持一致。","example":"The marketing wording must be consistent with the prospectus.","exampleZh":"营销用语必须与募集说明书保持一致。"},{"id":"gen-011","bank":"general","word":"material","full":"","ipa":"/məˈtɪəriəl/","pos":"adj.","meaning":"重大的；实质性的。在商务与法律语境中，不一定指“材料”，而指足以影响判断或决策的重要事项。a material change 即可能改变结论的重要变化。","example":"Any material change in the issuer's credit should be flagged immediately.","exampleZh":"发行人信用出现任何重大变化，都应立即标记出来。"},{"id":"gen-012","bank":"general","word":"mitigate","full":"","ipa":"/ˈmɪtɪɡeɪt/","pos":"v.","meaning":"减轻；缓解。指采取措施降低风险或不利影响的程度，而不是把风险完全消除。可以说 mitigate a risk / a loss / an impact。","example":"Diversification can mitigate concentration risk, but it cannot remove market risk.","exampleZh":"分散投资可以减轻集中度风险，但不能消除市场风险。"},{"id":"gen-013","bank":"general","word":"exacerbate","full":"","ipa":"/ɪɡˈzæsəbeɪt/","pos":"v.","meaning":"加剧；使恶化。指让已经存在的问题或风险变得更严重。与 mitigate 相反。使用杠杆或过度集中，往往会加剧亏损。","example":"A wide bid-offer spread can exacerbate losses if the client has to exit early.","exampleZh":"若客户不得不提前退出，较宽的买卖差价可能加剧亏损。"},{"id":"gen-014","bank":"general","word":"contingent","full":"","ipa":"/kənˈtɪndʒənt/","pos":"adj.","meaning":"有条件的；视情况而定的。指某结果取决于另一事件是否发生。名词 contingency 表示应急安排或或有情况。","example":"Physical delivery is contingent on the knock-in event having been triggered.","exampleZh":"是否进行实物交割，取决于是否已经触发敲入。"},{"id":"gen-015","bank":"general","word":"subsequent","full":"","ipa":"/ˈsʌbsɪkwənt/","pos":"adj.","meaning":"随后的；之后发生的。用于正式书面语，表示在某一时点或事件之后。subsequent to 相当于 after，但语气更正式。","example":"Any subsequent amendment should be initialled by both parties.","exampleZh":"此后的任何修订，均应由双方简签确认。"},{"id":"gen-016","bank":"general","word":"prior","full":"","ipa":"/ˈpraɪə/","pos":"adj.","meaning":"在先的；事先的。指在某一行动或时点之前已经存在或必须完成的。prior approval 即事先批准；prior notice 即事先通知。","example":"The issuer's prior approval is required before the materials are sent out.","exampleZh":"在发出材料之前，须获得发行人的事先批准。"},{"id":"gen-017","bank":"general","word":"preliminary","full":"","ipa":"/prɪˈlɪmɪnəri/","pos":"adj.","meaning":"初步的。指尚未最终确定、仍可能修改的版本或结论，例如初步条款、初步估值或初稿。对外发送时应标明其初步性质，以免被当作定稿。","example":"This is only a preliminary comparison and should not be sent to the client yet.","exampleZh":"这只是初步对照，尚不宜发送给客户。"},{"id":"gen-018","bank":"general","word":"substantiate","full":"","ipa":"/səbˈstænʃieɪt/","pos":"v.","meaning":"证实；提供依据。指用文件、数据或事实来支撑某一说法或结论。没有依据的表述，在合规审查中往往难以通过。","example":"Can we substantiate this performance claim with official data?","exampleZh":"我们能否用官方数据来证实这一业绩表述？"},{"id":"gen-019","bank":"general","word":"caveat","full":"","ipa":"/ˈkæviæt/","pos":"n.","meaning":"限制说明；需要注意的保留意见。用来提醒对方：结论成立是有条件的，或存在例外、风险与口径限制。加注 caveat 不是推卸，而是把边界说清。","example":"One important caveat is that past performance is not a guide to future results.","exampleZh":"一个重要的限制说明是：过往业绩并不预示未来结果。"},{"id":"gen-020","bank":"general","word":"prudent","full":"","ipa":"/ˈpruːdnt/","pos":"adj.","meaning":"审慎的。指在信息不完整或后果较大时，仍保持小心、克制和负责任的判断。金融机构常把prudent 与风险管理、合适性及保守估计联系在一起。","example":"It would be prudent to wait for the final terms before making a recommendation.","exampleZh":"在作出建议之前先等最终条款，会是较为审慎的做法。"},{"id":"gen-021","bank":"general","word":"onus","full":"","ipa":"/ˈəʊnəs/","pos":"n.","meaning":"责任；举证责任。the onus is on someone to do something 表示某事应由谁负责去完成或证明。语气正式，常见于书面讨论责任划分。","example":"The onus is on us to explain the worst-case loss clearly.","exampleZh":"清楚地说明最坏情况下的亏损，是我们的责任。"},{"id":"gen-022","bank":"general","word":"remit","full":"","ipa":"/ˈriːmɪt/","pos":"n.","meaning":"职责范围。指一个人或一个团队被授权处理的事务边界。动词 remit /rɪˈmɪt/ 另有“汇款”或“提交”等意思，这里取名词用法。","example":"Product wording is within our remit; tax advice is not.","exampleZh":"产品措辞属于我们的职责范围，税务建议则不是。"},{"id":"gen-023","bank":"general","word":"mandate","full":"","ipa":"/ˈmændeɪt/","pos":"n.","meaning":"授权；委托范围。在财富管理中常指客户给予团队的投资授权，包括可投资范围、限制和目标。也可泛指一项正式任务或授权。","example":"The portfolio must stay within the agreed investment mandate.","exampleZh":"投资组合必须保持在约定的投资授权范围之内。"},{"id":"gen-024","bank":"general","word":"jurisdiction","full":"","ipa":"/ˌdʒʊərɪsˈdɪkʃn/","pos":"n.","meaning":"司法管辖区；管辖权。既可指某个法律适用的地区，也可指某机构或法院有权处理的范围。跨境产品、销售限制和税务问题都常涉及不同管辖区。","example":"The selling restrictions differ from one jurisdiction to another.","exampleZh":"销售限制因司法管辖区而不同。"},{"id":"gen-025","bank":"general","word":"counterpart","full":"","ipa":"/ˈkaʊntəpɑːt/","pos":"n.","meaning":"对应的人；对等的一方。指在另一家机构、另一个团队或另一份文件中，职位或角色与自己相对应的人。注意不要与 counterparty（交易对手）混淆。","example":"I will check the timeline with my counterpart at the issuing bank.","exampleZh":"我会与发行银行的对应同事核对时间表。"},{"id":"gen-026","bank":"general","word":"liaise","full":"","ipa":"/liˈeɪz/","pos":"v.","meaning":"联络；沟通协调。指在两个或多个团队之间传递信息、对齐安排。在英式商务英语中很常见。名词是 liaison。","example":"Please liaise with operations on the settlement date.","exampleZh":"请就交收日与运营部门联络。"},{"id":"gen-027","bank":"general","word":"stakeholder","full":"","ipa":"/ˈsteɪkhəʊldə/","pos":"n.","meaning":"利益相关方。指会受到某项决定影响、或能影响该决定的个人或团体，如客户、合规、产品、运营和发行人。识别利益相关方有助于把该问的人问到。","example":"We should brief all internal stakeholders before the launch.","exampleZh":"在推出之前，我们应向所有内部相关方作简报。"},{"id":"gen-028","bank":"general","word":"deliverable","full":"","ipa":"/dɪˈlɪvərəbl/","pos":"n.","meaning":"交付成果。指一项工作必须交出的具体产出，如对照表、条款审阅意见或演示文稿。把 deliverable 写清楚，有助于避免“做了很多但没交件”的情况。","example":"The main deliverable this week is a one-page product comparison.","exampleZh":"本周的主要交付成果是一页纸的产品对照。"},{"id":"gen-029","bank":"general","word":"milestone","full":"","ipa":"/ˈmaɪlstəʊn/","pos":"n.","meaning":"里程碑。项目中可检查进度的关键时点或阶段性目标，例如完成尽职调查、取得内部批准或完成发行。里程碑应尽可能具体、可验证。","example":"Internal approval is the next milestone before we can send the pack to clients.","exampleZh":"在向客户发送材料之前，下一个里程碑是取得内部批准。"},{"id":"gen-030","bank":"general","word":"escalate","full":"","ipa":"/ˈeskəleɪt/","pos":"v.","meaning":"上报；升级处理。指把无法在本层解决的问题提交给更合适的上级、专家或委员会。及时上报并不等于推诿，拖延不上报反而可能扩大风险。也可表示问题本身在加剧。","example":"If the issuer does not reply today, we should escalate the query.","exampleZh":"若发行人今天仍不回复，我们就应把该询问上报。"},{"id":"gen-031","bank":"general","word":"bottleneck","full":"","ipa":"/ˈbɒtlnek/","pos":"n.","meaning":"瓶颈。指流程中导致整体变慢的卡住点，例如等待一个签字、一个系统或一个外部回复。识别瓶颈后，应优先处理它，而不是只加快其他已经顺畅的环节。","example":"Legal review has become the bottleneck for new product launches.","exampleZh":"法律审阅已成为新产品推出的瓶颈。"},{"id":"gen-032","bank":"general","word":"trade-off","full":"","ipa":"/ˈtreɪd ɒf/","pos":"n.","meaning":"取舍；权衡。指为了得到某方面的好处，而必须接受另一方面的代价。结构性产品里，更高票息往往意味着更严格的障碍或更高风险，这就是一种取舍。","example":"There is a trade-off between a higher coupon and a lower knock-in barrier.","exampleZh":"更高的票息与更低的敲入障碍之间存在取舍。"},{"id":"gen-033","bank":"general","word":"underpin","full":"","ipa":"/ˌʌndəˈpɪn/","pos":"v.","meaning":"支撑；构成……的基础。指某项结论、价格或判断是由哪些事实、假设或安排支撑起来的。审查产品时，要问回报宣传背后由什么条件 underpin。","example":"These terms are underpinned by the current level of implied volatility.","exampleZh":"这些条款是以当前的隐含波动率水平为支撑的。"},{"id":"gen-034","bank":"general","word":"notwithstanding","full":"","ipa":"/ˌnɒtwɪθˈstændɪŋ/","pos":"prep./adv.","meaning":"尽管；虽然如此。较为正式的书面语，用来引出与前述情况看似相反但仍成立的信息。可放在句首或句尾，相当于 despite 或 nevertheless 的正式说法。","example":"Notwithstanding the attractive coupon, the principal is fully at risk.","exampleZh":"尽管票息看起来吸引，本金仍全部处于风险之中。"},{"id":"gen-035","bank":"general","word":"disclose","full":"","ipa":"/dɪsˈkləʊz/","pos":"v.","meaning":"披露。指按监管、合同或合规要求，把重要事实、风险、利益冲突或费用告知客户或监管机构。该披露的未披露，可能构成违规。","example":"All relevant fees must be disclosed to the client in writing.","exampleZh":"所有相关费用都必须以书面形式向客户披露。"},{"id":"gen-036","bank":"general","word":"indemnity","full":"","ipa":"/ɪnˈdemnəti/","pos":"n.","meaning":"弥偿；赔偿保证。一方承诺就特定损失向另一方作出补偿的安排。具体范围、上限和除外事项以合同条款为准，不能望文生义地理解为“全部都能赔”。","example":"The clause provides an indemnity for losses arising from third-party claims.","exampleZh":"该条款就第三方索赔所造成的损失提供弥偿。"},{"id":"gen-037","bank":"general","word":"waiver","full":"","ipa":"/ˈweɪvə/","pos":"n.","meaning":"弃权；豁免安排。指明确放弃某项权利，或批准在特定条件下不严格执行某项要求。弃权通常应书面作出，并且往往只适用于这一次，并不自动成为永久例外。","example":"A waiver of that internal rule would require compliance approval.","exampleZh":"若要豁免该项内部规则，须取得合规批准。"},{"id":"gen-038","bank":"general","word":"amendment","full":"","ipa":"/əˈmendmənt/","pos":"n.","meaning":"修订。对已有文件、条款或授权所作的正式修改。修订后应以完整、可核对的版本为准，并保留修订记录。","example":"The amendment updates the observation dates but leaves the coupon unchanged.","exampleZh":"该修订更新了观察日，但票息保持不变。"},{"id":"gen-039","bank":"general","word":"provision","full":"","ipa":"/prəˈvɪʒn/","pos":"n.","meaning":"条款；规定。法律或合同中就某一事项作出的具体规定。也可指会计上的“拨备”，本词条取合同条款义。阅读文件时应定位到具体 provision，而不是只看摘要。","example":"Please refer to the provision on market disruption events.","exampleZh":"请参阅有关市场中断事件的条款。"},{"id":"gen-040","bank":"general","word":"clause","full":"","ipa":"/klɔːz/","pos":"n.","meaning":"条款；分款。合同或法律文件中相对独立的一条规定。与 provision 相近，clause 更强调条文本身的编号与文字。引用时应写清条款号。","example":"The governing law clause is set out at the end of the terms.","exampleZh":"管辖法律条款列于条款文件的末尾。"},{"id":"gen-041","bank":"general","word":"execute","full":"","ipa":"/ˈeksɪkjuːt/","pos":"v.","meaning":"签署生效；执行。在法律和营运语境中，常指正式签署文件使其中条款生效，也可指按指示完成交易。注意它在普通英语里还有“处决”之义，商务语境中通常没有该意思。","example":"The agreement will become effective once both parties have executed it.","exampleZh":"双方签署完成后，该协议即行生效。"},{"id":"gen-042","bank":"general","word":"binding","full":"","ipa":"/ˈbaɪndɪŋ/","pos":"adj.","meaning":"有约束力的。指在法律上必须遵守的安排或文件。指示性条款通常不是最终有约束力的承诺，而成交确认书或已签署的最终条款则往往具有约束力。","example":"The indicative quote is not legally binding.","exampleZh":"该指示性报价在法律上并不具有约束力。"},{"id":"gen-043","bank":"general","word":"discretionary","full":"","ipa":"/dɪˈskreʃənəri/","pos":"adj.","meaning":"酌情的；全权的。指在约定范围内可以由一方自行判断如何处理。财富管理中的 discretionary mandate 即全权委托授权；也用于“酌情批准”等场合。","example":"The manager may make discretionary switches within the agreed asset ranges.","exampleZh":"管理人可在约定的资产区间内酌情进行转换。"},{"id":"gen-044","bank":"general","word":"fiduciary","full":"","ipa":"/fɪˈdjuːʃəri/","pos":"adj./n.","meaning":"受信的；受信责任。指一方因受委托而须为另一方的利益诚实、审慎行事。是否构成法律上的受信责任，取决于具体关系和适用法律，不能随便自称或否认。","example":"A trustee owes fiduciary duties to the beneficiaries.","exampleZh":"受托人对受益人负有受信责任。"},{"id":"gen-045","bank":"general","word":"confidential","full":"","ipa":"/ˌkɒnfɪˈdenʃl/","pos":"adj.","meaning":"保密的。指不得向未经授权的人披露的信息，如客户资料、未公开条款和内部文件。处理保密信息应遵循最小必要原则和公司政策。","example":"Client holdings are confidential and must not be discussed outside the team.","exampleZh":"客户持仓属于保密信息，不得在团队以外讨论。"},{"id":"gen-046","bank":"general","word":"proprietary","full":"","ipa":"/prəˈpraɪətri/","pos":"adj.","meaning":"专有的；内部所有的。指属于某一机构、不宜对外公开的方法、模型、系统或资料。proprietary information 通常受保密及知识产权安排保护。","example":"The pricing model is proprietary and should not be copied into client emails.","exampleZh":"该定价模型属于公司专有资料，不应复制到给客户的电邮中。"},{"id":"gen-047","bank":"general","word":"compliant","full":"","ipa":"/kəmˈplaɪənt/","pos":"adj.","meaning":"符合规定的。指行为、文件或流程符合法律、监管要求或内部政策。它强调“达到要求”，并不自动等于“最好的做法”或“没有其他风险”。","example":"The pack is not compliant until the risk warning is added.","exampleZh":"在补上风险提示之前，这份材料仍不符合规定。"},{"id":"gen-048","bank":"general","word":"breach","full":"","ipa":"/briːtʃ/","pos":"n./v.","meaning":"违反；违约。指未能遵守合同、法规、政策或保密义务。发现可能的 breach 后，通常应按内部程序及时报告，而不是自行消化。","example":"A late report of a potential breach can make the matter worse.","exampleZh":"对潜在违规迟迟不报，可能使问题变得更严重。"},{"id":"gen-049","bank":"general","word":"adverse","full":"","ipa":"/ˈædvɜːs/","pos":"adj.","meaning":"不利的。形容朝负面方向发展的情况、影响或变化，如 adverse market move（不利的市场变动）、adverse comment（负面意见）。语气比 bad 更正式。","example":"An adverse move in the underlying may trigger knock-in.","exampleZh":"挂钩标的出现不利变动，可能触发敲入。"},{"id":"gen-050","bank":"general","word":"plausible","full":"","ipa":"/ˈplɔːzəbl/","pos":"adj.","meaning":"说得通的；似乎合理的。指某解释或情景表面上站得住，但仍需验证。它不等于“已经证实”，只表示值得认真考虑。","example":"That is a plausible explanation, but we still need to check the dates.","exampleZh":"这个解释说得通，但我们仍须核对日期。"},{"id":"gen-051","bank":"general","word":"anomaly","full":"","ipa":"/əˈnɒməli/","pos":"n.","meaning":"异常；与预期不符的情况。可能是数据错误、流程遗漏，也可能真的反映了特殊市场现象。发现 anomaly 后，应先查核再下结论。","example":"The pricing anomaly disappeared after we corrected the day-count.","exampleZh":"在我们更正计息基准后，那个定价异常就消失了。"},{"id":"gen-052","bank":"general","word":"rationale","full":"","ipa":"/ˌræʃəˈnɑːl/","pos":"n.","meaning":"理由；逻辑依据。指作出某一建议、决定或设计时背后的一套原因。把 rationale 写清楚，便于日后复核和向不在场的人解释。","example":"Please document the rationale for recommending this tenor.","exampleZh":"请把建议这一期限的理由记录下来。"},{"id":"gen-053","bank":"general","word":"implication","full":"","ipa":"/ˌɪmplɪˈkeɪʃn/","pos":"n.","meaning":"影响；可能的含意。指某事实或决定将会带来的后果，不一定在字面上直接说出来。分析条款时，既要看文字，也要看对客户的实际 implication。","example":"The implication of a lower barrier is a higher chance of principal loss.","exampleZh":"障碍更低，意味着本金亏损的可能性更高。"},{"id":"gen-054","bank":"general","word":"accordingly","full":"","ipa":"/əˈkɔːdɪŋli/","pos":"adv.","meaning":"因此；相应地。用于正式书面语，表示后面的行动是依据前面的情况作出的。常放在句首或句中，连接分析与结论。","example":"The final terms have changed; please update the comparison pack accordingly.","exampleZh":"最终条款已有变更，请相应更新对照材料。"},{"id":"gen-055","bank":"general","word":"nevertheless","full":"","ipa":"/ˌnevəðəˈles/","pos":"adv.","meaning":"尽管如此； nevertheless 用来承认前一句的事实，同时提出并不因此改变的判断或行动。是书面语中常用的转折副词。","example":"The coupon is attractive; nevertheless, the capital is at risk.","exampleZh":"票息确实吸引；尽管如此，本金仍处于风险之中。"},{"id":"gen-056","bank":"general","word":"furthermore","full":"","ipa":"/ˌfɜːðəˈmɔː/","pos":"adv.","meaning":"此外；而且。用于在已有论点上再补充一层理由或事实，常见于正式书面表达。不宜在同一段里反复堆砌。","example":"The document is overdue. Furthermore, two figures still need to be checked.","exampleZh":"该文件已经逾期。此外，还有两个数字有待核对。"},{"id":"gen-057","bank":"general","word":"conversely","full":"","ipa":"/ˈkɒnvɜːsli/","pos":"adv.","meaning":"相反地。用来引出与前面情况方向相反的对照。适合比较两种情景、两种产品或两种结果。","example":"A higher barrier reduces knock-in risk; conversely, it usually means a lower coupon.","exampleZh":"更高的障碍会降低敲入风险；相反，票息通常也会更低。"},{"id":"gen-058","bank":"general","word":"whereas","full":"","ipa":"/ˌweərˈæz/","pos":"conj.","meaning":"然而；而……则。用于对比两种情况，书面语气较强。法律文件里也常用 whereas 引出背景陈述，日常工作对照中多取其对比义。","example":"The first note is cash-settled, whereas the second may deliver shares.","exampleZh":"第一份票据以现金结算，而第二份则可能交割股票。"},{"id":"gen-059","bank":"general","word":"albeit","full":"","ipa":"/ˌɔːlˈbiːɪt/","pos":"conj.","meaning":"虽然；尽管。后面通常接短语而非完整句子，用来承认一个限制条件，同时不推翻主句。比 although 更紧凑，偏书面。","example":"The explanation is clear, albeit rather brief.","exampleZh":"这个说明是清楚的，虽然相当简短。"},{"id":"gen-060","bank":"general","word":"namely","full":"","ipa":"/ˈneɪmli/","pos":"adv.","meaning":"即；也就是。用来引出对前面概括的具体列举或点明。适合在已经给出类别之后，再把具体项目说出来。","example":"Two dates remain outstanding, namely the initial fixing date and the first observation date.","exampleZh":"还有两个日期未定，即初始定盘日和首个观察日。"},{"id":"gen-061","bank":"general","word":"respectively","full":"","ipa":"/rɪˈspektɪvli/","pos":"adv.","meaning":"分别；依次为。用于两个或多个项目与前面同样顺序的对象一一对应。使用时必须保证前后顺序严格一致，否则容易造成严重误解。","example":"Notes A and B mature in June and December respectively.","exampleZh":"票据 A 和票据 B 分别于六月和十二月到期。"},{"id":"gen-062","bank":"general","word":"predominantly","full":"","ipa":"/prɪˈdɒmɪnəntli/","pos":"adv.","meaning":"主要地；大多。表示某特征或构成占大多数，但不一定是全部。比 mainly 稍正式，适合描述组合构成或客户结构。","example":"The book is predominantly invested in investment-grade bonds.","exampleZh":"该组合主要投资于投资级债券。"},{"id":"gen-063","bank":"general","word":"marginally","full":"","ipa":"/ˈmɑːdʒɪnəli/","pos":"adv.","meaning":"略微地；只是稍微。表示差别很小，不应当被夸大成显著变化。写作时若差别其实很大，就不要用这个词。","example":"The new coupon is only marginally higher than the previous offer.","exampleZh":"新的票息只比此前报价略高一点。"},{"id":"gen-064","bank":"general","word":"substantially","full":"","ipa":"/səbˈstænʃəli/","pos":"adv.","meaning":"实质上；大幅度地。表示程度可观或差别足够重要。与 marginally 相对，常用来强调影响已经不小。","example":"The unwind cost has increased substantially since last week.","exampleZh":"自上周以来，平仓成本已大幅上升。"},{"id":"gen-065","bank":"general","word":"inherently","full":"","ipa":"/ɪnˈherəntli/","pos":"adv.","meaning":"本质上；固有地。表示某风险或特征是事物本身带有的，而不是临时附加的。例如非保本结构性产品 inherently 带有本金损失可能。","example":"A worst-of structure is inherently more sensitive to the weakest name in the basket.","exampleZh":"表现最差结构本质上对篮子里最弱的那一只更为敏感。"},{"id":"gen-066","bank":"general","word":"explicitly","full":"","ipa":"/ɪkˈsplɪsɪtli/","pos":"adv.","meaning":"明确地；清楚地写出或说出。指没有含糊、不靠暗示。重要限制、风险和销售范围应 explicitly 写明。","example":"The term sheet explicitly states that the product is not principal-protected.","exampleZh":"条款清单明确写明该产品并不保本。"},{"id":"gen-067","bank":"general","word":"implicitly","full":"","ipa":"/ɪmˈplɪsɪtli/","pos":"adv.","meaning":"含蓄地；未明说但可推知。指没有直接写出来，却可以从上下文或行为中推断。重要风险不宜只 implicitly 表达，而应写清楚。","example":"The email implicitly assumed that the client would hold to maturity.","exampleZh":"那封电邮含蓄地假定客户会持有至到期。"},{"id":"gen-068","bank":"general","word":"arguably","full":"","ipa":"/ˈɑːɡjuəbli/","pos":"adv.","meaning":"可以说；有理由认为。用来提出一个站得住但并非唯一的判断，语气留有讨论余地。不宜用它来回避本应明确的合规结论。","example":"This is arguably the clearest one-page comparison we have prepared this month.","exampleZh":"可以说，这是我们本月准备过的最清楚的一页对照。"},{"id":"gen-069","bank":"general","word":"tentatively","full":"","ipa":"/ˈtentətɪvli/","pos":"adv.","meaning":"暂定地；试探性地。表示时间、结论或安排尚未最终确定，仍可能修改。对外沟通时应把“暂定”说清，以免被当成承诺。","example":"The call is tentatively scheduled for 11:00, subject to the client's availability.","exampleZh":"电话会议暂定于十一时，须视客户是否有空而定。"},{"id":"gen-070","bank":"general","word":"promptly","full":"","ipa":"/ˈprɒmptli/","pos":"adv.","meaning":"迅速地；及时地。强调在合理短的时间内采取行动，但不等于不计质量地匆忙完成。处理客户投诉、差错和截止日期时常用。","example":"Please reply promptly if any figure in the confirmation is incorrect.","exampleZh":"若确认书中的任何数字有误，请及时回复。"},{"id":"gen-071","bank":"general","word":"thoroughly","full":"","ipa":"/ˈθʌrəli/","pos":"adv.","meaning":"彻底地；仔细全面地。指检查或准备时没有明显遗漏。thorough 审阅不等于无限拖延，但仍须覆盖关键风险与数字。","example":"The documents have been thoroughly checked against the final terms.","exampleZh":"文件已对照最终条款作了全面核对。"},{"id":"gen-072","bank":"general","word":"meticulously","full":"","ipa":"/məˈtɪkjələsli/","pos":"adv.","meaning":"一丝不苟地。语气比 thoroughly 更强调对细节的认真，适合描述对数字、日期、名称和条款编号的校对。","example":"She meticulously checked every ISIN and observation date in the table.","exampleZh":"她一丝不苟地核对了表中的每一个国际证券识别码和观察日。"},{"id":"gen-073","bank":"general","word":"inadvertently","full":"","ipa":"/ˌɪnədˈvɜːtəntli/","pos":"adv.","meaning":"不小心地；非故意地。用于说明某错误并非有意造成，但仍须纠正并检讨流程。承认 inadvertent error 并立即修正，通常好过回避。","example":"An outdated barrier was inadvertently left in the draft.","exampleZh":"草稿里不小心留下了一个过时的障碍水平。"},{"id":"gen-074","bank":"general","word":"deliberately","full":"","ipa":"/dɪˈlɪbərətli/","pos":"adv.","meaning":"故意地；有意地。也可表示“经过慎重考虑地”。在合规语境中，deliberately withhold 信息是严重问题；在工作安排里，deliberately leave time 则是有意留出时间。","example":"We deliberately left the risk warning on the first page.","exampleZh":"我们有意把风险提示放在第一页。"},{"id":"gen-075","bank":"general","word":"feasible","full":"","ipa":"/ˈfiːzəbl/","pos":"adj.","meaning":"可行的。指在现有时间、系统、法律和资源条件下能够做得到。可行不等于值得做，还要看风险、成本和是否合规。","example":"It is not feasible to reissue the pack after 5 p.m. today.","exampleZh":"今天下午五时后再重做这套材料，并不可行。"},{"id":"gen-076","bank":"general","word":"viable","full":"","ipa":"/ˈvaɪəbl/","pos":"adj.","meaning":"可行且站得住的。比 feasible 更强调在商业、经济或长期意义上“能够持续成立”，而不只是技术上做得到。a viable option 即一个真正能用的方案。","example":"Early exit is not a viable option if the unwind cost remains this high.","exampleZh":"若平仓成本仍然这么高，提前退出就不是一个站得住的选择。"},{"id":"gen-077","bank":"general","word":"resilient","full":"","ipa":"/rɪˈzɪliənt/","pos":"adj.","meaning":"有韧性的；能承受压力后恢复的。可形容人、团队、流程或投资组合在受到冲击后仍能维持运作或恢复。它是描述能力的词，并不保证不会受损。","example":"A more resilient process would catch this error before the email goes out.","exampleZh":"更有韧性的流程，应能在电邮发出之前发现这个错误。"},{"id":"gen-078","bank":"general","word":"robust","full":"","ipa":"/rəʊˈbʌst/","pos":"adj.","meaning":"稳健的；经得起检验的。指方法、结论或系统在压力、质疑或不同假设下仍然可靠。评审材料时，常问这个比较是否 robust。","example":"We need a more robust check than a single manual look at the spreadsheet.","exampleZh":"我们需要比只人工看一次表格更稳健的核对方法。"},{"id":"gen-079","bank":"general","word":"ambiguous","full":"","ipa":"/æmˈbɪɡjuəs/","pos":"adj.","meaning":"含糊的；可作多种解释的。条款或电邮一旦 ambiguous，就容易造成执行错误或争议。发现歧义应主动澄清，而不是各自按自己的理解继续做。","example":"The sentence is ambiguous as to whether the barrier is observed intra-day.","exampleZh":"这句话在障碍是否按盘中价格观察这一点上含糊不清。"},{"id":"gen-080","bank":"general","word":"unequivocal","full":"","ipa":"/ˌʌnɪˈkwɪvəkl/","pos":"adj.","meaning":"毫不含糊的；明确的。表示意思清楚、没有两可余地。重要的风险提示、销售限制和“不构成投资建议”等声明，应当 unequivocal。","example":"The document should include an unequivocal statement that the capital is at risk.","exampleZh":"文件中应有毫不含糊的声明：本金处于风险之中。"},{"id":"gen-081","bank":"general","word":"comprehensive","full":"","ipa":"/ˌkɒmprɪˈhensɪv/","pos":"adj.","meaning":"全面的；涵盖面广的。指覆盖了应覆盖的主要方面。全面并不等于冗长，也不等于没有重点；仍应把最关键的风险放在显眼位置。","example":"A comprehensive review should cover legal terms, pricing and operational details.","exampleZh":"全面的审阅应覆盖法律条款、定价和运营细节。"},{"id":"gen-082","bank":"general","word":"succinct","full":"","ipa":"/səkˈsɪŋkt/","pos":"adj.","meaning":"简练的。与 concise 相近，强调短而到位。一页通、会议结论和向管理层汇报时，尤其需要 succinct 的表达。","example":"Please keep the executive summary succinct and specific.","exampleZh":"请把给管理层的摘要写得简练而具体。"},{"id":"gen-083","bank":"general","word":"coherent","full":"","ipa":"/kəʊˈhɪərənt/","pos":"adj.","meaning":"连贯的；逻辑清楚的。指各部分能够形成一个说得通的整体，而不是彼此打架。材料中的数字、结论和风险提示必须 coherent。","example":"The recommendation is not coherent with a conservative risk profile.","exampleZh":"这一建议与保守的风险取向并不连贯。"},{"id":"gen-084","bank":"general","word":"pertinent","full":"","ipa":"/ˈpɜːtɪnənt/","pos":"adj.","meaning":"相关且切题的。比 relevant 更强调“正好针对当前问题”。写电邮或开会时，应先给 pertinent 的信息，再补充背景。","example":"Please only attach the pages that are pertinent to this trade.","exampleZh":"请只附上与这笔交易相关的页码。"},{"id":"gen-085","bank":"general","word":"redundant","full":"","ipa":"/rɪˈdʌndənt/","pos":"adj.","meaning":"多余的；重复的。指信息、步骤或表达已经不必要。在人事语境中也可指被裁员，使用时要注意场合，以免造成误会。","example":"The second paragraph is redundant and can be removed.","exampleZh":"第二段是多余的，可以删去。"},{"id":"gen-086","bank":"general","word":"obsolete","full":"","ipa":"/ˈɒbsəliːt/","pos":"adj.","meaning":"过时的；已不再适用的。指模板、条款、利率基准或流程已被新的安排取代。继续使用 obsolete 的材料可能导致错误披露。","example":"This template is obsolete after the new disclosure rules took effect.","exampleZh":"新的披露规则生效后，这份模板已经过时。"},{"id":"gen-087","bank":"general","word":"unprecedented","full":"","ipa":"/ʌnˈpresɪdentɪd/","pos":"adj.","meaning":"前所未有的。表示在已知经验里没有先例。这个词分量较重，只有在确实找不到可比情况时才适合使用，否则会显得夸张。","example":"The market move was unusually sharp, though not necessarily unprecedented.","exampleZh":"这轮市场波动异常剧烈，但未必称得上前所未有。"},{"id":"gen-088","bank":"general","word":"overdue","full":"","ipa":"/ˌəʊvəˈdjuː/","pos":"adj.","meaning":"逾期的；早该完成的。既可指已经过了截止日期，也可指某件早该做却一直没做的事。用于提醒时，语气可以坚定但不必指责。","example":"The issuer's reply is already overdue.","exampleZh":"发行人的回复已经逾期。"},{"id":"gen-089","bank":"general","word":"imminent","full":"","ipa":"/ˈɪmɪnənt/","pos":"adj.","meaning":"即将发生的；临近的。强调某事很可能很快发生。不要把尚不确定的可能性说成 imminent，以免造成不必要的紧张或误导。","example":"An imminent rate announcement may affect today's pricing.","exampleZh":"即将公布的利率决定可能影响今日定价。"},{"id":"gen-090","bank":"general","word":"intermittent","full":"","ipa":"/ˌɪntəˈmɪtənt/","pos":"adj.","meaning":"间歇的；时断时续的。形容不是持续不断，而是来一阵、停一阵的情况，如间歇性的系统故障或断续的市场波动。","example":"The system outage was intermittent, which made testing more difficult.","exampleZh":"系统故障时断时续，使测试更加困难。"},{"id":"gen-091","bank":"general","word":"recurring","full":"","ipa":"/rɪˈkɜːrɪŋ/","pos":"adj.","meaning":"反复出现的。指同一类问题或事项不止一次发生。recurring error 往往说明流程需要修复，而不是只改这一次的结果。","example":"This is a recurring error in the date field and needs a lasting fix.","exampleZh":"这是日期栏里反复出现的错误，需要一个能持久见效的修正。"},{"id":"gen-092","bank":"general","word":"residual","full":"","ipa":"/rɪˈzɪdjuəl/","pos":"adj.","meaning":"残余的；剩余的。指在采取措施之后仍然留下的部分，如 residual risk（剩余风险）。承认剩余风险，是诚实披露的一部分。","example":"Even after hedging, some residual currency risk remains.","exampleZh":"即使做了对冲，仍会留下一些残余的汇率风险。"},{"id":"gen-093","bank":"general","word":"incremental","full":"","ipa":"/ˌɪŋkrəˈmentl/","pos":"adj.","meaning":"增量的；逐步增加的。指每一小步的变化，而不是一次性的大改动。incremental change 便于控制风险，但有时也不足以解决问题。","example":"We made incremental improvements to the checklist after each incident.","exampleZh":"每次出现问题后，我们都对清单作了增量改进。"},{"id":"gen-094","bank":"general","word":"aggregate","full":"","ipa":"/ˈæɡrɪɡət/","pos":"adj./n.","meaning":"合计的；总量。指把各项加总后的结果。作动词时读作 /ˈæɡrɪɡeɪt/，表示“汇总”。看合计时不要忽略内部的集中度或相互抵消。","example":"The aggregate exposure to the same issuer must be kept within the limit.","exampleZh":"对同一发行人的合计敞口必须控制在限额以内。"},{"id":"gen-095","bank":"general","word":"insight","full":"","ipa":"/ˈɪnsaɪt/","pos":"n.","meaning":"洞见；有帮助的理解。指能够解释现象或指导行动的认识，而不只是复述数据。好的 insight 通常具体、可检验，并且对下一步有用。","example":"The review offered a useful insight into why clients were confused by the barrier language.","exampleZh":"这次回顾提供了一个有用的认识：为何客户会被障碍表述弄糊涂。"},{"id":"gen-096","bank":"general","word":"takeaway","full":"","ipa":"/ˈteɪkəweɪ/","pos":"n.","meaning":"要点收获。会议或材料读完后应记住并带走的关键结论。写会议纪要时，把 takeaway 单列出来，比只堆讨论过程更有用。","example":"The main takeaway is that the two notes use different observation methods.","exampleZh":"主要要点是：这两份票据采用了不同的观察方式。"},{"id":"gen-097","bank":"general","word":"recap","full":"","ipa":"/ˈriːkæp/","pos":"n./v.","meaning":"扼要重述。把已经讨论过的要点再归纳一遍，便于对齐理解或留给缺席的人。会议结束前作一个短 recap，往往能减少事后误解。","example":"Let me recap the three actions we agreed on.","exampleZh":"我来扼要重述一下我们商定的三项行动。"},{"id":"gen-098","bank":"general","word":"defer","full":"","ipa":"/dɪˈfɜː/","pos":"v.","meaning":"推迟；暂缓。指有意识地把事项移到更合适的时间处理，或把决定交给更合适的人（defer to someone）。推迟时应说明原因和新的时点，以免变成不了了之。","example":"We will defer the launch until the final terms are available.","exampleZh":"我们将把推出时间推迟到最终条款齐备之后。"},{"id":"gen-099","bank":"general","word":"expedite","full":"","ipa":"/ˈekspədaɪt/","pos":"v.","meaning":"加快办理。指在不违反必要控制的前提下，优先处理某事项以缩短等待时间。加快不等于跳过合规或核对步骤。","example":"Could you please expedite the review so that we can meet the trade date?","exampleZh":"可否加快审阅，以便我们赶上交易日？"},{"id":"gen-100","bank":"general","word":"facilitate","full":"","ipa":"/fəˈsɪlɪteɪt/","pos":"v.","meaning":"促成；提供便利。指通过安排、协调或提供工具，使事情更容易完成。它强调帮助过程顺利进行，而不是代替别人作决定。","example":"A shared checklist will facilitate handover between the two teams.","exampleZh":"一份共用清单将方便两个团队之间的交接。"},{"id":"gen-101","bank":"general","word":"coordinate","full":"","ipa":"/kəʊˈɔːdɪneɪt/","pos":"v.","meaning":"协调。把多方的时间、材料和责任对齐，避免重复或遗漏。协调的关键是明确谁做什么、截止何时、以及信息如何同步。","example":"Please coordinate with the duty team so that the files arrive in one pack.","exampleZh":"请与值班团队协调，确保文件汇成一套送达。"},{"id":"gen-102","bank":"general","word":"consolidate","full":"","ipa":"/kənˈsɒlɪdeɪt/","pos":"v.","meaning":"整合；合并整理。把分散的信息、持仓或文件归拢到一处，以便比较和管理。整合后应检查是否出现重复计算或口径不一致。","example":"Please consolidate the comments into a single version.","exampleZh":"请把各方意见整合到同一个版本里。"},{"id":"gen-103","bank":"general","word":"streamline","full":"","ipa":"/ˈstriːmlaɪn/","pos":"v.","meaning":"精简流程。去掉重复步骤，使工作更顺畅。精简应以不削弱必要控制为前提，尤其不能为了速度而删掉风险核对。","example":"We should streamline the checklist without removing the legal sign-off.","exampleZh":"我们应精简清单，但不可去掉法律会签。"},{"id":"gen-104","bank":"general","word":"prioritize","full":"","ipa":"/praɪˈɒrɪtaɪz/","pos":"v.","meaning":"排定优先次序。根据紧急程度、影响和截止日期，决定先做哪一件。同时宣布每件事都是第一优先，等于没有优先次序。","example":"Please prioritize the client-facing pack over the internal briefing notes.","exampleZh":"请把面向客户的材料放在内部简报之前处理。"},{"id":"gen-105","bank":"general","word":"allocate","full":"","ipa":"/ˈæləkeɪt/","pos":"v.","meaning":"分配。把时间、额度、任务或资金分给特定对象。分配时应写清数量、对象和限制，避免口头一说就以为已经落实。","example":"The team will allocate time tomorrow morning to finish the review.","exampleZh":"团队将把明天上午的时间分配出来，用于完成这项审阅。"},{"id":"gen-106","bank":"general","word":"withhold","full":"","ipa":"/wɪðˈhəʊld/","pos":"v.","meaning":"扣留；暂不提供。既可指依法预提税款，也可指暂时不发放信息或款项。若 withhold 的是客户应知的重要信息，通常会有合规问题。","example":"Do not withhold a known risk from the comparison pack.","exampleZh":"不要把已知风险从对照材料中隐去。"},{"id":"gen-107","bank":"general","word":"waive","full":"","ipa":"/weɪv/","pos":"v.","meaning":"放弃（权利）；不坚持执行。与名词 waiver 对应。是否可以 waive 某项要求，通常需要有权人士批准，并且应记录在案。","example":"Operations cannot waive the cut-off time without approval.","exampleZh":"未经批准，运营部门不能放宽截止时间。"},{"id":"gen-108","bank":"general","word":"endorse","full":"","ipa":"/ɪnˈdɔːs/","pos":"v.","meaning":"赞同；背书。指正式表示支持某一文件、建议或安排。在向外部使用时要谨慎：未经授权，个人意见不应被写成公司 endorse 的结论。","example":"The committee endorsed the revised product paper.","exampleZh":"委员会对修订后的产品文件表示赞同。"},{"id":"gen-109","bank":"general","word":"acknowledge","full":"","ipa":"/əkˈnɒlɪdʒ/","pos":"v.","meaning":"确认收到；承认。既可表示“已收到来信”，也可表示承认某一事实或限制。及时 acknowledge 客户来信，是基本的职业礼貌。","example":"Please acknowledge receipt of this email and let us know if any item is unclear.","exampleZh":"请确认收到此邮件，如有任何一项不清楚，请告知我们。"},{"id":"gen-110","bank":"general","word":"convey","full":"","ipa":"/kənˈveɪ/","pos":"v.","meaning":"转达；表达。指把信息、态度或歉意准确传递给对方。选择用词时要考虑 convey 出去的语气是否合适，尤其是在谈风险和拒绝时。","example":"Please convey our thanks to the client for the quick reply.","exampleZh":"请向客户转达我们对其迅速回复的感谢。"},{"id":"gen-111","bank":"general","word":"address","full":"","ipa":"/əˈdres/","pos":"v.","meaning":"处理；回应（某问题）。在商务英语里常指面对关切、风险或疑问并作出处理，而不只是“写地址”。address a concern 即回应并处理该关切。","example":"The revised pack addresses the questions raised in yesterday's meeting.","exampleZh":"修订后的材料回应了昨天会议上提出的问题。"},{"id":"gen-112","bank":"general","word":"flag","full":"","ipa":"/flæɡ/","pos":"v.","meaning":"标出；提醒注意。指把可能的问题、截止日期或异常清楚地标识出来，以便他人看见并跟进。及时 flag 问题，往往比事后解释更有价值。","example":"Please flag any inconsistency between the Chinese and English versions.","exampleZh":"中英文版本如有任何不一致，请标出。"},{"id":"gen-113","bank":"general","word":"align","full":"","ipa":"/əˈlaɪn/","pos":"v.","meaning":"对齐；取得一致。指让各方的理解、口径、时间表或目标保持一致。会前 align 关键数字，可以减少会上的来回修正。","example":"Let us align the wording with compliance before we send it out.","exampleZh":"在发出之前，让我们先与合规对齐措辞。"},{"id":"gen-114","bank":"general","word":"gauge","full":"","ipa":"/ɡeɪdʒ/","pos":"v./n.","meaning":"估量；判断。指在信息不完整时，对反应、风险或可能性作出合理估计。名词也可指“量尺”或“标准”。gauge interest 即试探兴趣或意向。","example":"A short call will help us gauge whether the client wants a shorter tenor.","exampleZh":"一次简短通话，有助于我们判断客户是否希望更短的期限。"},{"id":"gen-115","bank":"general","word":"assess","full":"","ipa":"/əˈses/","pos":"v.","meaning":"评估。对风险、合适性、影响或质量作出有依据的判断。评估应写明所依据的资料和限制，而不是只给一个印象式的结论。","example":"We need to assess whether this product fits the client's horizon and risk profile.","exampleZh":"我们需要评估该产品是否符合客户的投资年期和风险取向。"},{"id":"gen-116","bank":"general","word":"ascertain","full":"","ipa":"/ˌæsəˈteɪn/","pos":"v.","meaning":"查明；确定。指通过查核把尚未确定的事实查清楚。语气正式，适合在事实还不清时使用，而不适合代替已经明确的结论。","example":"Please ascertain whether the observation is close-only or continuous.","exampleZh":"请查明该观察是仅看收市价，还是持续观察。"},{"id":"gen-117","bank":"general","word":"verify","full":"","ipa":"/ˈverɪfaɪ/","pos":"v.","meaning":"核实。对照可靠来源，确认数字、名称、日期或身份是否正确。verify 强调核对已有信息，而不只是凭记忆确认。","example":"Please verify the ISIN against the trade confirmation.","exampleZh":"请对照成交确认书核实国际证券识别码。"},{"id":"gen-118","bank":"general","word":"reconcile","full":"","ipa":"/ˈrekənsaɪl/","pos":"v.","meaning":"对账；使一致。把两套记录或两份文件逐项对照，找出差异并解释清楚。运营、估值和持仓管理中都常用到 reconcile。","example":"We need to reconcile the portfolio report with the custodian's records.","exampleZh":"我们需要把组合报告与托管人的记录核对一致。"},{"id":"gen-119","bank":"general","word":"rectify","full":"","ipa":"/ˈrektɪfaɪ/","pos":"v.","meaning":"纠正。把已经发现的错误改正过来，并尽量防止再次发生。纠正时应同时更新所有已发出的相关版本，避免旧错误继续流传。","example":"Please rectify the coupon figure and resend the pack today.","exampleZh":"请纠正票息数字，并于今天重新发送材料。"},{"id":"gen-120","bank":"general","word":"compromise","full":"","ipa":"/ˈkɒmprəmaɪz/","pos":"n./v.","meaning":"折中；妥协。指各方让出一部分立场以达成可接受的方案。作动词时也可表示“损害”某原则或安全，使用时要看上下文，以免产生歧义。","example":"After a brief discussion, the teams reached a compromise on the timeline.","exampleZh":"经过简短讨论，各团队就时间表达成了折中方案。"},{"id":"gen-121","bank":"general","word":"consensus","full":"","ipa":"/kənˈsensəs/","pos":"n.","meaning":"共识。指相关方在主要问题上大体达成一致。共识不等于没有保留意见，但通常意味着可以据此推进下一步。","example":"There was a consensus to wait for the issuer's revised terms.","exampleZh":"各方达成共识：等待发行人的修订条款。"},{"id":"gen-122","bank":"general","word":"impartial","full":"","ipa":"/ɪmˈpɑːʃl/","pos":"adj.","meaning":"不偏不倚的。指在比较或判断时不偏向某一方或某一产品。内部材料若声称比较是 impartial，就应避免只展示对某一结论有利的信息。","example":"An impartial comparison should present both the benefits and the risks.","exampleZh":"一份不偏不倚的对照，应同时呈现好处与风险。"},{"id":"gen-123","bank":"general","word":"constructive","full":"","ipa":"/kənˈstrʌktɪv/","pos":"adj.","meaning":"建设性的。指批评或意见的目的是帮助改进，而不是只指出问题或指责。给出 constructive feedback 时，最好同时说明建议如何改。","example":"Thank you for the constructive comments on the draft.","exampleZh":"感谢你对草稿提出的建设性意见。"},{"id":"gen-124","bank":"general","word":"proactive","full":"","ipa":"/prəʊˈæktɪv/","pos":"adj.","meaning":"主动的；提前行动的。指在问题变大之前就采取措施，而不是被动等待。主动沟通截止日期、风险变化和文件缺口，通常更有职业素养。","example":"A proactive reminder helped the client return the forms on time.","exampleZh":"一次主动提醒，帮助客户按时交回了表格。"},{"id":"gen-125","bank":"general","word":"accountable","full":"","ipa":"/əˈkaʊntəbl/","pos":"adj.","meaning":"须负责的。指对某项结果负有被问责的责任，即使部分工作由他人执行。明确谁是 accountable，有助于避免事情落到两不管。","example":"The product owner remains accountable for the accuracy of the pack.","exampleZh":"产品负责人仍须对材料的准确性负责。"},{"id":"gen-126","bank":"general","word":"transparent","full":"","ipa":"/trænˈspærənt/","pos":"adj.","meaning":"透明的；清楚可见的。指把方法、费用、假设和限制开放给相关方查看，而不是藏在不易发现的地方。透明有助于建立信任，但仍须遵守保密规定。","example":"The fee explanation should be transparent and easy to find.","exampleZh":"费用说明应当透明，并且容易找到。"},{"id":"gen-127","bank":"general","word":"integrity","full":"","ipa":"/ɪnˈteɡrəti/","pos":"n.","meaning":"诚信；完整。既指诚实、不刻意误导的品格，也可指数据或文件保持完整、未被不当改动。职业工作中，integrity 往往体现在即使对自己不利也如实说明。","example":"Data integrity requires that we keep an unaltered copy of the original file.","exampleZh":"数据完整性要求我们保留一份未经改动的原始文件副本。"},{"id":"gen-128","bank":"general","word":"credibility","full":"","ipa":"/ˌkredəˈbɪləti/","pos":"n.","meaning":"可信度。指他人是否愿意相信你的陈述、数据或判断。数字错误、口径前后不一，都会削弱 credibility。","example":"A single unchecked typo in the yield can damage the team's credibility.","exampleZh":"收益率上一个未经核对的笔误，就可能损害团队的可信度。"},{"id":"gen-129","bank":"general","word":"discretion","full":"","ipa":"/dɪˈskreʃn/","pos":"n.","meaning":"谨慎处理；酌情判断。既指对敏感信息保持沉默和分寸，也指在授权范围内作出判断。at your discretion 表示由你酌情决定。","example":"Please use discretion when discussing client matters in public areas.","exampleZh":"在公共区域谈论客户事务时，请注意分寸。"},{"id":"gen-130","bank":"general","word":"tact","full":"","ipa":"/tækt/","pos":"n.","meaning":"得体；圆转。在传递不便消息、纠正错误或拒绝要求时，仍能照顾对方体面并保持清楚。得体不等于含糊其辞，关键信息仍须说清。","example":"She declined the request with tact, and also explained the policy reason.","exampleZh":"她得体地拒绝了该项请求，并说明了政策上的原因。"},{"id":"gen-131","bank":"general","word":"composure","full":"","ipa":"/kəmˈpəʊʒə/","pos":"n.","meaning":"镇定。在压力、抱怨或突发错误面前保持冷静和清楚表达的能力。保持 composure 有助于把问题处理得更准，而不是被情绪带走。","example":"He kept his composure and listed the facts in order.","exampleZh":"他保持镇定，并把事实按顺序列了出来。"},{"id":"gen-132","bank":"general","word":"perseverance","full":"","ipa":"/ˌpɜːsɪˈvɪərəns/","pos":"n.","meaning":"坚持；毅力。指在困难或重复性工作中仍持续努力，但不等于盲目硬撑。把问题拆小、按计划推进，也是 perseverance 的一种表现。","example":"Checking the remaining sixty terms will take perseverance, but it is necessary.","exampleZh":"核对余下的六十项条款需要毅力，但这是必要的。"},{"id":"gen-133","bank":"general","word":"initiative","full":"","ipa":"/ɪˈnɪʃətɪv/","pos":"n.","meaning":"主动性；倡议。指在没有被人一步步吩咐时，也能看到需要并先行动。也可指一项正式启动的计划。take the initiative 即主动迈出第一步。","example":"She took the initiative to prepare a one-page glossary for the new joiners.","exampleZh":"她主动为新同事准备了一页术语表。"},{"id":"gen-134","bank":"general","word":"proficiency","full":"","ipa":"/prəˈfɪʃnsi/","pos":"n.","meaning":"熟练程度。指在某项技能上能够稳定、准确地完成任务的水平，例如语言、系统或专业工具。proficiency 通常通过实际使用而不是自称来体现。","example":"The role requires proficiency in both written Chinese and English.","exampleZh":"该岗位要求中英文书面表达都达到熟练水平。"},{"id":"gen-135","bank":"general","word":"nuance","full":"","ipa":"/ˈnjuːɑːns/","pos":"n.","meaning":"细微差别。指表面上相似的事物在含义、语气或条款上的小差异。这些差异往往决定风险是否被说准，因此值得放慢速度看清楚。","example":"There is an important nuance between official closing price and last traded price.","exampleZh":"官方收市价与最后成交价之间有一个重要的细微差别。"},{"id":"gen-136","bank":"general","word":"constraint","full":"","ipa":"/kənˈstreɪnt/","pos":"n.","meaning":"约束；限制条件。指时间、监管、系统、额度或政策等方面不能随便突破的边界。设计方案时应先承认 constraint，再谈可行路径。","example":"The main constraint is that the pack must be issued in both languages today.","exampleZh":"主要约束是：这套材料今天必须中英文一并发出。"},{"id":"gen-137","bank":"general","word":"threshold","full":"","ipa":"/ˈθreʃhəʊld/","pos":"n.","meaning":"门槛；阈值。超过该水平就会触发某一行动、警告或不同处理方式的分界点。内部审批、风险评级和补仓安排都常设有 threshold。","example":"Any loss above this threshold must be reported the same day.","exampleZh":"任何超过该门槛的亏损，都必须在当天报告。"},{"id":"gen-138","bank":"general","word":"precedent","full":"","ipa":"/ˈpresɪdənt/","pos":"n.","meaning":"先例。以往曾经采用、可能影响本次如何处理的例子。有 precedent 不等于必须照搬，因为每笔交易的事实和监管要求可能不同。","example":"We should not treat last year's exception as a binding precedent.","exampleZh":"我们不应把去年的例外当成必须遵循的先例。"},{"id":"gen-139","bank":"general","word":"repercussion","full":"","ipa":"/ˌriːpəˈkʌʃn/","pos":"n.","meaning":"连带影响；后果。通常指决定或事件在事后引发的较广泛、不一定立刻显现的影响。评估方案时，除了直接结果，也要考虑可能的 repercussions。","example":"A misleading sentence in the pack could have serious repercussions.","exampleZh":"材料中一句有误导性的话，可能带来严重的连带影响。"},{"id":"gen-140","bank":"general","word":"outlook","full":"","ipa":"/ˈaʊtlʊk/","pos":"n.","meaning":"展望；前景看法。指对未来一段时间市场、业务或情况的判断。展望是意见而不是保证，对外表述时应避免说成确定会发生。","example":"The house outlook on rates is a view, not a promise of future performance.","exampleZh":"机构对利率的展望只是一种看法，并不是对未来表现的承诺。"},{"id":"gen-141","bank":"general","word":"trajectory","full":"","ipa":"/trəˈdʒektəri/","pos":"n.","meaning":"轨迹；走向。形容事物沿着某一方向发展的路径，如学习进度、业务增长或利率路径。它是描述趋势的词，并不保证该方向会持续。","example":"Her learning trajectory has been steady since she started reviewing every morning.","exampleZh":"自从她开始每天早晨复习，学习轨迹一直很平稳。"},{"id":"gen-142","bank":"general","word":"momentum","full":"","ipa":"/məˈmentəm/","pos":"n.","meaning":"势头。指事情正在积累的前进力量，如学习、项目或市场行情的 momentum。势头可以保持，也会中断，因此需要用规律来巩固。","example":"A short daily session is enough to keep the momentum going.","exampleZh":"每天一小段时间，就足以把学习势头保持下去。"},{"id":"gen-143","bank":"general","word":"setback","full":"","ipa":"/ˈsetbæk/","pos":"n.","meaning":"挫折；反复。指进展中遇到的后退或延误。把 setback 当成可以检讨的信息，而不是否定全部努力，通常更有助于恢复进度。","example":"Missing one study day is a setback, not a reason to stop the habit.","exampleZh":"漏学一天只是一次反复，不是放弃这个习惯的理由。"},{"id":"gen-144","bank":"general","word":"buffer","full":"","ipa":"/ˈbʌfə/","pos":"n.","meaning":"缓冲。为应对延误、波动或意外而预留的时间、资金或额度。留出 buffer 是审慎安排，不是浪费。","example":"Please leave a buffer of one hour before the client call in case the review runs long.","exampleZh":"请在客户通话前预留一小时缓冲，以防审阅超时。"},{"id":"gen-145","bank":"general","word":"contingency","full":"","ipa":"/kənˈtɪndʒənsi/","pos":"n.","meaning":"应急安排；或有情况。指为可能发生但不希望发生的事情预先准备的计划。a contingency plan 即备选方案。","example":"Our contingency is to use the previous approved template if the new one is delayed.","exampleZh":"我们的应急安排是：若新模板延误，就使用此前已批准的模板。"},{"id":"gen-146","bank":"general","word":"workaround","full":"","ipa":"/ˈwɜːkəraʊnd/","pos":"n.","meaning":"权宜办法。在正式解决方案尚未到位时，用来暂时绕过障碍的做法。权宜办法应标明其临时性，并评估是否引入新的操作风险。","example":"This workaround is acceptable for today, but it should not become the process.","exampleZh":"这个权宜办法今天可以用，但不应当变成正式流程。"},{"id":"gen-147","bank":"general","word":"backlog","full":"","ipa":"/ˈbæklɒɡ/","pos":"n.","meaning":"积压。已经到来但尚未处理完的工作量。面对 backlog，通常需要先分类、再排优先次序，而不是平均用力。","example":"There is a backlog of confirmations to be checked this afternoon.","exampleZh":"今天下午还有一批成交确认书积压待核。"},{"id":"gen-148","bank":"general","word":"bandwidth","full":"","ipa":"/ˈbændwɪdθ/","pos":"n.","meaning":"可用精力或时间（亦指网络带宽）。在办公室英语里，常用来表示某人当前还能承担多少额外工作。询问 bandwidth 是在尊重对方负荷，而不是推脱的托词。","example":"I do not have the bandwidth for another review until tomorrow.","exampleZh":"在明天之前，我没有余力再做另一项审阅。"},{"id":"gen-149","bank":"general","word":"turnaround","full":"","ipa":"/ˈtɜːnəraʊnd/","pos":"n.","meaning":"周转时间；完成并交回所需的时间。也指业绩或局面的扭转。向协作方提出请求时，说明所需 turnaround，有助于对方安排。","example":"The usual turnaround for a legal review is one business day.","exampleZh":"法律审阅通常的周转时间是一个营业日。"},{"id":"gen-150","bank":"general","word":"handover","full":"","ipa":"/ˈhændəʊvə/","pos":"n.","meaning":"交接。把未完事项、文件、风险点和联系人清楚地交给下一个负责人。完整的 handover 应让对方不必再回头追问关键事实。","example":"A written handover will help the duty colleague follow up tomorrow morning.","exampleZh":"一份书面交接，将方便值班同事明天上午继续跟进。"}]};
+
+/* 每日背单词 — 单文件离线应用逻辑 */
+(function () {
+  "use strict";
+
+  const STORAGE_KEY = "lui-vocab-v1";
+  const STEMS = "甲乙丙丁戊己庚辛壬癸";
+  const BRANCHES = "子丑寅卯辰巳午未申酉戌亥";
+  const STEM_EL = ["木","木","火","火","土","土","金","金","水","水"];
+  const BRANCH_EL = ["水","土","木","木","土","火","火","土","金","金","土","水"];
+  const EL_SCORE = { "火": 2, "土": 1, "金": 0, "水": -2, "木": -2 };
+  const WEEKDAYS = ["日","一","二","三","四","五","六"];
+  const HOUR_NAMES = "子丑寅卯辰巳午未申酉戌亥";
+  const TZ_HK = "Asia/Hong_Kong";
+  const TZ_LA = "America/Los_Angeles";
+
+  const ENCOURAGE = [
+    "甲木日主，食伤为用：把单词读出声，让表达成为开运的钥匙。",
+    "你像一棵早春的大树，根深之后更要向阳生长。今天也把自己的声音交给这些词。",
+    "想得多是长处，开口和复述才是把知识变成成果的一步。",
+    "用神是火，喜的是把所学说出来、写下来、用起来。不妨大声朗读三遍。",
+    "食神生财，学以致用：今天试着把新词放进一句与工作有关的话里。",
+    "2026 年为丙午，用神火旺，适合让才华被看见。大胆读，大胆用。",
+    "伤官见长，并不只是想得细，更是表达力。单词记在心里，也要送到嘴边。",
+    "己亥大运里，约从 2027 年起更利于进修考证。眼下日日开口，正是在为那一步蓄力。"
+  ];
+
+  const state = {
+    view: "home",
+    settings: {
+      dailyNew: 10,
+      voice: "en-GB",
+      tz: TZ_HK,
+      banks: { finance: true, general: true, custom: true },
+      followBazi: true
+    },
+    progress: {},
+    customWords: [],
+    days: {},
+    welcomed: false
+  };
+
+  let session = null;
+  let quiz = null;
+  let toastTimer = 0;
+
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c];
+    });
+  }
+  function $(sel, root) { return (root || document).querySelector(sel); }
+  function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
+
+  function load() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      if (data.settings) Object.assign(state.settings, data.settings);
+      if (data.progress) state.progress = data.progress;
+      if (data.customWords) state.customWords = data.customWords;
+      if (data.days) state.days = data.days;
+      if (data.welcomed) state.welcomed = true;
+    } catch (err) {
+      console.error("读取本地进度失败", err);
+    }
+  }
+  function save() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        version: 1,
+        settings: state.settings,
+        progress: state.progress,
+        customWords: state.customWords,
+        days: state.days,
+        welcomed: state.welcomed
+      }));
+    } catch (err) {
+      toast("无法保存到本地存储，请检查浏览器是否禁用了本地存储。");
+    }
+  }
+
+  function tzParts(date, tz) {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: tz,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      weekday: "short",
+      hourCycle: "h23"
+    }).formatToParts(date);
+    const g = {};
+    parts.forEach(function (p) { if (p.type !== "literal") g[p.type] = p.value; });
+    return {
+      year: +g.year, month: +g.month, day: +g.day,
+      hour: +g.hour, minute: +g.minute, second: +g.second,
+      weekday: g.weekday
+    };
+  }
+  function pad(n) { return String(n).padStart(2, "0"); }
+  function todayISO(date) {
+    const p = tzParts(date || new Date(), state.settings.tz);
+    return p.year + "-" + pad(p.month) + "-" + pad(p.day);
+  }
+  function parseISO(iso) {
+    const a = iso.split("-");
+    return { y: +a[0], m: +a[1], d: +a[2] };
+  }
+
+  function jdn(y, m, d) {
+    const a = Math.floor((14 - m) / 12);
+    const y2 = y + 4800 - a;
+    const m2 = m + 12 * a - 3;
+    return d + Math.floor((153 * m2 + 2) / 5) + 365 * y2 + Math.floor(y2 / 4) - Math.floor(y2 / 100) + Math.floor(y2 / 400) - 32045;
+  }
+  function dayPillar(y, m, d) {
+    const idx = ((jdn(y, m, d) + 49) % 60 + 60) % 60;
+    return {
+      index: idx,
+      stem: idx % 10,
+      branch: idx % 12,
+      name: STEMS[idx % 10] + BRANCHES[idx % 12],
+      stemName: STEMS[idx % 10],
+      branchName: BRANCHES[idx % 12],
+      stemEl: STEM_EL[idx % 10],
+      branchEl: BRANCH_EL[idx % 12]
+    };
+  }
+
+  function julianDate(date) {
+    let y = date.getUTCFullYear();
+    let m = date.getUTCMonth() + 1;
+    const day = date.getUTCDate() + (date.getUTCHours() + date.getUTCMinutes() / 60 + date.getUTCSeconds() / 3600 + date.getUTCMilliseconds() / 3.6e6) / 24;
+    if (m <= 2) { y--; m += 12; }
+    const A = Math.floor(y / 100);
+    const B = 2 - A + Math.floor(A / 4);
+    return Math.floor(365.25 * (y + 4716)) + Math.floor(30.6001 * (m + 1)) + day + B - 1524.5;
+  }
+  function apparentLon(jd) {
+    const T = (jd - 2451545.0) / 36525.0;
+    const L0 = (280.46646 + 36000.76983 * T + 0.0003032 * T * T) % 360;
+    const Mdeg = (357.52911 + 35999.05029 * T - 0.0001537 * T * T) % 360;
+    const M = Mdeg * Math.PI / 180;
+    const C = (1.914602 - 0.004817 * T - 0.000014 * T * T) * Math.sin(M)
+      + (0.019993 - 0.000101 * T) * Math.sin(2 * M)
+      + 0.000289 * Math.sin(3 * M);
+    const omega = (125.04 - 1934.136 * T) * Math.PI / 180;
+    let lam = (L0 + C - 0.00569 - 0.00478 * Math.sin(omega)) % 360;
+    if (lam < 0) lam += 360;
+    return lam;
+  }
+  function yearMonthAt(date) {
+    const lon = apparentLon(julianDate(date));
+    const p = tzParts(date, state.settings.tz);
+    const lichunThis = termInstant(p.year, 315);
+    const afterLiChun = date.getTime() >= lichunThis.getTime();
+    const yearY = afterLiChun ? p.year : p.year - 1;
+    const yearIdx = ((yearY - 4) % 60 + 60) % 60;
+    const yearStem = yearIdx % 10;
+    const yearBranch = yearIdx % 12;
+    const monthBranch = Math.floor(((lon - 315 + 360) % 360) / 30);
+    const monthStemStart = [2, 4, 6, 8, 0][yearStem % 5];
+    const monthStem = (monthStemStart + monthBranch) % 10;
+    return {
+      lon: lon,
+      yearName: STEMS[yearStem] + BRANCHES[yearBranch],
+      monthName: STEMS[monthStem] + BRANCHES[(monthBranch + 2) % 12],
+      yearStem: yearStem,
+      monthBranch: monthBranch,
+      afterLiChun: afterLiChun
+    };
+  }
+  function termInstant(year, targetLon) {
+    const guessMonth = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1, 2][Math.floor(((targetLon + 360) % 360) / 30)] || 3;
+    let jd = julianDate(new Date(Date.UTC(year, guessMonth - 1, 18, 0, 0, 0)));
+    if (targetLon >= 270) jd = julianDate(new Date(Date.UTC(year, 1, 4, 0, 0, 0)));
+    if (targetLon >= 210 && targetLon < 270) jd = julianDate(new Date(Date.UTC(year, 10, 7, 0, 0, 0)));
+    for (let i = 0; i < 25; i++) {
+      const lon = apparentLon(jd);
+      let diff = (targetLon - lon + 180) % 360 - 180;
+      jd += diff / 0.98564736;
+    }
+    return new Date((jd - 2451545.0) * 86400000 + Date.UTC(2000, 0, 1, 12, 0, 0));
+  }
+  function hourBranch(hour) {
+    return Math.floor((hour + 1) / 2) % 12;
+  }
+  function hourRangeLabel(idx) {
+    const starts = [23, 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21];
+    const ends = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23];
+    return pad(starts[idx]) + ":00–" + pad(ends[idx]) + ":00";
+  }
+
+  function todayEnergy(date) {
+    const now = date || new Date();
+    const p = tzParts(now, state.settings.tz);
+    const day = dayPillar(p.year, p.month, p.day);
+    const ym = yearMonthAt(now);
+    const score = EL_SCORE[day.stemEl] + EL_SCORE[day.branchEl];
+    let tone, suggest, action;
+    if (score >= 2) {
+      tone = "用神得气";
+      suggest = "今日用神之力较旺，适合大胆记新词，并把单词大声读出来。";
+      action = "new";
+    } else if (score >= 1) {
+      tone = "喜用有助";
+      suggest = "今日能量对学习较有利，适合在复习之外增加新词，边记边开口。";
+      action = "new";
+    } else if (score >= 0) {
+      tone = "平稳可用";
+      suggest = "今日宜新词与复习并重。读出声音，比只看一眼更对路。";
+      action = "mix";
+    } else if (score >= -2) {
+      tone = "宜温故";
+      suggest = "今日水木偏重，建议以复习为主、少加新词，把已学的读熟、用准。";
+      action = "review";
+    } else {
+      tone = "宜守成";
+      suggest = "今日忌神较重，更宜温故而非贪多。把开口朗读当作今天的主功课。";
+      action = "review";
+    }
+    const hb = hourBranch(p.hour);
+    const inGood = hb === 5 || hb === 6;
+    const inOk = hb === 4 || hb === 7;
+    const inAvoid = hb === 11 || hb === 0;
+    return { p: p, day: day, ym: ym, score: score, tone: tone, suggest: suggest, action: action, hourBranch: hb, inGood: inGood, inOk: inOk, inAvoid: inAvoid };
+  }
+
+  function selfTestGanZhi() {
+    const d = dayPillar(2026, 11, 17);
+    const d2 = dayPillar(2000, 1, 1);
+    const d3 = dayPillar(2024, 1, 1);
+    const d4 = dayPillar(2026, 11, 1);
+    if (d.name !== "乙未") console.error("日柱校验失败：2026-11-17 应为乙未，实际为 " + d.name);
+    if (d2.name !== "戊午") console.error("日柱校验失败：2000-01-01 应为戊午，实际为 " + d2.name);
+    if (d3.name !== "甲子") console.error("日柱校验失败：2024-01-01 应为甲子，实际为 " + d3.name);
+    if (d4.name !== "己卯") console.error("日柱校验失败：2026-11-01 应为己卯，实际为 " + d4.name);
+    const prevTz = state.settings.tz;
+    state.settings.tz = TZ_HK;
+    const inst = new Date("2026-11-17T04:00:00Z");
+    const ym = yearMonthAt(inst);
+    if (ym.yearName !== "丙午" || ym.monthName !== "己亥") {
+      console.error("年月柱校验失败：2026-11-17 午时香港应是丙午年己亥月，实际为 " + ym.yearName + " " + ym.monthName, ym);
+    }
+    const lichun = termInstant(2026, 315);
+    const lidong = termInstant(2026, 225);
+    const xiaoxue = termInstant(2026, 240);
+    const hk = function (dt) { return tzParts(dt, TZ_HK); };
+    const a = hk(lidong);
+    const b = hk(xiaoxue);
+    if (!(a.month === 11 && a.day === 7)) console.error("立冬日期校验失败", a, lidong.toISOString());
+    if (!(b.month === 11 && b.day === 22)) console.error("小雪日期校验失败", b, xiaoxue.toISOString());
+    const c = hk(lichun);
+    if (!(c.month === 2 && c.day === 4)) console.error("立春日期校验失败", c, lichun.toISOString());
+    state.settings.tz = prevTz;
+  }
+
+  function hashStr(s) {
+    let h = 2166136261;
+    for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return h >>> 0;
+  }
+  function pickEncourage(iso) {
+    return ENCOURAGE[hashStr(iso + "-e") % ENCOURAGE.length];
+  }
+
+  function allWords() {
+    const out = [];
+    if (state.settings.banks.finance) out.push.apply(out, BANKS.finance);
+    if (state.settings.banks.general) out.push.apply(out, BANKS.general);
+    if (state.settings.banks.custom) out.push.apply(out, state.customWords);
+    return out;
+  }
+  function wordById(id) {
+    for (let i = 0; i < BANKS.finance.length; i++) if (BANKS.finance[i].id === id) return BANKS.finance[i];
+    for (let i = 0; i < BANKS.general.length; i++) if (BANKS.general[i].id === id) return BANKS.general[i];
+    for (let i = 0; i < state.customWords.length; i++) if (state.customWords[i].id === id) return state.customWords[i];
+    return null;
+  }
+  function isNew(id) {
+    const p = state.progress[id];
+    return !p || !p.seen;
+  }
+  function isDue(id, iso) {
+    const p = state.progress[id];
+    return !!(p && p.seen && p.nextReview && p.nextReview <= iso);
+  }
+
+  function effectiveNewGoal(energy) {
+    const base = Math.max(1, Math.min(50, Number(state.settings.dailyNew) || 10));
+    if (!state.settings.followBazi) return base;
+    const ev = energy || todayEnergy();
+    if (ev.score <= -1) return Math.max(3, Math.round(base * 0.5));
+    return base;
+  }
+
+  function dayLog(iso) {
+    if (!state.days[iso]) {
+      state.days[iso] = {
+        studied: 0, newCount: 0, reviewCount: 0, drillCount: 0,
+        ratings: { "1": 0, "3": 0, "5": 0 },
+        quizCorrect: 0, quizTotal: 0, goalComplete: false
+      };
+    }
+    return state.days[iso];
+  }
+  function logStudy(iso, payload) {
+    const d = dayLog(iso);
+    d.studied += payload.studied || 0;
+    d.newCount += payload.newCount || 0;
+    d.reviewCount += payload.reviewCount || 0;
+    d.drillCount += payload.drillCount || 0;
+    if (payload.rating) d.ratings[String(payload.rating)] = (d.ratings[String(payload.rating)] || 0) + 1;
+    const words = allWords();
+    const dueLeft = words.filter(function (w) { return isDue(w.id, iso); }).length;
+    const newDone = d.newCount;
+    const goal = effectiveNewGoal();
+    if (dueLeft === 0 && newDone >= goal && d.studied > 0) d.goalComplete = true;
+    save();
+  }
+
+  function streakCount(iso) {
+    let n = 0;
+    let cur = iso;
+    const todayHas = (dayLog(cur).studied || 0) + (dayLog(cur).quizTotal || 0) > 0;
+    if (!todayHas) {
+      const p = parseISO(cur);
+      const dt = new Date(Date.UTC(p.y, p.m - 1, p.d - 1));
+      cur = dt.getUTCFullYear() + "-" + pad(dt.getUTCMonth() + 1) + "-" + pad(dt.getUTCDate());
+    }
+    for (let i = 0; i < 400; i++) {
+      const d = state.days[cur];
+      if (d && ((d.studied || 0) + (d.quizTotal || 0) > 0)) {
+        n++;
+        const p = parseISO(cur);
+        const dt = new Date(Date.UTC(p.y, p.m - 1, p.d - 1));
+        cur = dt.getUTCFullYear() + "-" + pad(dt.getUTCMonth() + 1) + "-" + pad(dt.getUTCDate());
+      } else break;
+    }
+    return n;
+  }
+
+  function applySM2(prev, q, iso) {
+    const card = prev ? Object.assign({}, prev) : { ef: 2.5, interval: 0, reps: 0, lapses: 0, seen: false };
+    let ef = typeof card.ef === "number" ? card.ef : 2.5;
+    let interval = card.interval || 0;
+    let reps = card.reps || 0;
+    if (q < 3) {
+      reps = 0;
+      interval = 1;
+      card.lapses = (card.lapses || 0) + 1;
+      ef = Math.max(1.3, ef - 0.2);
+    } else if (q === 3) {
+      ef = Math.max(1.3, ef - 0.15);
+      if (reps === 0) interval = 1;
+      else interval = Math.max(1, Math.round(interval * 1.2));
+      reps += 1;
+    } else {
+      ef = ef + (0.1 - (5 - q) * (0.08 + (5 - q) * 0.02));
+      if (ef < 1.3) ef = 1.3;
+      if (reps === 0) interval = 1;
+      else if (reps === 1) interval = 6;
+      else interval = Math.max(1, Math.round(interval * ef));
+      reps += 1;
+    }
+    const p = parseISO(iso);
+    const next = new Date(Date.UTC(p.y, p.m - 1, p.d + interval));
+    card.ef = Math.round(ef * 1000) / 1000;
+    card.interval = interval;
+    card.reps = reps;
+    card.lastReview = iso;
+    card.lastQ = q;
+    card.nextReview = next.getUTCFullYear() + "-" + pad(next.getUTCMonth() + 1) + "-" + pad(next.getUTCDate());
+    card.seen = true;
+    return card;
+  }
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function toast(msg) {
+    const el = $("#toast");
+    el.textContent = msg;
+    el.classList.add("on");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { el.classList.remove("on"); }, 2400);
+  }
+
+  function speak(text, lang) {
+    if (!text) return;
+    if (!("speechSynthesis" in window)) {
+      toast("当前浏览器不支持朗读。");
+      return;
+    }
+    try {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      const use = lang || state.settings.voice || "en-GB";
+      u.lang = use;
+      u.rate = 0.92;
+      const voices = window.speechSynthesis.getVoices() || [];
+      let v = voices.filter(function (x) { return x.lang === use || x.lang.replace("_", "-") === use; })[0];
+      if (!v) v = voices.filter(function (x) { return (x.lang || "").indexOf(use.slice(0, 2)) === 0; })[0];
+      if (v) u.voice = v;
+      window.speechSynthesis.speak(u);
+    } catch (err) {
+      toast("朗读暂时不可用。");
+    }
+  }
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.addEventListener("voiceschanged", function () {});
+    try { window.speechSynthesis.getVoices(); } catch (e) {}
+  }
+
+  function showView(name) {
+    state.view = name;
+    $all(".view").forEach(function (v) { v.classList.toggle("on", v.id === "view-" + name); });
+    $all(".nav button").forEach(function (b) { b.classList.toggle("active", b.dataset.view === name); });
+    if (name === "home") renderHome();
+    if (name === "study" && !session) renderStudyIdle();
+    if (name === "quiz" && !quiz) renderQuizIdle();
+    if (name === "progress") renderProgress();
+    if (name === "library") renderLibrary();
+    window.scrollTo(0, 0);
+  }
+
+  function bankLabel(b) {
+    if (b === "finance") return "工作金融英语";
+    if (b === "general") return "通用进阶英语";
+    return "我的词库";
+  }
+
+  function renderHome() {
+    const ev = todayEnergy();
+    const iso = todayISO();
+    const words = allWords();
+    const due = words.filter(function (w) { return isDue(w.id, iso); });
+    const fresh = words.filter(function (w) { return isNew(w.id); });
+    const goal = effectiveNewGoal(ev);
+    const baseGoal = Math.max(1, Math.min(50, Number(state.settings.dailyNew) || 10));
+    const log = state.days[iso] || { studied: 0, newCount: 0, reviewCount: 0, quizCorrect: 0, quizTotal: 0, goalComplete: false };
+    const newLeft = Math.max(0, goal - (log.newCount || 0));
+    const dueCount = due.length;
+    const totalToday = dueCount + newLeft;
+    const done = log.studied || 0;
+    const denom = Math.max(1, (log.studied || 0) + totalToday);
+    const pct = Math.min(100, Math.round(((log.newCount || 0) + ((state.days[iso] && dueCount === 0 ? dueCount : Math.min(dueCount, log.reviewCount || 0))) + 0) / Math.max(1, goal + due.length + (log.reviewCount || 0) - (log.reviewCount || 0)) * 100));
+    const planned = due.length + goal;
+    const progressed = Math.min(planned, (log.newCount || 0) + (log.reviewCount || 0));
+    const barPct = planned === 0 ? (done > 0 ? 100 : 0) : Math.min(100, Math.round(progressed / planned * 100));
+    const streak = streakCount(iso);
+    const hb = ev.hourBranch;
+    const hourTip = ev.inGood
+      ? "现在正是巳午时，较宜开口学习。"
+      : ev.inOk
+        ? "现在接近土的时辰，也可以安心学一阵。"
+        : ev.inAvoid
+          ? "现在已入亥子时，宜收工休息，把睡眠放在学习前面。"
+          : "推荐学习时段是巳午时（9:00–13:00）；未时（13:00–15:00）也可作为补充。";
+    const wordOfDay = pickWordOfDay(iso, words);
+    const tzName = state.settings.tz === TZ_LA ? "洛杉矶时间" : "香港时间";
+
+    $("#view-home").innerHTML =
+      '<div class="home-grid">' +
+          '<article class="card card-energy" id="energy-card">' +
+            '<div class="kicker">今日五行能量 · 命理参考</div>' +
+            '<div class="energy-grid">' +
+              '<div class="pillar-seal"><div class="gz">' + esc(ev.day.name) + '</div><div class="sub">日柱</div></div>' +
+              '<div class="energy-copy">' +
+                '<p>' + esc(ev.ym.yearName) + "年 " + esc(ev.ym.monthName) + "月 · " + esc(ev.day.stemName) + ev.day.stemEl + " / " + esc(ev.day.branchName) + ev.day.branchEl + " · " + esc(ev.tone) + "</p>" +
+                '<div class="suggest">' + esc(ev.suggest) + "</div>" +
+              "</div>" +
+            "</div>" +
+            '<p class="disclaimer">按' + esc(tzName) + "计算。日柱以当地日历日零点换日；年柱、月柱按节气交节时刻（立春换年、节气换月）。此栏为命理参考，供娱乐与自我激励，不构成科学、医疗或投资依据。</p>" +
+          "</article>" +
+          '<article class="card card-progress">' +
+            '<h2>今日进度</h2>' +
+            '<div class="progress-row">' +
+              '<div class="stat"><b>' + (log.newCount || 0) + "/" + goal + "</b><span>新词" + (goal !== baseGoal ? "（今日建议 " + goal + "，原目标 " + baseGoal + "）" : "") + "</span></div>" +
+              '<div class="stat"><b>' + due.length + "</b><span>待复习</span></div>" +
+              '<div class="stat"><b>' + streak + "</b><span>连续学习天数</span></div>" +
+              '<div class="stat"><b>' + (log.goalComplete ? "已完成" : ((log.studied || 0) + " 张")) + "</b><span>今日目标</span></div>" +
+            "</div>" +
+            '<div class="bar" aria-hidden="true"><i style="width:' + barPct + '%"></i></div>' +
+            '<div class="cta-row" style="margin-top:12px">' +
+              '<button class="btn btn-primary" id="btn-start-study" type="button">开始今日学习</button>' +
+              '<button class="btn btn-ghost" id="btn-start-quiz" type="button">快速测验</button>' +
+            "</div>" +
+          "</article>" +
+          '<article class="card card-hours">' +
+            '<h2>学习时辰</h2>' +
+            '<div class="hours">' +
+              '<span class="chip' + (ev.inGood ? " now" : "") + '">用神 · 巳午时 09:00–13:00</span>' +
+              '<span class="chip' + (ev.inOk ? " now" : "") + '">喜神 · 辰未时可作补充</span>' +
+              '<span class="chip warn' + (ev.inAvoid ? " now" : "") + '">亥子时请收工休息</span>' +
+            "</div>" +
+            '<p class="muted" style="margin:10px 0 0">当前' + pad(ev.p.hour) + ":" + pad(ev.p.minute) + "，" + HOUR_NAMES[hb] + "时（" + hourRangeLabel(hb) + "）。" + esc(hourTip) + "报告也提示本年宜留意睡眠与情绪，不必熬夜背词。</p>" +
+          "</article>" +
+          '<article class="card card-encourage">' +
+            '<p class="encourage">' + esc(pickEncourage(iso)) + "</p>" +
+          "</article>" +
+          (wordOfDay ? (
+            '<article class="card word-today card-word">' +
+              '<div class="kicker">今日一词</div>' +
+              '<div class="en">' + esc(wordOfDay.word) + "</div>" +
+              (wordOfDay.full ? '<div class="full muted">' + esc(wordOfDay.full) + "</div>" : "") +
+              '<div class="ipa">' + esc(wordOfDay.ipa || "") + "</div>" +
+              '<p class="muted" style="margin:8px 0 0">' + esc((wordOfDay.meaning || "").split("。")[0]) + "。</p>" +
+              '<div class="cta-row" style="margin-top:10px"><button class="btn btn-gold" type="button" id="btn-speak-today">朗读这个词</button></div>' +
+            "</article>"
+          ) : "") +
+      "</div>";
+
+    $("#btn-start-study").addEventListener("click", function () { startStudy("today"); });
+    $("#btn-start-quiz").addEventListener("click", function () { startQuiz("mix"); showView("quiz"); });
+    const sp = $("#btn-speak-today");
+    if (sp && wordOfDay) sp.addEventListener("click", function (e) {
+      e.preventDefault();
+      speak(wordOfDay.full ? (wordOfDay.word + ", " + wordOfDay.full) : wordOfDay.word);
+    });
+  }
+
+  function pickWordOfDay(iso, words) {
+    if (!words.length) return null;
+    const unseen = words.filter(function (w) { return isNew(w.id); });
+    const pool = unseen.length ? unseen : words;
+    return pool[hashStr(iso + "-w") % pool.length];
+  }
+
+
+
+  function renderStudyIdle() {
+    const iso = todayISO();
+    const words = allWords();
+    const due = words.filter(function (w) { return isDue(w.id, iso); }).length;
+    const goal = effectiveNewGoal();
+    const leftNew = Math.max(0, goal - ((state.days[iso] && state.days[iso].newCount) || 0));
+    $("#view-study").innerHTML =
+      '<article class="card">' +
+        "<h2>开始学习</h2>" +
+        '<p class="muted">待复习 ' + due + " 词，今日还可学新词 " + leftNew + " 个（目标按今日建议计算）。不认识的词会在本轮稍后再次出现。</p>" +
+        '<div class="cta-row" style="margin-top:12px">' +
+          '<button class="btn btn-primary" id="btn-study-today" type="button">按今日安排学</button>' +
+          '<button class="btn btn-ghost" id="btn-study-review" type="button">只复习</button>' +
+          '<button class="btn btn-gold" id="btn-study-new" type="button">再学一组新词</button>' +
+        "</div>" +
+      "</article>";
+    $("#btn-study-today").addEventListener("click", function () { startStudy("today"); });
+    $("#btn-study-review").addEventListener("click", function () { startStudy("review"); });
+    $("#btn-study-new").addEventListener("click", function () { startStudy("new"); });
+  }
+
+  function startStudy(mode) {
+    const iso = todayISO();
+    const words = allWords();
+    if (!words.length) { toast("请先在「词库」中启用至少一个词库。"); showView("library"); return; }
+    const due = shuffle(words.filter(function (w) { return isDue(w.id, iso); }));
+    const fresh = shuffle(words.filter(function (w) { return isNew(w.id); }));
+    const goal = effectiveNewGoal();
+    const already = (state.days[iso] && state.days[iso].newCount) || 0;
+    const leftNew = Math.max(0, goal - already);
+    let queue = [];
+    if (mode === "review") {
+      due.forEach(function (w) { queue.push({ word: w, kind: "review" }); });
+    } else if (mode === "new") {
+      fresh.slice(0, goal).forEach(function (w) { queue.push({ word: w, kind: "new" }); });
+    } else {
+      due.forEach(function (w) { queue.push({ word: w, kind: "review" }); });
+      fresh.slice(0, leftNew).forEach(function (w) { queue.push({ word: w, kind: "new" }); });
+    }
+    if (!queue.length) {
+      toast(mode === "review" ? "暂时没有到期复习。" : "今天的新词已完成，可做测验或再学一组。");
+      renderStudyIdle();
+      return;
+    }
+    session = { i: 0, queue: queue, revealed: false, rated: 0 };
+    renderCard();
+    showView("study");
+  }
+
+  function renderCard() {
+    if (!session || session.i >= session.queue.length) { renderSessionDone(); return; }
+    const item = session.queue[session.i];
+    const w = item.word;
+    const n = session.queue.length;
+    const i = session.i + 1;
+    const shown = session.revealed;
+    $("#view-study").innerHTML =
+      '<div class="study-top"><span class="muted">第 ' + i + " / " + n + " 张 · " + esc(bankLabel(w.bank)) + (item.kind === "drill" ? " · 再练一次" : (item.kind === "new" ? " · 新词" : " · 复习")) + '</span><button class="icon-btn" type="button" id="btn-study-end" title="结束本轮">✕</button></div>' +
+      '<article class="card flash" id="flash-card" tabindex="0">' +
+        '<div class="word" id="card-word">' + esc(w.word) + "</div>" +
+        (w.full ? '<div class="full">' + esc(w.full) + "</div>" : "") +
+        '<div class="ipa">' + esc(w.ipa || "") + "</div>" +
+        '<div class="speak-row">' +
+          '<button class="speak" type="button" data-lang="en-GB" id="speak-gb">英音</button>' +
+          '<button class="speak" type="button" data-lang="en-US" id="speak-us">美音</button>' +
+        "</div>" +
+        (shown ? (
+          '<div class="pos-tag">' + esc(w.pos || "") + "</div>" +
+          '<div class="meaning">' + esc(w.meaning || "") + "</div>" +
+          (w.example ? '<div class="example"><div class="en">' + esc(w.example) + '</div><div class="zh">' + esc(w.exampleZh || "") + '</div><button class="speak" type="button" id="speak-ex" style="margin-top:8px">朗读例句</button></div>' : "")
+        ) : '<div class="hint-flip">轻点卡片显示释义，先试着自己说出来</div>') +
+      "</article>" +
+      (shown
+        ? '<div class="rate-bar">' +
+            '<button class="rate again" type="button" data-q="1" id="rate-1">不认识</button>' +
+            '<button class="rate hard" type="button" data-q="3" id="rate-3">模糊</button>' +
+            '<button class="rate good" type="button" data-q="5" id="rate-5">认识</button>' +
+          "</div>"
+        : '<div class="cta-row"><button class="btn btn-primary" type="button" id="btn-reveal">显示释义</button></div>');
+    function reveal() {
+      session.revealed = true;
+      renderCard();
+    }
+    const flash = $("#flash-card");
+    if (!shown) {
+      flash.addEventListener("click", function (e) {
+        if (e.target.closest && e.target.closest("button")) return;
+        reveal();
+      });
+      $("#btn-reveal").addEventListener("click", function (e) { e.stopPropagation(); reveal(); });
+    }
+    const speakText = w.full ? (w.word + ". " + w.full) : w.word;
+    $("#speak-gb").addEventListener("click", function (e) { e.stopPropagation(); speak(speakText, "en-GB"); });
+    $("#speak-us").addEventListener("click", function (e) { e.stopPropagation(); speak(speakText, "en-US"); });
+    const ex = $("#speak-ex");
+    if (ex) ex.addEventListener("click", function (e) { e.stopPropagation(); speak(w.example, state.settings.voice); });
+    if (shown) {
+      $all(".rate").forEach(function (btn) {
+        btn.addEventListener("click", function () { rateCard(+btn.getAttribute("data-q")); });
+      });
+    }
+    $("#btn-study-end").addEventListener("click", function () {
+      session = null;
+      renderStudyIdle();
+      toast("已结束本轮，进度已保存。");
+    });
+  }
+
+  function rateCard(q) {
+    if (!session || !session.revealed) return;
+    const item = session.queue[session.i];
+    const w = item.word;
+    const iso = todayISO();
+    const wasNew = isNew(w.id);
+    state.progress[w.id] = applySM2(state.progress[w.id], q, iso);
+    session.rated += 1;
+    const payload = { studied: 1, rating: q, newCount: 0, reviewCount: 0, drillCount: 0 };
+    if (item.kind === "drill") payload.drillCount = 1;
+    else if (wasNew) payload.newCount = 1;
+    else payload.reviewCount = 1;
+    logStudy(iso, payload);
+    if (q < 3) {
+      const pos = Math.min(session.queue.length, session.i + 4);
+      session.queue.splice(pos, 0, { word: w, kind: "drill" });
+    }
+    session.i += 1;
+    session.revealed = false;
+    if (session.i >= session.queue.length) renderSessionDone();
+    else renderCard();
+  }
+
+  function renderSessionDone() {
+    const rated = session ? session.rated : 0;
+    session = null;
+    const iso = todayISO();
+    const log = state.days[iso] || {};
+    $("#view-study").innerHTML =
+      '<article class="card" style="text-align:center;padding:28px 16px">' +
+        '<div class="kicker">本轮完成</div>' +
+        '<h2 style="margin-top:6px">已经开口 ' + rated + " 次</h2>" +
+        '<p class="muted">今日累计学习 ' + (log.studied || 0) + " 张，新词 " + (log.newCount || 0) + "，复习 " + (log.reviewCount || 0) + "。" + (log.goalComplete ? "今日目标已完成。" : "") + "</p>" +
+        '<div class="cta-row" style="margin-top:16px">' +
+          '<button class="btn btn-primary" id="btn-more-study" type="button">再学一组</button>' +
+          '<button class="btn btn-ghost" id="btn-go-quiz" type="button">去做测验</button>' +
+        "</div>" +
+      "</article>";
+    $("#btn-more-study").addEventListener("click", function () { startStudy("today"); });
+    $("#btn-go-quiz").addEventListener("click", function () { startQuiz("mix"); showView("quiz"); });
+  }
+
+  function renderQuizIdle() {
+    $("#view-quiz").innerHTML =
+      '<article class="card">' +
+        "<h2>快速测验</h2>" +
+        '<p class="muted">从已学单词中抽题；若还没有学过，则暂时使用当前词库。可选择看英文选中文、看中文选英文，或拼写。</p>' +
+        '<div class="cta-row" style="margin-top:12px">' +
+          '<button class="btn btn-primary" data-type="mix" type="button">综合测验</button>' +
+          '<button class="btn btn-ghost" data-type="mcq-zh" type="button">看英文选中文</button>' +
+          '<button class="btn btn-ghost" data-type="mcq-en" type="button">看中文选英文</button>' +
+          '<button class="btn btn-gold" data-type="spell" type="button">拼写</button>' +
+        "</div>" +
+      "</article>";
+    $all("[data-type]", $("#view-quiz")).forEach(function (b) {
+      b.addEventListener("click", function () { startQuiz(b.getAttribute("data-type")); });
+    });
+  }
+
+  function shortMeaning(w) {
+    const s = (w.meaning || "").trim();
+    const cut = s.split("。")[0];
+    return cut || s;
+  }
+  function quizPool() {
+    const words = allWords();
+    const seen = words.filter(function (w) { return state.progress[w.id] && state.progress[w.id].seen; });
+    return (seen.length >= 4 ? seen : words).slice();
+  }
+  function startQuiz(type) {
+    const pool = quizPool();
+    if (pool.length < 4) { toast("词库不足四词，无法出选择题。"); renderQuizIdle(); return; }
+    const n = Math.min(10, pool.length);
+    const picked = shuffle(pool).slice(0, n);
+    quiz = { type: type, i: 0, items: picked, score: 0, total: 0, answered: false, lastType: [] };
+    picked.forEach(function () {
+      if (type === "mix") {
+        const r = Math.random();
+        quiz.lastType.push(r < 0.4 ? "mcq-zh" : r < 0.8 ? "mcq-en" : "spell");
+      } else quiz.lastType.push(type);
+    });
+    renderQuizQ();
+  }
+  function renderQuizQ() {
+    if (!quiz || quiz.i >= quiz.items.length) { renderQuizDone(); return; }
+    const w = quiz.items[quiz.i];
+    const typ = quiz.lastType[quiz.i];
+    const head = '<div class="study-top"><span class="muted">第 ' + (quiz.i + 1) + " / " + quiz.items.length + " 题 · 已对 " + quiz.score + '</span><button class="icon-btn" type="button" id="btn-quiz-end">✕</button></div>';
+    let body = "";
+    if (typ === "spell") {
+      body = '<article class="card">' +
+        '<div class="kicker">拼写</div>' +
+        '<p class="muted">' + esc(shortMeaning(w)) + "</p>" +
+        (w.exampleZh ? '<p class="muted">提示例句：' + esc(w.exampleZh) + "</p>" : "") +
+        '<div class="speak-row"><button class="speak" type="button" id="quiz-speak">听发音</button></div>' +
+        '<input class="spell-input" id="spell-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="请输入英文单词">' +
+        '<div class="cta-row" style="margin-top:12px"><button class="btn btn-primary" type="button" id="btn-spell-ok">提交</button></div>' +
+        '<div id="quiz-fb"></div>' +
+      "</article>";
+    } else if (typ === "mcq-en") {
+      const opts = makeOptions(w, "word");
+      body = '<article class="card">' +
+        '<div class="kicker">看中文选英文</div>' +
+        '<p class="muted">' + esc(shortMeaning(w)) + "</p>" +
+        '<div class="choices" id="choices">' + opts.map(function (o, i) {
+          return '<button class="choice" type="button" data-i="' + i + '">' + esc(o.word) + (o.full ? " <span class='muted'>(" + esc(o.full) + ")</span>" : "") + "</button>";
+        }).join("") + "</div><div id='quiz-fb'></div></article>";
+      quiz._opts = opts;
+    } else {
+      const opts = makeOptions(w, "meaning");
+      body = '<article class="card">' +
+        '<div class="kicker">看英文选中文</div>' +
+        '<div class="quiz-q">' + esc(w.word) + "</div>" +
+        (w.full ? '<p class="muted" style="text-align:center">' + esc(w.full) + "</p>" : "") +
+        '<div class="speak-row"><button class="speak" type="button" id="quiz-speak">朗读</button></div>' +
+        '<div class="choices" id="choices">' + opts.map(function (o, i) {
+          return '<button class="choice" type="button" data-i="' + i + '">' + esc(shortMeaning(o)) + "</button>";
+        }).join("") + "</div><div id='quiz-fb'></div></article>";
+      quiz._opts = opts;
+    }
+    $("#view-quiz").innerHTML = head + body;
+    $("#btn-quiz-end").addEventListener("click", function () { quiz = null; renderQuizIdle(); });
+    const qs = $("#quiz-speak");
+    if (qs) qs.addEventListener("click", function () { speak(w.full ? (w.word + ". " + w.full) : w.word, state.settings.voice); });
+    if (typ === "spell") {
+      const input = $("#spell-input");
+      input.focus();
+      const submit = function () { answerSpell(input.value); };
+      $("#btn-spell-ok").addEventListener("click", submit);
+      input.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
+    } else {
+      $all(".choice").forEach(function (btn) {
+        btn.addEventListener("click", function () { answerMcq(+btn.getAttribute("data-i")); });
+      });
+    }
+  }
+  function makeOptions(correct, by) {
+    const pool = shuffle(allWords().filter(function (w) { return w.id !== correct.id; })).slice(0, 3);
+    return shuffle(pool.concat([correct]));
+  }
+  function spellEq(a, b) {
+    const n = function (s) {
+      return String(s).toLowerCase().trim().replace(/[-–—]/g, " ").replace(/[^a-z0-9+ ]/g, "").replace(/\s+/g, " ");
+    };
+    return n(a) === n(b);
+  }
+  function gradeQuiz(ok, detailHtml) {
+    if (quiz.answered) return;
+    quiz.answered = true;
+    quiz.total += 1;
+    if (ok) quiz.score += 1;
+    const iso = todayISO();
+    const d = dayLog(iso);
+    d.quizTotal += 1;
+    if (ok) d.quizCorrect += 1;
+    save();
+    const fb = $("#quiz-fb");
+    fb.innerHTML = '<p style="margin:12px 0 0;font-size:0.92rem">' + (ok ? "回答正确。" : "这一题还需要再看一看。") + "</p>" + (detailHtml || "") +
+      '<div class="cta-row" style="margin-top:10px"><button class="btn btn-primary" type="button" id="btn-quiz-next">' + (quiz.i + 1 >= quiz.items.length ? "查看成绩" : "下一题") + "</button></div>";
+    $("#btn-quiz-next").addEventListener("click", function () {
+      quiz.i += 1;
+      quiz.answered = false;
+      renderQuizQ();
+    });
+  }
+  function answerMcq(i) {
+    if (!quiz || quiz.answered) return;
+    const w = quiz.items[quiz.i];
+    const opts = quiz._opts;
+    const chosen = opts[i];
+    const ok = chosen.id === w.id;
+    $all(".choice").forEach(function (btn, idx) {
+      if (opts[idx].id === w.id) btn.classList.add("correct");
+      else if (idx === i) btn.classList.add("wrong");
+      btn.disabled = true;
+    });
+    gradeQuiz(ok, '<p class="muted">' + esc(w.word) + (w.full ? "（" + esc(w.full) + "）" : "") + "：" + esc(shortMeaning(w)) + "</p>");
+  }
+  function answerSpell(val) {
+    if (!quiz || quiz.answered) return;
+    const w = quiz.items[quiz.i];
+    const ok = spellEq(val, w.word) || (w.full && spellEq(val, w.full));
+    const input = $("#spell-input");
+    if (input) input.disabled = true;
+    gradeQuiz(ok, '<p class="muted">答案：' + esc(w.word) + (w.full ? " / " + esc(w.full) + "" : "") + "</p>");
+  }
+  function renderQuizDone() {
+    const score = quiz ? quiz.score : 0;
+    const total = quiz ? quiz.total : 0;
+    quiz = null;
+    $("#view-quiz").innerHTML =
+      '<article class="card" style="text-align:center;padding:28px 16px">' +
+        '<div class="kicker">测验结束</div>' +
+        "<h2>答对 " + score + " / " + total + "</h2>" +
+        '<p class="muted">' + (total && score / total >= 0.8 ? "很稳，可以把今天学的词再读一遍。" : "错过的词可以回到学习里再看一眼。") + "</p>" +
+        '<div class="cta-row" style="margin-top:16px">' +
+          '<button class="btn btn-primary" id="btn-quiz-again" type="button">再测一组</button>' +
+          '<button class="btn btn-ghost" id="btn-quiz-home" type="button">返回今日</button>' +
+        "</div></article>";
+    $("#btn-quiz-again").addEventListener("click", function () { startQuiz("mix"); });
+    $("#btn-quiz-home").addEventListener("click", function () { showView("home"); });
+  }
+
+  function mastered(p) {
+    return p && p.seen && ((p.interval || 0) >= 21 || ((p.reps || 0) >= 3 && (p.ef || 0) >= 2.5));
+  }
+  function renderProgress() {
+    const iso = todayISO();
+    const words = allWords();
+    const seen = words.filter(function (w) { return state.progress[w.id] && state.progress[w.id].seen; });
+    const mast = seen.filter(function (w) { return mastered(state.progress[w.id]); });
+    const due = words.filter(function (w) { return isDue(w.id, iso); });
+    const streak = streakCount(iso);
+    let quizC = 0, quizT = 0;
+    Object.keys(state.days).forEach(function (k) { quizC += state.days[k].quizCorrect || 0; quizT += state.days[k].quizTotal || 0; });
+    const banks = [
+      { id: "finance", name: "工作金融英语", list: BANKS.finance },
+      { id: "general", name: "通用进阶英语", list: BANKS.general },
+      { id: "custom", name: "我的词库", list: state.customWords }
+    ];
+    const bankHtml = banks.map(function (b) {
+      const s = b.list.filter(function (w) { return state.progress[w.id] && state.progress[w.id].seen; }).length;
+      return '<div class="list-item"><span>' + esc(b.name) + '</span><span>' + s + " / " + b.list.length + "</span></div>";
+    }).join("");
+    $("#view-progress").innerHTML =
+      '<article class="card"><h2>学习统计</h2>' +
+        '<div class="stats-grid">' +
+          '<div class="stat"><b>' + seen.length + "</b><span>已学单词</span></div>" +
+          '<div class="stat"><b>' + mast.length + "</b><span>较稳固</span></div>" +
+          '<div class="stat"><b>' + due.length + "</b><span>今日待复习</span></div>" +
+          '<div class="stat"><b>' + streak + "</b><span>连续天数</span></div>" +
+          '<div class="stat"><b>' + (quizT ? Math.round(quizC / quizT * 100) + "%" : "—") + "</b><span>测验正确率</span></div>" +
+          '<div class="stat"><b>' + words.length + "</b><span>当前词库总量</span></div>" +
+        "</div></article>" +
+      '<article class="card"><h2>学习日历</h2><div class="heat" id="heat"></div><div class="legend">较少 <span class="heat-cell"></span><span class="heat-cell" style="background:#F0D59A"></span><span class="heat-cell" style="background:#E07A35"></span><span class="heat-cell" style="background:#C43C22"></span> 较多</div></article>' +
+      '<article class="card"><h2>各词库进度</h2><div class="list">' + bankHtml + "</div></article>" +
+      (due.length ? '<article class="card"><h2>今日待复习</h2><div class="list">' + due.slice(0, 30).map(function (w) {
+        return '<div class="list-item"><span class="w">' + esc(w.word) + '</span><span class="muted">' + esc(shortMeaning(w)) + '</span></div>';
+      }).join("") + (due.length > 30 ? '<p class="muted">以及另外 ' + (due.length - 30) + " 词</p>" : "") + "</div></article>" : "");
+    renderHeatmap($("#heat"), iso);
+  }
+  function renderHeatmap(root, iso) {
+    if (!root) return;
+    const p = parseISO(iso);
+    const today = new Date(Date.UTC(p.y, p.m - 1, p.d));
+    const dow = today.getUTCDay();
+    const mondayOffset = (dow + 6) % 7;
+    const end = new Date(today.getTime() + (6 - mondayOffset) * 86400000);
+    const weeks = 20;
+    const start = new Date(end.getTime() - (weeks * 7 - 1) * 86400000);
+    let max = 1;
+    const cells = [];
+    for (let i = 0; i < weeks * 7; i++) {
+      const dt = new Date(start.getTime() + i * 86400000);
+      const key = dt.getUTCFullYear() + "-" + pad(dt.getUTCMonth() + 1) + "-" + pad(dt.getUTCDate());
+      const d = state.days[key];
+      const v = d ? (d.studied || 0) + (d.quizTotal || 0) : 0;
+      if (v > max) max = v;
+      cells.push({ key: key, v: v, future: dt > today });
+    }
+    root.innerHTML = '<div class="heat-grid" id="heat-grid"></div>';
+    const grid = $("#heat-grid", root);
+    cells.forEach(function (c) {
+      const el = document.createElement("div");
+      el.className = "heat-cell";
+      if (!c.future && c.v > 0) {
+        const t = c.v / max;
+        el.style.background = t > 0.75 ? "#C43C22" : t > 0.45 ? "#E07A35" : t > 0.2 ? "#E8A31A" : "#F0D59A";
+      } else if (c.future) el.style.opacity = "0.25";
+      el.title = c.key + " · " + c.v + " 次";
+      grid.appendChild(el);
+    });
+  }
+
+  function renderLibrary() {
+    const s = state.settings;
+    $("#view-library").innerHTML =
+      '<article class="card"><h2>词库</h2>' +
+        toggleRow("bank-finance", "工作金融英语（" + BANKS.finance.length + " 词）", s.banks.finance) +
+        toggleRow("bank-general", "通用进阶英语（" + BANKS.general.length + " 词）", s.banks.general) +
+        toggleRow("bank-custom", "我的词库（" + state.customWords.length + " 词）", s.banks.custom) +
+      "</article>" +
+      '<article class="card"><h2>学习设置</h2>' +
+        '<div class="field"><label for="daily-new">每日新词目标</label><input id="daily-new" type="number" min="1" max="50" value="' + esc(s.dailyNew) + '"></div>' +
+        '<div class="field"><label for="voice">默认朗读口音</label><select id="voice">' +
+        '<option value="en-GB"' + (s.voice === "en-GB" ? " selected" : "") + '>英式英语（en-GB）</option>' +
+        '<option value="en-US"' + (s.voice === "en-US" ? " selected" : "") + '>美式英语（en-US）</option></select></div>' +
+        '<div class="field"><label for="tz">日期与时辰所用时区</label><select id="tz">' +
+        '<option value="' + TZ_HK + '"' + (s.tz === TZ_HK ? " selected" : "") + '>香港时间（Asia/Hong_Kong）</option>' +
+        '<option value="' + TZ_LA + '"' + (s.tz === TZ_LA ? " selected" : "") + '>洛杉矶时间（America/Los_Angeles）</option></select></div>' +
+        toggleRow("follow-bazi", "按今日五行建议调整新词数量", s.followBazi) +
+        '<p class="disclaimer">开启后，水木偏重的日子会把新词目标减半（至少 3 个），并建议以复习为主；火土较旺的日子保持你设定的目标。</p>' +
+      "</article>" +
+      '<article class="card"><h2>导入与备份</h2>' +
+        '<p class="muted">导入自己的单词：每行一条，格式为 <code>word,meaning,example</code>。也可导入此前导出的 JSON 备份。</p>' +
+        '<div class="field"><label for="import-text">粘贴 CSV 或 JSON</label><textarea id="import-text" placeholder="term,条款,Please read the term carefully."></textarea></div>' +
+        '<div class="cta-row">' +
+          '<button class="btn btn-primary" type="button" id="btn-import">导入</button>' +
+          '<label class="btn btn-ghost" style="cursor:pointer">选择文件<input id="import-file" type="file" accept=".csv,.txt,.json,text/csv,application/json" hidden></label>' +
+        "</div>" +
+        '<div class="cta-row" style="margin-top:10px">' +
+          '<button class="btn btn-gold" type="button" id="btn-export">导出备份 JSON</button>' +
+          '<button class="btn btn-ghost" type="button" id="btn-copy">复制备份</button>' +
+        "</div>" +
+      "</article>" +
+      '<article class="card"><h2>关于与说明</h2>' +
+        '<p class="muted">本页为单文件离线应用，学习进度只保存在本机浏览器的本地存储中，不会上传。金融词释义力求与香港证监会、金管局、投资者及理财教育委员会及通行发行文件用语一致；具体产品条款仍以发行文件及现行法规为准，本页不构成投资建议。</p>' +
+        '<p class="muted">八字个性化依据公开给本页使用的命盘摘要：日主甲木，生于寅月，身偏旺；用神为火（食伤），喜神为土（财），金可少用；忌过重的水与木。2026 年为丙午，用神火旺，报告提示宜留意睡眠与情绪。日柱算法已用 2026-11-17（乙未日）、2000-01-01（戊午日）、2024-01-01（甲子日）核对；年月柱按节气交节，2026-11-17 为丙午年己亥月。</p>' +
+        '<p class="disclaimer">命理内容仅供参考与自我激励，不构成科学、医疗、法律或投资建议。若把本页添加到手机主屏幕，即可像小工具一样离线使用。</p>' +
+        '<div class="cta-row" style="margin-top:10px"><button class="btn btn-ghost" type="button" id="btn-reset">清空学习进度</button></div>' +
+      "</article>";
+    bindToggles();
+    $("#daily-new").addEventListener("change", function () {
+      state.settings.dailyNew = Math.max(1, Math.min(50, parseInt($("#daily-new").value, 10) || 10));
+      save();
+    });
+    $("#voice").addEventListener("change", function () { state.settings.voice = $("#voice").value; save(); });
+    $("#tz").addEventListener("change", function () { state.settings.tz = $("#tz").value; save(); toast("时区已更新。"); });
+    $("#btn-import").addEventListener("click", function () { doImport($("#import-text").value, false); });
+    $("#import-file").addEventListener("change", function (e) {
+      const f = e.target.files && e.target.files[0];
+      if (!f) return;
+      const reader = new FileReader();
+      reader.onload = function () { doImport(String(reader.result || ""), /\.json$/i.test(f.name) || String(f.type).indexOf("json") >= 0); };
+      reader.readAsText(f);
+      e.target.value = "";
+    });
+    $("#btn-export").addEventListener("click", function () { exportBackup(false); });
+    $("#btn-copy").addEventListener("click", function () { exportBackup(true); });
+    $("#btn-reset").addEventListener("click", function () {
+      if (window.confirm("确定清空学习进度、测验记录和每日统计吗？自定义单词不会删除。")) {
+        state.progress = {};
+        state.days = {};
+        save();
+        toast("进度已清空。");
+        renderLibrary();
+      }
+    });
+  }
+  function toggleRow(id, label, on) {
+    return '<div class="toggle"><label for="' + id + '">' + esc(label) + '</label><label class="switch"><input type="checkbox" id="' + id + '"' + (on ? " checked" : "") + '><span></span></label></div>';
+  }
+  function bindToggles() {
+    const map = {
+      "bank-finance": function (v) { state.settings.banks.finance = v; },
+      "bank-general": function (v) { state.settings.banks.general = v; },
+      "bank-custom": function (v) { state.settings.banks.custom = v; },
+      "follow-bazi": function (v) { state.settings.followBazi = v; }
+    };
+    Object.keys(map).forEach(function (id) {
+      const el = $("#" + id);
+      if (!el) return;
+      el.addEventListener("change", function () { map[id](el.checked); save(); });
+    });
+  }
+
+  function exportObject() {
+    return {
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      settings: state.settings,
+      progress: state.progress,
+      customWords: state.customWords,
+      days: state.days
+    };
+  }
+  function exportBackup(copyOnly) {
+    const json = JSON.stringify(exportObject(), null, 2);
+    if (copyOnly) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(json).then(function () { toast("备份已复制。"); }, function () { fallbackCopy(json); });
+      } else fallbackCopy(json);
+      return;
+    }
+    const iso = todayISO();
+    const name = "每日背单词备份_" + iso + ".json";
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+    toast("已尝试下载备份。若设备无法下载，请改用复制备份。");
+  }
+  function fallbackCopy(text) {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand("copy");
+      toast("备份已复制。");
+    } catch (e) {
+      toast("无法自动复制，请改用选择文件或手动复制文本框。");
+    }
+    document.body.removeChild(ta);
+  }
+
+  function parseCSV(text) {
+    const rows = [];
+    let row = [], cell = "", i = 0, q = false;
+    const s = String(text).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+    while (i < s.length) {
+      const ch = s[i];
+      if (q) {
+        if (ch === '"') {
+          if (s[i + 1] === '"') { cell += '"'; i += 2; continue; }
+          q = false; i++; continue;
+        }
+        cell += ch; i++; continue;
+      }
+      if (ch === '"') { q = true; i++; continue; }
+      if (ch === ",") { row.push(cell); cell = ""; i++; continue; }
+      if (ch === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; i++; continue; }
+      cell += ch; i++;
+    }
+    if (cell.length || row.length) { row.push(cell); rows.push(row); }
+    return rows.filter(function (r) { return r.some(function (c) { return String(c).trim() !== ""; }); });
+  }
+  function doImport(raw, forceJson) {
+    const text = String(raw || "").trim();
+    if (!text) { toast("请先粘贴内容或选择文件。"); return; }
+    if (forceJson || text.charAt(0) === "{") {
+      try {
+        const data = JSON.parse(text);
+        if (!data || typeof data !== "object") throw new Error("格式不正确");
+        const mode = window.confirm("导入备份：确定后将合并进度与自定义单词。取消则中止。\n\n若要完全覆盖现有进度，请先在下方清空学习进度，再导入。") ? "merge" : "";
+        if (!mode) return;
+        if (data.settings) Object.assign(state.settings, data.settings);
+        if (data.progress) Object.assign(state.progress, data.progress);
+        if (data.days) {
+          Object.keys(data.days).forEach(function (k) {
+            if (!state.days[k]) state.days[k] = data.days[k];
+            else {
+              const a = state.days[k], b = data.days[k];
+              a.studied = Math.max(a.studied || 0, b.studied || 0);
+              a.newCount = Math.max(a.newCount || 0, b.newCount || 0);
+              a.reviewCount = Math.max(a.reviewCount || 0, b.reviewCount || 0);
+              a.quizCorrect = Math.max(a.quizCorrect || 0, b.quizCorrect || 0);
+              a.quizTotal = Math.max(a.quizTotal || 0, b.quizTotal || 0);
+              a.goalComplete = !!(a.goalComplete || b.goalComplete);
+            }
+          });
+        }
+        if (Array.isArray(data.customWords)) {
+          const have = {};
+          state.customWords.forEach(function (w) { have[w.word.toLowerCase()] = w; });
+          data.customWords.forEach(function (w) {
+            if (!w || !w.word) return;
+            const key = String(w.word).toLowerCase();
+            if (have[key]) Object.assign(have[key], w);
+            else {
+              if (!w.id) w.id = "custom-" + Date.now() + "-" + Math.random().toString(36).slice(2, 7);
+              w.bank = "custom";
+              state.customWords.push(w);
+              have[key] = w;
+            }
+          });
+        }
+        save();
+        toast("备份已合并导入。");
+        renderLibrary();
+        return;
+      } catch (e) {
+        if (forceJson) { toast("无法解析该 JSON 备份。"); return; }
+      }
+    }
+    const rows = parseCSV(text);
+    if (!rows.length) { toast("没有读到有效的行。"); return; }
+    let start = 0;
+    const header = rows[0].map(function (c) { return String(c).trim().toLowerCase(); });
+    const looksHeader = header[0] === "word" || header[0] === "单词" || header.indexOf("meaning") >= 0;
+    const idx = { word: 0, meaning: 1, example: 2, exampleZh: -1, ipa: -1, pos: -1, full: -1 };
+    if (looksHeader) {
+      start = 1;
+      header.forEach(function (h, i) {
+        if (h === "word" || h === "单词" || h === "term") idx.word = i;
+        if (h === "meaning" || h === "释义" || h === "中文") idx.meaning = i;
+        if (h === "example" || h === "例句") idx.example = i;
+        if (h === "examplezh" || h === "example_zh" || h === "中文例句") idx.exampleZh = i;
+        if (h === "ipa") idx.ipa = i;
+        if (h === "pos" || h === "词性") idx.pos = i;
+        if (h === "full" || h === "全称") idx.full = i;
+      });
+    }
+    let added = 0, updated = 0;
+    const have = {};
+    state.customWords.forEach(function (w) { have[w.word.toLowerCase()] = w; });
+    for (let r = start; r < rows.length; r++) {
+      const row = rows[r];
+      const word = String(row[idx.word] || "").trim();
+      const meaning = String(row[idx.meaning] || "").trim();
+      if (!word || !meaning) continue;
+      const obj = {
+        word: word,
+        full: idx.full >= 0 ? String(row[idx.full] || "").trim() : "",
+        ipa: idx.ipa >= 0 ? String(row[idx.ipa] || "").trim() : "",
+        pos: idx.pos >= 0 ? String(row[idx.pos] || "").trim() : "n.",
+        meaning: meaning,
+        example: idx.example >= 0 ? String(row[idx.example] || "").trim() : "",
+        exampleZh: idx.exampleZh >= 0 ? String(row[idx.exampleZh] || "").trim() : "",
+        bank: "custom"
+      };
+      const key = word.toLowerCase();
+      if (have[key]) {
+        Object.assign(have[key], obj);
+        updated++;
+      } else {
+        obj.id = "custom-" + Date.now() + "-" + r + "-" + Math.random().toString(36).slice(2, 6);
+        state.customWords.push(obj);
+        have[key] = obj;
+        added++;
+      }
+    }
+    if (!added && !updated) { toast("没有导入到有效单词，请确认格式为 word,meaning,example。"); return; }
+    state.settings.banks.custom = true;
+    save();
+    toast("已导入新词 " + added + " 个，更新 " + updated + " 个。");
+    renderLibrary();
+  }
+
+  function maybeWelcome() {
+    if (state.welcomed) return;
+    const bg = document.createElement("div");
+    bg.className = "modal-bg";
+    bg.id = "welcome";
+    bg.innerHTML = '<div class="modal" role="dialog" aria-labelledby="welcome-title">' +
+      '<h3 id="welcome-title">欢迎使用每日背单词</h3>' +
+      "<p>这是一份可离线使用的单词册，默认词库包括工作金融英语与通用进阶英语。进度只保存在这台设备的浏览器里。</p>" +
+      "<p>页面按甲木日主、用神为火、喜神为土做了暖色设计，并用当日干支给出轻量的学习建议。那只是命理参考，用来提醒开口朗读、火土之日可多记新词、水木偏重之日多复习，以及亥子时宜休息。</p>" +
+      "<p>建议把单词读出声。食伤为用，表达本身就是一种练习。</p>" +
+      '<div class="cta-row"><button class="btn btn-primary" type="button" id="welcome-ok">开始使用</button></div>' +
+      "</div>";
+    document.body.appendChild(bg);
+    document.body.classList.add("locked");
+    $("#welcome-ok").addEventListener("click", function () {
+      state.welcomed = true;
+      save();
+      document.body.classList.remove("locked");
+      bg.remove();
+    });
+  }
+
+  function onKey(e) {
+    if (state.view === "study" && session && session.i < session.queue.length) {
+      if ((e.key === " " || e.key === "Enter") && !session.revealed) { e.preventDefault(); session.revealed = true; renderCard(); }
+      else if (session.revealed && (e.key === "1" || e.key === "2" || e.key === "3")) {
+        rateCard(e.key === "1" ? 1 : e.key === "2" ? 3 : 5);
+      }
+    }
+  }
+
+  function init() {
+    load();
+    selfTestGanZhi();
+    $all(".nav button").forEach(function (b) {
+      b.addEventListener("click", function () { showView(b.dataset.view); });
+    });
+    $("#btn-settings").addEventListener("click", function () { showView("library"); });
+    document.addEventListener("keydown", onKey);
+    showView("home");
+    maybeWelcome();
+  }
+
+  window.VocabApp = {
+    todayEnergy: todayEnergy,
+    dayPillar: dayPillar,
+    yearMonthAt: yearMonthAt,
+    todayISO: todayISO,
+    startStudy: startStudy,
+    startQuiz: startQuiz,
+    exportObject: exportObject,
+    doImport: doImport,
+    state: state,
+    showView: showView,
+    selfTestGanZhi: selfTestGanZhi
+  };
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+
+  </script>
+</body>
+</html>
